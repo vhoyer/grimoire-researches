@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b71lavpyvqlqv"]
+
+[ext_resource type="Script" path="res://modules/UI/button_scene_changer.gd" id="1_ffo6y"]
+[ext_resource type="PackedScene" uid="uid://c2y6mrga3auhp" path="res://stages/battle/battle.tscn" id="2_hpowy"]
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="ButtonSceneChanger" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+script = ExtResource("1_ffo6y")
+scene = ExtResource("2_hpowy")

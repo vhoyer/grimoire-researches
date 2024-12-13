@@ -1,0 +1,74 @@
+[gd_scene load_steps=3 format=3 uid="uid://dai1di82aw08k"]
+
+[ext_resource type="Script" path="res://stages/_debug/spell_list/spell_display.gd" id="1_rji4n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxrum"]
+font_size = 24
+
+[node name="SpellDisplay" type="PanelContainer"]
+offset_right = 1152.0
+offset_bottom = 70.0
+script = ExtResource("1_rji4n")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SpellName" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+text = "mahidratchu"
+label_settings = SubResource("LabelSettings_oxrum")
+
+[node name="Element" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "water"
+horizontal_alignment = 1
+
+[node name="Effect" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = " afhsdkads hksdajhfa klsdjflaksd h askh lorem sit amet dolor sit amet lorem ipsum mto doido mesmo esse spell casta efeitos mirabolaaaaantes!!!"
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "MP"
+
+[node name="MP" type="Label" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+text = "Casting Turns
+"
+
+[node name="TurnsCasting" type="Label" parent="HBoxContainer/VBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer5"]
+layout_mode = 2
+text = "Circle"
+
+[node name="Circle" type="Label" parent="HBoxContainer/VBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
