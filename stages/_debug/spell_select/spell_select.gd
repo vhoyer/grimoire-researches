@@ -6,6 +6,8 @@ extends CanvasLayer
 @onready var radixes: ItemList = %Radixes
 @onready var postfixes: ItemList = %Postfixes
 
+signal spell_selected;
+
 var pre: = SpellPrepostfix.new():
 	set(value):
 		pre = value
@@ -14,7 +16,12 @@ var post: = SpellPrepostfix.new():
 	set(value):
 		post = value
 		spell = spell
-var spell: = Spell.new() :
+var radix: = Spell.new():
+	set(value):
+		radix = value
+		spell = spell
+
+var spell: = Spell.new():
 	set(value):
 		spell = value.duplicate(true);
 		spell.pre = pre;
@@ -38,3 +45,7 @@ func _on_radixes_item_selected(index: int) -> void:
 
 func _on_postfixes_item_selected(index: int) -> void:
 	post = spell_list.postfixes[index];
+
+func _on_select_spell_button_down() -> void:
+	spell_selected.emit(spell)
+	pass # Replace with function body.

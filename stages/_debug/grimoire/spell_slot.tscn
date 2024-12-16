@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://k8h78vpoebr5"]
+
+[ext_resource type="Script" path="res://stages/_debug/grimoire/spell_slot.gd" id="1_6m6rt"]
+[ext_resource type="PackedScene" uid="uid://c4err8c6jno10" path="res://stages/_debug/spell_select/spell_select.tscn" id="2_41hp8"]
+
+[node name="SpellSlot" type="Button"]
+offset_right = 600.0
+offset_bottom = 53.0
+theme_override_font_sizes/font_size = 32
+text = "+"
+script = ExtResource("1_6m6rt")
+SpellSelectionScene = ExtResource("2_41hp8")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

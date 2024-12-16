@@ -1,0 +1,306 @@
+[gd_scene load_steps=2 format=3 uid="uid://n1056y7etnkk"]
+
+[ext_resource type="PackedScene" uid="uid://k8h78vpoebr5" path="res://stages/_debug/grimoire/spell_slot.tscn" id="1_br3ms"]
+
+[node name="Grimoires" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Book" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="BookPages" type="HBoxContainer" parent="MarginContainer/Book"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="PageLeft" type="VBoxContainer" parent="MarginContainer/Book/BookPages"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 32
+
+[node name="Name" type="Label" parent="MarginContainer/Book/BookPages/PageLeft"]
+layout_mode = 2
+text = "Name of the Grimoire"
+horizontal_alignment = 1
+
+[node name="Affinities" type="GridContainer" parent="MarginContainer/Book/BookPages/PageLeft"]
+layout_mode = 2
+columns = 6
+
+[node name="Fire" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Fire"
+horizontal_alignment = 1
+
+[node name="Water" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Water"
+horizontal_alignment = 1
+
+[node name="Earth" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Earth"
+horizontal_alignment = 1
+
+[node name="Wind" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wind"
+horizontal_alignment = 1
+
+[node name="Light" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Light"
+horizontal_alignment = 1
+
+[node name="Dark" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Dark"
+horizontal_alignment = 1
+
+[node name="FireAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="WaterAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="EarthAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="WindAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="LightAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="DarkAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Stats" type="GridContainer" parent="MarginContainer/Book/BookPages/PageLeft"]
+layout_mode = 2
+columns = 6
+
+[node name="PowerLabel" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Power
+"
+horizontal_alignment = 1
+
+[node name="VitalityLabel" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Vitality"
+horizontal_alignment = 1
+
+[node name="EnduranceLabel" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Endurance
+"
+horizontal_alignment = 1
+
+[node name="AgilityLabel" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Agility"
+horizontal_alignment = 1
+
+[node name="LuckLabel" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Luck"
+horizontal_alignment = 1
+
+[node name="EnergyLabel" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Energy"
+horizontal_alignment = 1
+
+[node name="Power" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Vitality" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Endurance" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Agility" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Luck" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="Energy" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Stats"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="HPBar" type="HBoxContainer" parent="MarginContainer/Book/BookPages/PageLeft"]
+layout_mode = 2
+
+[node name="HP" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/HPBar"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Max HP"
+
+[node name="Control" type="Control" parent="MarginContainer/Book/BookPages/PageLeft/HPBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/Book/BookPages/PageLeft/HPBar/Control"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+show_percentage = false
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Book/BookPages/PageLeft/HPBar/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HP" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/HPBar/Control/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1000"
+
+[node name="MPBar" type="HBoxContainer" parent="MarginContainer/Book/BookPages/PageLeft"]
+layout_mode = 2
+
+[node name="MP" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/MPBar"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Max MP
+"
+
+[node name="Control" type="Control" parent="MarginContainer/Book/BookPages/PageLeft/MPBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/Book/BookPages/PageLeft/MPBar/Control"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+show_percentage = false
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/Book/BookPages/PageLeft/MPBar/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MP" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/MPBar/Control/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1000"
+
+[node name="PageRight" type="VBoxContainer" parent="MarginContainer/Book/BookPages"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpellSlot1" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot2" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot3" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot4" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot5" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot6" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot7" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot8" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot9" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2
+
+[node name="SpellSlot10" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
+layout_mode = 2

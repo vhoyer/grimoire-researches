@@ -1,11 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4err8c6jno10"]
+[gd_scene load_steps=5 format=3 uid="uid://c4err8c6jno10"]
 
 [ext_resource type="Script" path="res://stages/_debug/spell_select/spell_spinselector.gd" id="1_f4tn8"]
 [ext_resource type="Script" path="res://stages/_debug/spell_select/spell_select.gd" id="1_udffm"]
 [ext_resource type="PackedScene" uid="uid://dai1di82aw08k" path="res://stages/_debug/spell_display/spell_display.tscn" id="3_oahyn"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okk2l"]
+bg_color = Color(0.172549, 0.172549, 0.172549, 0.690196)
+
 [node name="SpellSelect" type="CanvasLayer"]
 script = ExtResource("1_udffm")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_okk2l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -129,6 +140,15 @@ item_2/text = "kai"
 [node name="SpellDisplay" parent="MarginContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_oahyn")]
 layout_mode = 2
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="SelectSpell" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Select Spell"
+
 [connection signal="item_selected" from="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector/Prefixes" to="." method="_on_prefixes_item_selected"]
 [connection signal="item_selected" from="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector/Radixes" to="." method="_on_radixes_item_selected"]
 [connection signal="item_selected" from="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector/Postfixes" to="." method="_on_postfixes_item_selected"]
+[connection signal="button_down" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SelectSpell" to="." method="_on_select_spell_button_down"]
