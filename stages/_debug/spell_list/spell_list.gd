@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var v_box_container: VBoxContainer = $ScrollContainer/VBoxContainer
-const SPELL_DISPLAY = preload("res://stages/_debug/spell_list/spell_display.tscn")
+const SPELL_DISPLAY = preload("res://stages/_debug/spell_display/spell_display.tscn")
 
 func _ready() -> void:
 	var list = SpellList.new()

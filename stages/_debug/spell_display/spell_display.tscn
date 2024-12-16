@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dai1di82aw08k"]
 
-[ext_resource type="Script" path="res://stages/_debug/spell_list/spell_display.gd" id="1_rji4n"]
+[ext_resource type="Script" path="res://stages/_debug/spell_display/spell_display.gd" id="1_oyj13"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oxrum"]
 font_size = 24
@@ -8,7 +8,7 @@ font_size = 24
 [node name="SpellDisplay" type="PanelContainer"]
 offset_right = 1152.0
 offset_bottom = 70.0
-script = ExtResource("1_rji4n")
+script = ExtResource("1_oyj13")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

@@ -32,7 +32,7 @@ static func parse_element(raw: String) -> Elements:
 @export var base_turns_casting: int = 1
 
 @export var name: String:
-	get(): return pre.name + radix + post.name;
+	get(): return pre.name.replace('(nil)', '') + radix + post.name;
 @export var effect: String:
 	get():
 		return String('\n').join([

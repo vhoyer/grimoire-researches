@@ -4,6 +4,7 @@ class_name SpellList
 var spells: Array[Spell] = [];
 
 var prefixes: Array[SpellPrepostfix] = [];
+var radixes: Array[Spell] = [];
 var postfixes: Array[SpellPrepostfix] = [];
 
 func _init() -> void:
@@ -32,9 +33,9 @@ func load_prepostfixes() -> void:
 	prepost.close()
 
 func create_spells() -> void:
-	var radixes = CSV.new("res://entities/spell_list/data/spell_radixes.csv")
-	while (radixes.next()):
-		var current = radixes.current;
+	var radix_list = CSV.new("res://entities/spell_list/data/spell_radixes.csv")
+	while (radix_list.next()):
+		var current = radix_list.current;
 		var spell = Spell.new();
 		spell.radix = current["spell radix"];
 		spell.element = Spell.parse_element(current["element"])
@@ -45,14 +46,15 @@ func create_spells() -> void:
 		spell.base_chance_primary = float(current["chance_primary"])
 		spell.base_chance_secondary = float(current["chance_secondary"])
 		
+		radixes.push_back(spell)
+		
 		for post in postfixes:
 			if (current[post.name] != ''): continue;
 			var copy = spell.duplicate(true)
 			copy.post = post;
-			spells.push_back(copy);
 			for pre in prefixes:
 				if (current[pre.name] != ''): continue;
 				var clone = copy.duplicate(true)
 				clone.pre = pre;
 				spells.push_back(clone)
-	radixes.close()
+	radix_list.close()
