@@ -14,23 +14,25 @@ static func parse_element(raw: String) -> Elements:
 	assert(Elements.has(raw), "Error: raw element cannot be parsed");
 	return Elements.get(raw);
 
+@export_group("morphemes")
+@export var pre: SpellPrepostfix = SpellPrepostfix.new()
+@export var post: SpellPrepostfix = SpellPrepostfix.new()
+
+@export_subgroup("radix")
 @export var radix: String
 @export var base_effect: String
 @export var element: Elements
-
-@export var pre: SpellPrepostfix = SpellPrepostfix.new()
-@export var post: SpellPrepostfix = SpellPrepostfix.new()
 
 @export var base_mp: int = 12
 @export var base_amount: int = 1
 @export var base_turns_active: int = 1
 @export var base_chance_primary: float = 0.0
 @export var base_chance_secondary: float = 0.0
-
 # implict values (could be const, should be const, but I'm insane)
 @export var base_circle: int = 1
 @export var base_turns_casting: int = 1
 
+@export_group("")
 @export var name: String:
 	get(): return pre.name.replace('(nil)', '') + radix + post.name;
 @export var effect: String:
