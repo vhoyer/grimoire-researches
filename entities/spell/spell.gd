@@ -2,12 +2,12 @@ extends Resource
 class_name Spell
 
 enum Elements {
-	fire,
-	water,
-	earth,
-	wind,
-	light,
-	dark,
+	fire = 0,
+	water = 1,
+	earth = 2,
+	wind = 3,
+	light = 4,
+	dark = 5,
 }
 
 static func parse_element(raw: String) -> Elements:
@@ -65,3 +65,9 @@ func modify(what: String, value: float) -> float:
 func pcent(raw: float) -> String:
 	var value = floor(raw * 100)
 	return str(value) + '%'
+
+func extract_radix() -> Spell:
+	var radix = self.duplicate(true)
+	radix.pre = SpellPrepostfix.new()
+	radix.post = SpellPrepostfix.new()
+	return radix

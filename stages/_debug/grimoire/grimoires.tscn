@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://n1056y7etnkk"]
+[gd_scene load_steps=4 format=3 uid="uid://n1056y7etnkk"]
 
 [ext_resource type="PackedScene" uid="uid://k8h78vpoebr5" path="res://stages/_debug/grimoire/spell_slot.tscn" id="1_br3ms"]
+[ext_resource type="Script" path="res://stages/_debug/grimoire/grimoire.gd" id="1_lrpgt"]
+[ext_resource type="Script" path="res://stages/_debug/grimoire/spell_slots.gd" id="2_lip0o"]
 
 [node name="Grimoires" type="CanvasLayer"]
 
@@ -16,7 +18,9 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="Book" type="PanelContainer" parent="MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+script = ExtResource("1_lrpgt")
 
 [node name="BookPages" type="HBoxContainer" parent="MarginContainer/Book"]
 layout_mode = 2
@@ -36,78 +40,78 @@ horizontal_alignment = 1
 layout_mode = 2
 columns = 6
 
-[node name="Fire" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="AffinityLabel1" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Fire"
 horizontal_alignment = 1
 
-[node name="Water" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="AffinityLabel2" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Water"
 horizontal_alignment = 1
 
-[node name="Earth" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="AffinityLabel3" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Earth"
 horizontal_alignment = 1
 
-[node name="Wind" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="AffinityLabel4" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Wind"
 horizontal_alignment = 1
 
-[node name="Light" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="AffinityLabel5" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Light"
 horizontal_alignment = 1
 
-[node name="Dark" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="AffinityLabel6" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Dark"
 horizontal_alignment = 1
 
-[node name="FireAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="Fire" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
-[node name="WaterAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="Water" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
-[node name="EarthAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="Earth" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
-[node name="WindAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="Wind" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
-[node name="LightAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="Light" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
-[node name="DarkAffinity" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
+[node name="Dark" type="Label" parent="MarginContainer/Book/BookPages/PageLeft/Affinities"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -274,33 +278,5 @@ text = "1000"
 [node name="PageRight" type="VBoxContainer" parent="MarginContainer/Book/BookPages"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="SpellSlot1" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot2" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot3" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot4" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot5" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot6" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot7" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot8" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot9" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
-
-[node name="SpellSlot10" parent="MarginContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
-layout_mode = 2
+script = ExtResource("2_lip0o")
+SpellSlotScene = ExtResource("1_br3ms")
