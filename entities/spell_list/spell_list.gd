@@ -11,6 +11,24 @@ func _init() -> void:
 	load_prepostfixes()
 	create_spells()
 
+func find_prefix(prefix: SpellPrepostfix) -> int:
+	for i in prefixes.size():
+		if prefixes[i].name == prefix.name:
+			return i;
+	return -1;
+
+func find_postfix(postfix: SpellPrepostfix) -> int:
+	for i in postfixes.size():
+		if postfixes[i].name == postfix.name:
+			return i;
+	return -1;
+
+func find_radix(radix: Spell) -> int:
+	for i in radixes.size():
+		if radixes[i].name == radix.name:
+			return i;
+	return -1;
+
 func load_prepostfixes() -> void:
 	var prepost = CSV.new("res://entities/spell_list/data/prepostfix.csv")
 	while (prepost.next()):

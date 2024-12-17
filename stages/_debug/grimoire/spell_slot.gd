@@ -26,8 +26,9 @@ func update_label():
 func _on_button_down() -> void:
 	spell_select = SpellSelectionScene.instantiate()
 	get_tree().root.add_child(spell_select)
-	spell_select.connect('spell_selected', _on_spell_selected);
-	spell_select.connect('cancel', _on_spell_selection_canceled);
+	spell_select.select_spell(spell)
+	spell_select.connect('spell_selected', _on_spell_selected)
+	spell_select.connect('cancel', _on_spell_selection_canceled)
 
 func _on_spell_selected(spell: Spell) -> void:
 	self.spell = spell;

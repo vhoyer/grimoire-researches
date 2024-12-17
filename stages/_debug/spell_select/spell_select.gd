@@ -38,6 +38,20 @@ func _ready() -> void:
 	_on_postfixes_item_selected(0)
 	pass
 
+func select_spell(spell: Spell) -> void:
+	if (spell == null): return
+	
+	var pre = spell.pre
+	select_and_emit(prefixes, spell_list.find_prefix(pre))
+	var post = spell.post
+	select_and_emit(postfixes, spell_list.find_postfix(post))
+	var radix = spell.extract_radix()
+	select_and_emit(radixes, spell_list.find_radix(radix))
+
+func select_and_emit(item_list: ItemList, index: int) -> void:
+	item_list.select(index)
+	item_list.item_selected.emit(index)
+
 func _on_prefixes_item_selected(index: int) -> void:
 	pre = spell_list.prefixes[index];
 
