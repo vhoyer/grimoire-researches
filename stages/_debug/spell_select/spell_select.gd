@@ -7,6 +7,7 @@ extends CanvasLayer
 @onready var postfixes: ItemList = %Postfixes
 
 signal spell_selected;
+signal cancel;
 
 var pre: = SpellPrepostfix.new():
 	set(value):
@@ -48,4 +49,6 @@ func _on_postfixes_item_selected(index: int) -> void:
 
 func _on_select_spell_button_down() -> void:
 	spell_selected.emit(spell)
-	pass # Replace with function body.
+
+func _on_cancel_button_down() -> void:
+	cancel.emit()

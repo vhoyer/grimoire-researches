@@ -6,7 +6,8 @@
 [node name="SpellSlot" type="Button"]
 offset_right = 600.0
 offset_bottom = 53.0
-theme_override_font_sizes/font_size = 32
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
 text = "+"
 script = ExtResource("1_6m6rt")
 SpellSelectionScene = ExtResource("2_41hp8")

@@ -1,10 +1,20 @@
 extends PanelContainer
 
-var grimoire = Grimoire.new()
+@export var SpellSlotScene: PackedScene;
+@onready var page_right: VBoxContainer = $BookPages/PageRight
 
-func _ready() -> void:
+var grimoire: Grimoire
+
+signal grimoire_changed;
+
+func change_grimoire(grimoire: Grimoire) -> void:
+	if (self.grimoire != null and self.grimoire.updated.is_connected(update_labels)):
+		self.grimoire.updated.disconnect(update_labels)
+	self.grimoire = grimoire
+	self.grimoire.updated.connect(update_labels)
 	update_labels()
-	grimoire.updated.connect(update_labels)
+	call_deferred('update_slots')
+	grimoire_changed.emit(self.grimoire)
 
 func update_labels():
 	%Fire.text = str(grimoire.affinities.fire);
@@ -23,3 +33,12 @@ func update_labels():
 
 	%HP.text = str(grimoire.stats.max_hp);
 	%MP.text = str(grimoire.stats.max_mp);
+
+func update_slots() -> void:
+	for child in page_right.get_children():
+		child.free();
+	for index in grimoire.SIZE:
+		var btn = SpellSlotScene.instantiate()
+		btn.grimoire = grimoire
+		btn.slot_index = index
+		page_right.add_child(btn)

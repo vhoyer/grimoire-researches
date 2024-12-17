@@ -144,6 +144,10 @@ layout_mode = 2
 layout_mode = 2
 alignment = 2
 
+[node name="Cancel" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Cancel"
+
 [node name="SelectSpell" type="Button" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "Select Spell"
@@ -151,4 +155,5 @@ text = "Select Spell"
 [connection signal="item_selected" from="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector/Prefixes" to="." method="_on_prefixes_item_selected"]
 [connection signal="item_selected" from="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector/Radixes" to="." method="_on_radixes_item_selected"]
 [connection signal="item_selected" from="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector/Postfixes" to="." method="_on_postfixes_item_selected"]
+[connection signal="button_down" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/Cancel" to="." method="_on_cancel_button_down"]
 [connection signal="button_down" from="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/SelectSpell" to="." method="_on_select_spell_button_down"]
