@@ -28,7 +28,7 @@ layout_mode = 2
 text = "water"
 horizontal_alignment = 1
 
-[node name="Effect" type="Label" parent="HBoxContainer"]
+[node name="Description" type="Label" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2

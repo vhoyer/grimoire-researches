@@ -1,4 +1,4 @@
-slot,name,effect,turns_casting,mp,amount,turns_active,circle,chance_primary,chance_secondary
+slot,name,description,turns_casting,mp,amount,turns_active,circle,chance_primary,chance_secondary
 post,tchi,,*1,*1,*1,*1,=1,*1,*1
 post,tchu,,+1,*2,*3,*1,=2,*2,*1
 post,kai,,+2,*4,*5,*1,=2,*3,*1

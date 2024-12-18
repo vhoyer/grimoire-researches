@@ -35,7 +35,7 @@ func load_prepostfixes() -> void:
 		var current = prepost.current;
 		var prepostfix = SpellPrepostfix.new();
 		prepostfix.name = current.name;
-		prepostfix.effect = current.effect;
+		prepostfix.description = current.description;
 		prepostfix.turns_casting = SpellModifier.parse(current.turns_casting);
 		prepostfix.turns_active = SpellModifier.parse(current.turns_active);
 		prepostfix.mp = SpellModifier.parse(current.mp);
@@ -57,7 +57,7 @@ func create_spells() -> void:
 		var spell = Spell.new();
 		spell.radix = current["spell radix"];
 		spell.element = Spell.parse_element(current["element"])
-		spell.base_effect = current["effect"];
+		spell.base_description = current["description"];
 		spell.base_mp = current["MP cost"]
 		spell.base_amount = current["amount"]
 		spell.base_turns_active = current["turns_active"]
