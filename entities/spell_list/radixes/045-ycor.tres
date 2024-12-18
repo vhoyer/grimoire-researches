@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_rdv83"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_vewcc"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_wwkhj"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_heud5"]
+
+[sub_resource type="Resource" id="Resource_wk70q"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_42tym"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_rxj0h"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_bnvy3"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ygva0"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_meul0"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_6r0b5"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_st6bn"]
+script = ExtResource("3_wwkhj")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_6r0b5")
+turns_active = SubResource("Resource_meul0")
+mp = SubResource("Resource_ygva0")
+amount = SubResource("Resource_wk70q")
+circle = SubResource("Resource_bnvy3")
+chance_primary = SubResource("Resource_42tym")
+chance_secondary = SubResource("Resource_rxj0h")
+
+[sub_resource type="Resource" id="Resource_jtbfp"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_j12tp"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_tin2a"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_bj7cw"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_hs00x"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_8uark"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_simk4"]
+script = ExtResource("2_vewcc")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_lcbny"]
+script = ExtResource("3_wwkhj")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_simk4")
+turns_active = SubResource("Resource_8uark")
+mp = SubResource("Resource_hs00x")
+amount = SubResource("Resource_jtbfp")
+circle = SubResource("Resource_bj7cw")
+chance_primary = SubResource("Resource_j12tp")
+chance_secondary = SubResource("Resource_tin2a")
+
+[resource]
+script = ExtResource("4_heud5")
+id = 45
+pre = SubResource("Resource_lcbny")
+post = SubResource("Resource_st6bn")
+radix = "ycor"
+base_description = "Increases {amount} turns nedded to cast the next spell or the current spell for the target"
+element = 3
+base_mp = 12
+base_amount = 1
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_rdv83")]([])

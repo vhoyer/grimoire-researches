@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_hfw46"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_ispw7"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_gtrk6"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_eplqb"]
+
+[sub_resource type="Resource" id="Resource_ibhen"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_woost"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_n1oou"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_5g6um"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_4dwlq"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_62ray"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_4cd0x"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_5j5c7"]
+script = ExtResource("3_gtrk6")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_4cd0x")
+turns_active = SubResource("Resource_62ray")
+mp = SubResource("Resource_4dwlq")
+amount = SubResource("Resource_ibhen")
+circle = SubResource("Resource_5g6um")
+chance_primary = SubResource("Resource_woost")
+chance_secondary = SubResource("Resource_n1oou")
+
+[sub_resource type="Resource" id="Resource_26ieg"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_l0srk"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_t0irg"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_lsc74"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_hexe0"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_nie7f"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_m2isg"]
+script = ExtResource("2_ispw7")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_oflj1"]
+script = ExtResource("3_gtrk6")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_m2isg")
+turns_active = SubResource("Resource_nie7f")
+mp = SubResource("Resource_hexe0")
+amount = SubResource("Resource_26ieg")
+circle = SubResource("Resource_lsc74")
+chance_primary = SubResource("Resource_l0srk")
+chance_secondary = SubResource("Resource_t0irg")
+
+[resource]
+script = ExtResource("4_eplqb")
+id = 12
+pre = SubResource("Resource_oflj1")
+post = SubResource("Resource_5j5c7")
+radix = "mald"
+base_description = "Has a {chance_primary} chance of applying Cursed status"
+element = 5
+base_mp = 12
+base_amount = 0
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_hfw46")]([])

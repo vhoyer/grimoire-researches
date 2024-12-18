@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_5swkf"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_7augq"]
+
+[sub_resource type="Resource" id="Resource_j2qd0"]
+script = ExtResource("1_5swkf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_sxyu5"]
+script = ExtResource("1_5swkf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_1tlgf"]
+script = ExtResource("1_5swkf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_srg2i"]
+script = ExtResource("1_5swkf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_lggrs"]
+script = ExtResource("1_5swkf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_46ogd"]
+script = ExtResource("1_5swkf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_v37ar"]
+script = ExtResource("1_5swkf")
+type = 2
+value = 1.0
+
+[resource]
+script = ExtResource("2_7augq")
+id = 6
+name = "(nil)"
+description = ""
+turns_casting = SubResource("Resource_v37ar")
+turns_active = SubResource("Resource_46ogd")
+mp = SubResource("Resource_lggrs")
+amount = SubResource("Resource_j2qd0")
+circle = SubResource("Resource_srg2i")
+chance_primary = SubResource("Resource_sxyu5")
+chance_secondary = SubResource("Resource_1tlgf")

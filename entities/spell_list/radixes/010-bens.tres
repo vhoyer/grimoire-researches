@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_h4q1u"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_2uoxf"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_rw4bo"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_u54si"]
+
+[sub_resource type="Resource" id="Resource_jp086"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_rfp7k"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_73vch"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_3wup3"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_iigli"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_jp6qs"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_g4poh"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_88jgi"]
+script = ExtResource("3_rw4bo")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_g4poh")
+turns_active = SubResource("Resource_jp6qs")
+mp = SubResource("Resource_iigli")
+amount = SubResource("Resource_jp086")
+circle = SubResource("Resource_3wup3")
+chance_primary = SubResource("Resource_rfp7k")
+chance_secondary = SubResource("Resource_73vch")
+
+[sub_resource type="Resource" id="Resource_avoce"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_y2ktt"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_v6yrw"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_frmen"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ghtxv"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_xncm4"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_utmfr"]
+script = ExtResource("2_2uoxf")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_nclif"]
+script = ExtResource("3_rw4bo")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_utmfr")
+turns_active = SubResource("Resource_xncm4")
+mp = SubResource("Resource_ghtxv")
+amount = SubResource("Resource_avoce")
+circle = SubResource("Resource_frmen")
+chance_primary = SubResource("Resource_y2ktt")
+chance_secondary = SubResource("Resource_v6yrw")
+
+[resource]
+script = ExtResource("4_u54si")
+id = 10
+pre = SubResource("Resource_nclif")
+post = SubResource("Resource_88jgi")
+radix = "bens"
+base_description = "Has a {chance_primary} chance of applying Blessed status"
+element = 4
+base_mp = 12
+base_amount = 0
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_h4q1u")]([])

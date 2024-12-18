@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_vukn5"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_5pvhk"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_s5n7h"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_qhlo1"]
+
+[sub_resource type="Resource" id="Resource_jdf5v"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_gem56"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_0ep0i"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_r3smd"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_8b7gb"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_47c0s"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_wm6h4"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_htrqe"]
+script = ExtResource("3_s5n7h")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_wm6h4")
+turns_active = SubResource("Resource_47c0s")
+mp = SubResource("Resource_8b7gb")
+amount = SubResource("Resource_jdf5v")
+circle = SubResource("Resource_r3smd")
+chance_primary = SubResource("Resource_gem56")
+chance_secondary = SubResource("Resource_0ep0i")
+
+[sub_resource type="Resource" id="Resource_1y03k"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_d1rnx"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_hohuw"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_6n6er"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_na1rk"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_dpthb"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_mhoal"]
+script = ExtResource("2_5pvhk")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_danwl"]
+script = ExtResource("3_s5n7h")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_mhoal")
+turns_active = SubResource("Resource_dpthb")
+mp = SubResource("Resource_na1rk")
+amount = SubResource("Resource_1y03k")
+circle = SubResource("Resource_6n6er")
+chance_primary = SubResource("Resource_d1rnx")
+chance_secondary = SubResource("Resource_hohuw")
+
+[resource]
+script = ExtResource("4_qhlo1")
+id = 13
+pre = SubResource("Resource_danwl")
+post = SubResource("Resource_htrqe")
+radix = "ter"
+base_description = "Until after the next earth attack, increases earth affinity by {amount}"
+element = 2
+base_mp = 12
+base_amount = 2
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_vukn5")]([])

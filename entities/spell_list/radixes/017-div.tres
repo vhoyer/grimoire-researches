@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_ri2dv"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_nox28"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_441xw"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_tn7yg"]
+
+[sub_resource type="Resource" id="Resource_uqu8l"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_h3o40"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_fiytg"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ykdc4"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_8h6xk"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_sycxg"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ntat6"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_quf43"]
+script = ExtResource("3_441xw")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_ntat6")
+turns_active = SubResource("Resource_sycxg")
+mp = SubResource("Resource_8h6xk")
+amount = SubResource("Resource_uqu8l")
+circle = SubResource("Resource_ykdc4")
+chance_primary = SubResource("Resource_h3o40")
+chance_secondary = SubResource("Resource_fiytg")
+
+[sub_resource type="Resource" id="Resource_q7wg8"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_wopr0"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_pas41"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_clk4g"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ctwck"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ceps3"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_inday"]
+script = ExtResource("2_nox28")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_8aofb"]
+script = ExtResource("3_441xw")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_inday")
+turns_active = SubResource("Resource_ceps3")
+mp = SubResource("Resource_ctwck")
+amount = SubResource("Resource_q7wg8")
+circle = SubResource("Resource_clk4g")
+chance_primary = SubResource("Resource_wopr0")
+chance_secondary = SubResource("Resource_pas41")
+
+[resource]
+script = ExtResource("4_tn7yg")
+id = 17
+pre = SubResource("Resource_8aofb")
+post = SubResource("Resource_quf43")
+radix = "div"
+base_description = "Until after the next light attack, increases light affinity by {amount}"
+element = 4
+base_mp = 12
+base_amount = 2
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_ri2dv")]([])

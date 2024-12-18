@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_hhoht"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_ao47j"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_76prp"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_k6yin"]
+
+[sub_resource type="Resource" id="Resource_dnu3a"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_d5ul4"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_t1h51"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_w7178"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_hs6s6"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_wshfo"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_rwr0f"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_rtegg"]
+script = ExtResource("3_76prp")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_rwr0f")
+turns_active = SubResource("Resource_wshfo")
+mp = SubResource("Resource_hs6s6")
+amount = SubResource("Resource_dnu3a")
+circle = SubResource("Resource_w7178")
+chance_primary = SubResource("Resource_d5ul4")
+chance_secondary = SubResource("Resource_t1h51")
+
+[sub_resource type="Resource" id="Resource_tbkif"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_d5k3r"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_qrh1h"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_5q5m5"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_3e2uc"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_cwur5"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_cdsde"]
+script = ExtResource("2_ao47j")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_6rdsa"]
+script = ExtResource("3_76prp")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_cdsde")
+turns_active = SubResource("Resource_cwur5")
+mp = SubResource("Resource_3e2uc")
+amount = SubResource("Resource_tbkif")
+circle = SubResource("Resource_5q5m5")
+chance_primary = SubResource("Resource_d5k3r")
+chance_secondary = SubResource("Resource_qrh1h")
+
+[resource]
+script = ExtResource("4_k6yin")
+id = 27
+pre = SubResource("Resource_6rdsa")
+post = SubResource("Resource_rtegg")
+radix = "tat"
+base_description = "For {turns_active} turns, make arena favorable to wind attacks and infavorable for earth attacks"
+element = 3
+base_mp = 12
+base_amount = 0
+base_turns_active = 1
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_hhoht")]([])

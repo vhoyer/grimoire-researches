@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_p1hno"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_q2rig"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_1oc3d"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_8qkbm"]
+
+[sub_resource type="Resource" id="Resource_hd63i"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_5hdkd"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_wawuh"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_yiieb"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_iuiqm"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_1g1f1"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_0tvak"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_af7sg"]
+script = ExtResource("3_1oc3d")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_0tvak")
+turns_active = SubResource("Resource_1g1f1")
+mp = SubResource("Resource_iuiqm")
+amount = SubResource("Resource_hd63i")
+circle = SubResource("Resource_yiieb")
+chance_primary = SubResource("Resource_5hdkd")
+chance_secondary = SubResource("Resource_wawuh")
+
+[sub_resource type="Resource" id="Resource_lifeb"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_hojmt"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_47o6k"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_hgowg"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ll4pd"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_1g2ag"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_3cy6s"]
+script = ExtResource("2_q2rig")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_pbpve"]
+script = ExtResource("3_1oc3d")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_3cy6s")
+turns_active = SubResource("Resource_1g2ag")
+mp = SubResource("Resource_ll4pd")
+amount = SubResource("Resource_lifeb")
+circle = SubResource("Resource_hgowg")
+chance_primary = SubResource("Resource_hojmt")
+chance_secondary = SubResource("Resource_47o6k")
+
+[resource]
+script = ExtResource("4_8qkbm")
+id = 55
+pre = SubResource("Resource_pbpve")
+post = SubResource("Resource_af7sg")
+radix = "ban"
+base_description = "Negates once the next water based technical damage"
+element = 1
+base_mp = 12
+base_amount = 0
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_p1hno")]([])

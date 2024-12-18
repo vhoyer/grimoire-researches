@@ -1,6 +1,7 @@
 extends Resource
 class_name SpellPrepostfix
 
+@export var id: int = 0
 @export var name: String = ""
 @export var description: String = ""
 @export var turns_casting: SpellModifier = SpellModifier.new()

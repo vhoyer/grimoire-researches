@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_3bknv"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_f2b7f"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_pk06n"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_43p0e"]
+
+[sub_resource type="Resource" id="Resource_a7fc2"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_m83dv"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_7htmo"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_i54v6"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_rbr6m"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_13ya2"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_177du"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_m762n"]
+script = ExtResource("3_pk06n")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_177du")
+turns_active = SubResource("Resource_13ya2")
+mp = SubResource("Resource_rbr6m")
+amount = SubResource("Resource_a7fc2")
+circle = SubResource("Resource_i54v6")
+chance_primary = SubResource("Resource_m83dv")
+chance_secondary = SubResource("Resource_7htmo")
+
+[sub_resource type="Resource" id="Resource_18he1"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_n3ua0"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_v8arh"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_xe1su"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_frf0f"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_qex2n"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_vwdbk"]
+script = ExtResource("2_f2b7f")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_fnan6"]
+script = ExtResource("3_pk06n")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_vwdbk")
+turns_active = SubResource("Resource_qex2n")
+mp = SubResource("Resource_frf0f")
+amount = SubResource("Resource_18he1")
+circle = SubResource("Resource_xe1su")
+chance_primary = SubResource("Resource_n3ua0")
+chance_secondary = SubResource("Resource_v8arh")
+
+[resource]
+script = ExtResource("4_43p0e")
+id = 50
+pre = SubResource("Resource_fnan6")
+post = SubResource("Resource_m762n")
+radix = "cha"
+base_description = "Makes all targets aim only at the caster for {turns_active} turns"
+element = 0
+base_mp = 12
+base_amount = 0
+base_turns_active = 1
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_3bknv")]([])

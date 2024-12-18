@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_gqj13"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_qwfqv"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_jfvs4"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_vk27s"]
+
+[sub_resource type="Resource" id="Resource_iuus6"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_sp57u"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_hk03t"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ev436"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_34447"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_1otjd"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_x5ghq"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_jhhq2"]
+script = ExtResource("3_jfvs4")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_x5ghq")
+turns_active = SubResource("Resource_1otjd")
+mp = SubResource("Resource_34447")
+amount = SubResource("Resource_iuus6")
+circle = SubResource("Resource_ev436")
+chance_primary = SubResource("Resource_sp57u")
+chance_secondary = SubResource("Resource_hk03t")
+
+[sub_resource type="Resource" id="Resource_6me0s"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_l5j5w"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_vw31l"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_wd25n"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_6egmb"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_3wx0p"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ar8mu"]
+script = ExtResource("2_qwfqv")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_jtxpv"]
+script = ExtResource("3_jfvs4")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_ar8mu")
+turns_active = SubResource("Resource_3wx0p")
+mp = SubResource("Resource_6egmb")
+amount = SubResource("Resource_6me0s")
+circle = SubResource("Resource_wd25n")
+chance_primary = SubResource("Resource_l5j5w")
+chance_secondary = SubResource("Resource_vw31l")
+
+[resource]
+script = ExtResource("4_vk27s")
+id = 7
+pre = SubResource("Resource_jtxpv")
+post = SubResource("Resource_jhhq2")
+radix = "raj"
+base_description = "Deal {amount} of wind damage"
+element = 3
+base_mp = 12
+base_amount = 100
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_gqj13")]([])

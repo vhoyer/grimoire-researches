@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_rwb3s"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_o85hp"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_kkrkk"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_rmvb8"]
+
+[sub_resource type="Resource" id="Resource_0j6jc"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_monsu"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_jmjvd"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_or54v"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_g327d"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_3gndb"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_fh4vg"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_pp8lf"]
+script = ExtResource("3_kkrkk")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_fh4vg")
+turns_active = SubResource("Resource_3gndb")
+mp = SubResource("Resource_g327d")
+amount = SubResource("Resource_0j6jc")
+circle = SubResource("Resource_or54v")
+chance_primary = SubResource("Resource_monsu")
+chance_secondary = SubResource("Resource_jmjvd")
+
+[sub_resource type="Resource" id="Resource_8erqw"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_jvpgt"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_eet50"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ljfs6"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_5ps1m"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_6521s"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_qee3a"]
+script = ExtResource("2_o85hp")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_e0rod"]
+script = ExtResource("3_kkrkk")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_qee3a")
+turns_active = SubResource("Resource_6521s")
+mp = SubResource("Resource_5ps1m")
+amount = SubResource("Resource_8erqw")
+circle = SubResource("Resource_ljfs6")
+chance_primary = SubResource("Resource_jvpgt")
+chance_secondary = SubResource("Resource_eet50")
+
+[resource]
+script = ExtResource("4_rmvb8")
+id = 2
+pre = SubResource("Resource_e0rod")
+post = SubResource("Resource_pp8lf")
+radix = "bras"
+base_description = "Deal {amount} of fire damage with a {chance_secondary} chance of applying Burning status"
+element = 0
+base_mp = 12
+base_amount = 50
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_rwb3s")]([])

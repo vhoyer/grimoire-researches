@@ -14,6 +14,8 @@ static func parse_element(raw: String) -> Elements:
 	assert(Elements.has(raw), "Error: raw element cannot be parsed");
 	return Elements.get(raw);
 
+@export var id: int = 0
+
 @export var pre: SpellPrepostfix = SpellPrepostfix.new()
 @export var post: SpellPrepostfix = SpellPrepostfix.new()
 
@@ -30,6 +32,7 @@ static func parse_element(raw: String) -> Elements:
 @export var base_circle: int = 1
 @export var base_turns_casting: int = 1
 
+@export var effect: Array[SpellEffect] = []
 
 var name: String:
 	get(): return pre.name.replace('(nil)', '') + radix + post.name;

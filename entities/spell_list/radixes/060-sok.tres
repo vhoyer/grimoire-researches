@@ -1,0 +1,119 @@
+[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_cd6ne"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_oxdvo"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_3mno4"]
+[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_0j4hg"]
+
+[sub_resource type="Resource" id="Resource_ugkfv"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_pbs7t"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_n0kdj"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_pa8vt"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_2vge8"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_pk6p3"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_rpoqn"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_yv1vi"]
+script = ExtResource("3_3mno4")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_rpoqn")
+turns_active = SubResource("Resource_pk6p3")
+mp = SubResource("Resource_2vge8")
+amount = SubResource("Resource_ugkfv")
+circle = SubResource("Resource_pa8vt")
+chance_primary = SubResource("Resource_pbs7t")
+chance_secondary = SubResource("Resource_n0kdj")
+
+[sub_resource type="Resource" id="Resource_0s7xh"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_afqxc"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_k1cck"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_u7tjk"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_ntmxc"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_o5qes"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_2bc0u"]
+script = ExtResource("2_oxdvo")
+type = 2
+value = 1.0
+
+[sub_resource type="Resource" id="Resource_pwkcq"]
+script = ExtResource("3_3mno4")
+id = 0
+name = ""
+description = ""
+turns_casting = SubResource("Resource_2bc0u")
+turns_active = SubResource("Resource_o5qes")
+mp = SubResource("Resource_ntmxc")
+amount = SubResource("Resource_0s7xh")
+circle = SubResource("Resource_u7tjk")
+chance_primary = SubResource("Resource_afqxc")
+chance_secondary = SubResource("Resource_k1cck")
+
+[resource]
+script = ExtResource("4_0j4hg")
+id = 60
+pre = SubResource("Resource_pwkcq")
+post = SubResource("Resource_yv1vi")
+radix = "sok"
+base_description = "Revives target with half HP"
+element = 5
+base_mp = 12
+base_amount = 0
+base_turns_active = 0
+base_chance_primary = 0.33
+base_chance_secondary = 0.17
+base_circle = 1
+base_turns_casting = 1
+effect = Array[ExtResource("1_cd6ne")]([])
