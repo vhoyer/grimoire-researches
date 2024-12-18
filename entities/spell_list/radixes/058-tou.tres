@@ -1,119 +1,29 @@
-[gd_resource type="Resource" script_class="Spell" load_steps=21 format=3]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_hps7c"]
-[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="2_7rx36"]
-[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="3_h42nx"]
-[ext_resource type="Script" path="res://entities/spell/spell.gd" id="4_mg111"]
-
-[sub_resource type="Resource" id="Resource_p2oxj"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_3h113"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_mqs2t"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_ww44l"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_ck7b4"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_ohgwc"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_buwq4"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_kt6bw"]
-script = ExtResource("3_h42nx")
-id = 0
-name = ""
-description = ""
-turns_casting = SubResource("Resource_buwq4")
-turns_active = SubResource("Resource_ohgwc")
-mp = SubResource("Resource_ck7b4")
-amount = SubResource("Resource_p2oxj")
-circle = SubResource("Resource_ww44l")
-chance_primary = SubResource("Resource_3h113")
-chance_secondary = SubResource("Resource_mqs2t")
-
-[sub_resource type="Resource" id="Resource_5src3"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_136g7"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_hjsqd"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_8dt42"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_wevlr"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_vjn5v"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_r1sym"]
-script = ExtResource("2_7rx36")
-type = 2
-value = 1.0
-
-[sub_resource type="Resource" id="Resource_ko83o"]
-script = ExtResource("3_h42nx")
-id = 0
-name = ""
-description = ""
-turns_casting = SubResource("Resource_r1sym")
-turns_active = SubResource("Resource_vjn5v")
-mp = SubResource("Resource_wevlr")
-amount = SubResource("Resource_5src3")
-circle = SubResource("Resource_8dt42")
-chance_primary = SubResource("Resource_136g7")
-chance_secondary = SubResource("Resource_hjsqd")
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_ks0fh"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_pm437"]
 
 [resource]
-script = ExtResource("4_mg111")
+script = ExtResource("2_pm437")
 id = 58
-pre = SubResource("Resource_ko83o")
-post = SubResource("Resource_kt6bw")
-radix = "tou"
-base_description = "Negates once the next earth based technical damage"
+name = "tou"
+description = "Negates once the next earth based technical damage"
 element = 2
-base_mp = 12
-base_amount = 0
-base_turns_active = 0
-base_chance_primary = 0.33
-base_chance_secondary = 0.17
-base_circle = 1
-base_turns_casting = 1
-effect = Array[ExtResource("1_hps7c")]([])
+mp = 12
+amount = 0
+turns_active = 0
+chance_primary = 0.33
+chance_secondary = 0.17
+circle = 1
+turns_casting = 1
+effect = Array[ExtResource("1_ks0fh")]([])
+constraints = {
+"(nil)": true,
+"al": false,
+"in": false,
+"kai": false,
+"ma": true,
+"se": true,
+"tchi": true,
+"tchu": false
+}

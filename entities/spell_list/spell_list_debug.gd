@@ -3,13 +3,7 @@ extends CanvasLayer
 @export var csv_prepostfix = "res://entities/spell_list/data/prepostfix.csv"
 @export var csv_radixes = "res://entities/spell_list/data/spell_radixes.csv"
 
-@export var prefixes_path = "res://entities/spell_list/prefixes/"
-@export var postfixes_path = "res://entities/spell_list/postfixes/"
-@export var radixes_path = "res://entities/spell_list/radixes/"
-
-var prefixes: Array[SpellPrepostfix] = [];
-var radixes: Array[Spell] = [];
-var postfixes: Array[SpellPrepostfix] = [];
+var prepostfixes: Array[SpellPrepostfix] = []
 
 func load_prepostfixes() -> void:
 	var prepost = CSV.new(csv_prepostfix)
@@ -18,7 +12,7 @@ func load_prepostfixes() -> void:
 		id += 1
 		var current = prepost.current;
 		var resource_path = "%s/%s-%s.tres" % [
-			postfixes_path if current.slot == 'post' else prefixes_path,
+			SpellList.postfixes_path if current.slot == 'post' else SpellList.prefixes_path,
 			str(id).pad_zeros(3),
 			current.name,
 		];
@@ -36,6 +30,7 @@ func load_prepostfixes() -> void:
 		prepostfix.chance_secondary = SpellModifier.parse(current.chance_secondary);
 		
 		ResourceSaver.save(prepostfix, resource_path)
+		prepostfixes.push_back(prepostfix)
 	prepost.close()
 
 func load_radixes() -> void:
@@ -44,21 +39,24 @@ func load_radixes() -> void:
 	while (radix_list.next()):
 		id += 1
 		var current = radix_list.current;
-		var resource_path = "%s/%s-%s.tres" % [radixes_path, str(id).pad_zeros(3), current["spell radix"]];
-		var file_exists = ResourceLoader.exists(resource_path, "Spell")
-		var spell: Spell = ResourceLoader.load(resource_path, "Spell") if file_exists else Spell.new()
-		spell.id = id
-		spell.radix = current["spell radix"]
-		spell.element = Spell.parse_element(current["element"])
-		spell.base_description = current["description"];
-		spell.base_mp = current["MP cost"]
-		spell.base_amount = current["amount"]
-		spell.base_turns_active = current["turns_active"]
-		spell.base_chance_primary = float(current["chance_primary"])
-		spell.base_chance_secondary = float(current["chance_secondary"])
+		var resource_path = "%s/%s-%s.tres" % [SpellList.radixes_path, str(id).pad_zeros(3), current["spell radix"]];
+		var file_exists = ResourceLoader.exists(resource_path, "SpellRadix")
+		var radix: SpellRadix = ResourceLoader.load(resource_path, "SpellRadix") if file_exists else SpellRadix.new()
+		radix.id = id
+		radix.name = current["spell radix"]
+		radix.element = Spell.parse_element(current["element"])
+		radix.description = current["description"];
+		radix.mp = current["MP cost"]
+		radix.amount = current["amount"]
+		radix.turns_active = current["turns_active"]
+		radix.chance_primary = float(current["chance_primary"])
+		radix.chance_secondary = float(current["chance_secondary"])
+
+		radix.constraints = {}
+		for prepost in prepostfixes:
+			radix.constraints[prepost.name] = (current[prepost.name] == '')
 		
-		radixes.push_back(spell)
-		ResourceSaver.save(spell, )
+		ResourceSaver.save(radix, resource_path)
 	radix_list.close()
 
 func _on_save_resources_from_csv_button_down() -> void:
@@ -68,9 +66,9 @@ func _on_save_resources_from_csv_button_down() -> void:
 
 
 func _on_clear_resource_folders_button_down() -> void:
-	clear_dir(postfixes_path)
-	clear_dir(prefixes_path)
-	clear_dir(radixes_path)
+	clear_dir(SpellList.postfixes_path)
+	clear_dir(SpellList.prefixes_path)
+	clear_dir(SpellList.radixes_path)
 
 func clear_dir(path: String) -> void:
 	var dir = DirAccess.open(path)

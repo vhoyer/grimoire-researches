@@ -10,7 +10,7 @@ class_name SpellDisplay
 
 func set_values(spell: Spell) -> void:
 	spell_name.text = spell.name
-	element.text = Spell.Elements.keys()[spell.element]
+	element.text = Spell.Elements.keys()[spell.radix.element]
 	description.text = spell.description
 	mp.text = str(spell.mp)
 	turns_casting.text = str(spell.turns_casting)

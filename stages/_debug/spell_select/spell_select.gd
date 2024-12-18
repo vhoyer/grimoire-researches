@@ -17,7 +17,7 @@ var post: = SpellPrepostfix.new():
 	set(value):
 		post = value
 		spell = spell
-var radix: = Spell.new():
+var radix: = SpellRadix.new():
 	set(value):
 		radix = value
 		spell = spell
@@ -27,16 +27,17 @@ var spell: = Spell.new():
 		spell = value.duplicate(true);
 		spell.pre = pre;
 		spell.post = post;
+		spell.radix = radix;
 		spell_display.set_values(spell);
 
 func _ready() -> void:
+	%spell_spinselector.loadparts(spell_list)
 	prefixes.select(2)
 	_on_prefixes_item_selected(2)
 	radixes.select(0)
 	_on_radixes_item_selected(0)
 	postfixes.select(0)
 	_on_postfixes_item_selected(0)
-	pass
 
 func select_spell(spell: Spell) -> void:
 	if (spell == null): return
@@ -45,7 +46,7 @@ func select_spell(spell: Spell) -> void:
 	select_and_emit(prefixes, spell_list.find_prefix(pre))
 	var post = spell.post
 	select_and_emit(postfixes, spell_list.find_postfix(post))
-	var radix = spell.extract_radix()
+	var radix = spell.radix
 	select_and_emit(radixes, spell_list.find_radix(radix))
 
 func select_and_emit(item_list: ItemList, index: int) -> void:
@@ -56,7 +57,7 @@ func _on_prefixes_item_selected(index: int) -> void:
 	pre = spell_list.prefixes[index];
 
 func _on_radixes_item_selected(index: int) -> void:
-	spell = spell_list.radixes[index]
+	radix = spell_list.radixes[index]
 
 func _on_postfixes_item_selected(index: int) -> void:
 	post = spell_list.postfixes[index];

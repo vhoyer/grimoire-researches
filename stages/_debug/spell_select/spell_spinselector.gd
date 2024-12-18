@@ -7,16 +7,10 @@ extends HBoxContainer
 
 @export var reload := false :
 	set(value):
-		loadparts()
+		loadparts(SpellList.new())
 		reload = value;
 
-func _ready() -> void:
-	loadparts()
-
-func loadparts() -> void:
-	if (!Engine.is_editor_hint()): return
-	
-	var spell_list = SpellList.new()
+func loadparts(spell_list: SpellList) -> void:
 	one_list(prefixes, spell_list.prefixes)
 	one_list(radixes, spell_list.radixes)
 	one_list(postfixes, spell_list.postfixes)
