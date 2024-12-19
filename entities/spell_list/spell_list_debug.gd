@@ -28,6 +28,7 @@ func load_prepostfixes() -> void:
 		prepostfix.circle = SpellModifier.parse(current.circle);
 		prepostfix.chance_primary = SpellModifier.parse(current.chance_primary);
 		prepostfix.chance_secondary = SpellModifier.parse(current.chance_secondary);
+		prepostfix.is_passive = str(current.effect).contains('passive')
 		
 		ResourceSaver.save(prepostfix, resource_path)
 		prepostfixes.push_back(prepostfix)

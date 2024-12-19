@@ -15,3 +15,14 @@ class_name Stats
 @export var max_mp: int:
 	get():
 		return 1000 + 100 * (energy - 1)
+
+func increment_stat_by_element(element: Spell.Elements, value: int) -> void:
+	const stat_map = {
+		Spell.Elements.fire: 'power',
+		Spell.Elements.water: 'vitality',
+		Spell.Elements.earth: 'endurance',
+		Spell.Elements.wind: 'agility',
+		Spell.Elements.light: 'luck',
+		Spell.Elements.dark: 'energy',
+	}
+	self[stat_map[element]] += value;

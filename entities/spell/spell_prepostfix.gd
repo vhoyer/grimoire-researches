@@ -12,3 +12,4 @@ class_name SpellPrepostfix
 
 @export var chance_primary: SpellModifier = SpellModifier.new()
 @export var chance_secondary: SpellModifier = SpellModifier.new()
+@export var is_passive: bool = false;

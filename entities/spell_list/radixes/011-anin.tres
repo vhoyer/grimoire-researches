@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_8ctfp"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_lrbs2"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_pamm2"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_k0trh"]
 
 [resource]
-script = ExtResource("2_lrbs2")
+script = ExtResource("2_k0trh")
 id = 11
 name = "anin"
 description = "Deals {amount} of dark damage"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_8ctfp")]([])
+effect = Array[ExtResource("1_pamm2")]([])
 constraints = {
 "(nil)": true,
 "al": false,

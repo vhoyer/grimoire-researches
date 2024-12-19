@@ -1,22 +1,22 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_ywjuu"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_gw3b2"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_0nfoy"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_yye18"]
 
 [resource]
-script = ExtResource("2_gw3b2")
+script = ExtResource("2_yye18")
 id = 38
 name = "yvit"
 description = "Decreases vitality stat by {amount} for {turns_active} turns"
 element = 1
 mp = 12
-amount = 0
+amount = 1
 turns_active = 1
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_ywjuu")]([])
+effect = Array[ExtResource("1_0nfoy")]([])
 constraints = {
 "(nil)": true,
 "al": false,

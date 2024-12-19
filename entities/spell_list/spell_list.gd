@@ -46,8 +46,6 @@ func load_morphemes() -> void:
 	var radixes_dir = DirAccess.open(radixes_path)
 	for filepath in radixes_dir.get_files():
 		radixes.push_back(ResourceLoader.load(radixes_path + filepath))
-	
-	for rad in radixes: print(rad.name)
 
 func create_spells() -> void:
 	for radix in radixes:

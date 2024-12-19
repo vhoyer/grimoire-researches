@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_plse8"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_kmw7n"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_nm81c"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_n5m7p"]
 
 [resource]
-script = ExtResource("2_kmw7n")
+script = ExtResource("2_n5m7p")
 id = 51
 name = "rep"
 description = "Makes the target use the same spell used last for {turns_active} turns"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_plse8")]([])
+effect = Array[ExtResource("1_nm81c")]([])
 constraints = {
 "(nil)": true,
 "al": false,

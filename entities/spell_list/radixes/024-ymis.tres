@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_05gkh"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_l30k4"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_vav2u"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_s1rd6"]
 
 [resource]
-script = ExtResource("2_l30k4")
+script = ExtResource("2_s1rd6")
 id = 24
 name = "ymis"
 description = "Until after the next dark attack, decreases dark affinity by {amount}"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_05gkh")]([])
+effect = Array[ExtResource("1_vav2u")]([])
 constraints = {
 "(nil)": true,
 "al": false,

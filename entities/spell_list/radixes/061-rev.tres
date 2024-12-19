@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_mlrst"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_78eka"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_2v4kj"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_kl7b8"]
 
 [resource]
-script = ExtResource("2_78eka")
+script = ExtResource("2_kl7b8")
 id = 61
 name = "rev"
 description = "Revives target with full HP"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_mlrst")]([])
+effect = Array[ExtResource("1_2v4kj")]([])
 constraints = {
 "(nil)": true,
 "al": false,

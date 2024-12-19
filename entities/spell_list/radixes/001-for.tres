@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://ci58kyyqh5kmo"]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_alin3"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_3p57v"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_jfv3w"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_hs3mi"]
 
 [resource]
-script = ExtResource("2_3p57v")
+script = ExtResource("2_hs3mi")
 id = 1
 name = "for"
 description = "Deal {amount} of fire damage"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_alin3")]([])
+effect = Array[ExtResource("1_jfv3w")]([])
 constraints = {
 "(nil)": true,
 "al": false,

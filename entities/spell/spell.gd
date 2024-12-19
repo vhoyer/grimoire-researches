@@ -49,6 +49,8 @@ var chance_primary: float:
 	get(): return max(0.0, min(1.0, modify('chance_primary', radix.chance_primary)))
 var chance_secondary: float:
 	get(): return max(0.0, min(1.0, modify('chance_secondary', radix.chance_secondary)))
+var is_passive: bool:
+	get(): return pre.is_passive
 
 func modify(what: String, value: float) -> float:
 	return pre[what].mod(post[what].mod(value));

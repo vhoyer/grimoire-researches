@@ -27,4 +27,9 @@ func recalculate() -> void:
 	for spell in _list:
 		if spell == null: continue;
 		affinities.process_spell(spell);
+		if (spell.is_passive):
+			for effect in spell.radix.effect:
+				var dummy_mage = Mage.new("dummy", self)
+				effect.do_effect(spell, dummy_mage, [dummy_mage])
+		
 	updated.emit();

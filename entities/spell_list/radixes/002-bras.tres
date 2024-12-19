@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://b4idn2m7qfu2s"]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_55lat"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_1s0n4"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_aeoji"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_2ebw7"]
 
 [resource]
-script = ExtResource("2_1s0n4")
+script = ExtResource("2_2ebw7")
 id = 2
 name = "bras"
 description = "Deal {amount} of fire damage with a {chance_secondary} chance of applying Burning status"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_55lat")]([])
+effect = Array[ExtResource("1_aeoji")]([])
 constraints = {
 "(nil)": true,
 "al": false,

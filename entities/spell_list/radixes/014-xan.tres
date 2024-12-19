@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_4fxrc"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_1ng5l"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_dqoge"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_6inoi"]
 
 [resource]
-script = ExtResource("2_1ng5l")
+script = ExtResource("2_6inoi")
 id = 14
 name = "xan"
 description = "Until after the next fire attack, increases fire affinity by {amount}"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_4fxrc")]([])
+effect = Array[ExtResource("1_dqoge")]([])
 constraints = {
 "(nil)": true,
 "al": false,

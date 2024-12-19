@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_rnypm"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_o54tv"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_avyyf"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_ubq1m"]
 
 [resource]
-script = ExtResource("2_o54tv")
+script = ExtResource("2_ubq1m")
 id = 22
 name = "yhidra"
 description = "Until after the next water attack, decreases water affinity by {amount}"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_rnypm")]([])
+effect = Array[ExtResource("1_avyyf")]([])
 constraints = {
 "(nil)": true,
 "al": false,

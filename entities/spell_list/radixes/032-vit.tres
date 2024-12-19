@@ -1,22 +1,26 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=5 format=3 uid="uid://cerfrw4oqh0um"]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_s0itk"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_1mnkb"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_56oxi"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_4p2s5"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_stat.gd" id="2_l8qi0"]
+
+[sub_resource type="Resource" id="Resource_5um08"]
+script = ExtResource("2_l8qi0")
 
 [resource]
-script = ExtResource("2_1mnkb")
+script = ExtResource("2_4p2s5")
 id = 32
 name = "vit"
 description = "Increases vitality stat by {amount} for {turns_active} turns"
 element = 1
 mp = 12
-amount = 0
+amount = 1
 turns_active = 1
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_s0itk")]([])
+effect = Array[ExtResource("1_56oxi")]([SubResource("Resource_5um08")])
 constraints = {
 "(nil)": true,
 "al": true,

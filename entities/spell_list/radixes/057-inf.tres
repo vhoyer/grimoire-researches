@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_n2q6m"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_qeyuw"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_8t8a6"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_jyltr"]
 
 [resource]
-script = ExtResource("2_qeyuw")
+script = ExtResource("2_jyltr")
 id = 57
 name = "inf"
 description = "Negates once the next fire based technical damage"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_n2q6m")]([])
+effect = Array[ExtResource("1_8t8a6")]([])
 constraints = {
 "(nil)": true,
 "al": false,

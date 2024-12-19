@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_veqno"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_22v8l"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_pyd3j"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_nrdh6"]
 
 [resource]
-script = ExtResource("2_22v8l")
+script = ExtResource("2_nrdh6")
 id = 55
 name = "ban"
 description = "Negates once the next water based technical damage"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_veqno")]([])
+effect = Array[ExtResource("1_pyd3j")]([])
 constraints = {
 "(nil)": true,
 "al": false,

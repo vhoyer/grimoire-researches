@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_qrd0f"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_hygpc"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_spuwr"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_pn6qp"]
 
 [resource]
-script = ExtResource("2_hygpc")
+script = ExtResource("2_pn6qp")
 id = 10
 name = "bens"
 description = "Has a {chance_primary} chance of applying Blessed status"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_qrd0f")]([])
+effect = Array[ExtResource("1_spuwr")]([])
 constraints = {
 "(nil)": true,
 "al": false,

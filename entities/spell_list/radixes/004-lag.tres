@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://bldvbl31vg10u"]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_765of"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_3scf6"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_8pl6n"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_hrdi5"]
 
 [resource]
-script = ExtResource("2_3scf6")
+script = ExtResource("2_hrdi5")
 id = 4
 name = "lag"
 description = "Deal {amount} of water damage with a {chance_secondary} chance of applying Wet status"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_765of")]([])
+effect = Array[ExtResource("1_8pl6n")]([])
 constraints = {
 "(nil)": true,
 "al": false,

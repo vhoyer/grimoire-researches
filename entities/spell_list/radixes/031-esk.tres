@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_w83hf"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_hjhw2"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_gkgww"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_b0w0s"]
 
 [resource]
-script = ExtResource("2_hjhw2")
+script = ExtResource("2_b0w0s")
 id = 31
 name = "esk"
 description = "For {turns_active} turns, make arena favorable to dark attacks and infavorable for light attacks"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_w83hf")]([])
+effect = Array[ExtResource("1_gkgww")]([])
 constraints = {
 "(nil)": true,
 "al": false,

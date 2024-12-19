@@ -1,22 +1,22 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_fpx2d"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_bl6ip"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_0ojev"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_s2ep4"]
 
 [resource]
-script = ExtResource("2_bl6ip")
+script = ExtResource("2_s2ep4")
 id = 41
 name = "ydef"
 description = "Decreases endurance stat by {amount} for {turns_active} turns"
 element = 2
 mp = 12
-amount = 0
+amount = 1
 turns_active = 1
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_fpx2d")]([])
+effect = Array[ExtResource("1_0ojev")]([])
 constraints = {
 "(nil)": true,
 "al": false,

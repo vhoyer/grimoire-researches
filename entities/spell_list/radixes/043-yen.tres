@@ -1,22 +1,22 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_64csw"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_16043"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_jeulo"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_qe73k"]
 
 [resource]
-script = ExtResource("2_16043")
+script = ExtResource("2_qe73k")
 id = 43
 name = "yen"
 description = "Decreases energy stat by {amount} for {turns_active} turns"
 element = 5
 mp = 12
-amount = 0
+amount = 1
 turns_active = 1
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_64csw")]([])
+effect = Array[ExtResource("1_jeulo")]([])
 constraints = {
 "(nil)": true,
 "al": false,

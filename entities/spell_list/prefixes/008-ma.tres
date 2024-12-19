@@ -1,52 +1,53 @@
 [gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3]
 
-[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_pi1xk"]
-[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_gm22h"]
+[ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_jdy7h"]
+[ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_jym2d"]
 
-[sub_resource type="Resource" id="Resource_w8vtu"]
-script = ExtResource("1_pi1xk")
+[sub_resource type="Resource" id="Resource_ukgih"]
+script = ExtResource("1_jdy7h")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_22x4b"]
-script = ExtResource("1_pi1xk")
+[sub_resource type="Resource" id="Resource_acsw5"]
+script = ExtResource("1_jdy7h")
 type = 2
 value = 0.333333
 
-[sub_resource type="Resource" id="Resource_ev02p"]
-script = ExtResource("1_pi1xk")
+[sub_resource type="Resource" id="Resource_a67b2"]
+script = ExtResource("1_jdy7h")
 type = 2
 value = 0.2
 
-[sub_resource type="Resource" id="Resource_hxuw7"]
-script = ExtResource("1_pi1xk")
+[sub_resource type="Resource" id="Resource_vk58j"]
+script = ExtResource("1_jdy7h")
 type = 0
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_b5usi"]
-script = ExtResource("1_pi1xk")
+[sub_resource type="Resource" id="Resource_0mp5k"]
+script = ExtResource("1_jdy7h")
 type = 2
 value = 3.0
 
-[sub_resource type="Resource" id="Resource_hf627"]
-script = ExtResource("1_pi1xk")
+[sub_resource type="Resource" id="Resource_g3f04"]
+script = ExtResource("1_jdy7h")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_g15hk"]
-script = ExtResource("1_pi1xk")
+[sub_resource type="Resource" id="Resource_akfeu"]
+script = ExtResource("1_jdy7h")
 type = 0
 value = 2.0
 
 [resource]
-script = ExtResource("2_gm22h")
+script = ExtResource("2_jym2d")
 id = 8
 name = "ma"
 description = "Allow 3 targets (not the same)"
-turns_casting = SubResource("Resource_g15hk")
-turns_active = SubResource("Resource_hf627")
-mp = SubResource("Resource_b5usi")
-amount = SubResource("Resource_w8vtu")
-circle = SubResource("Resource_hxuw7")
-chance_primary = SubResource("Resource_22x4b")
-chance_secondary = SubResource("Resource_ev02p")
+turns_casting = SubResource("Resource_akfeu")
+turns_active = SubResource("Resource_g3f04")
+mp = SubResource("Resource_0mp5k")
+amount = SubResource("Resource_ukgih")
+circle = SubResource("Resource_vk58j")
+chance_primary = SubResource("Resource_acsw5")
+chance_secondary = SubResource("Resource_a67b2")
+is_passive = false

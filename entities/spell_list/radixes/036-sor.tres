@@ -1,22 +1,22 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_go5iv"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_n44fe"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_kme7k"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_6mws7"]
 
 [resource]
-script = ExtResource("2_n44fe")
+script = ExtResource("2_6mws7")
 id = 36
 name = "sor"
 description = "Increases lucky stat by {amount} for {turns_active} turns"
 element = 4
 mp = 12
-amount = 0
+amount = 1
 turns_active = 1
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_go5iv")]([])
+effect = Array[ExtResource("1_kme7k")]([])
 constraints = {
 "(nil)": true,
 "al": true,

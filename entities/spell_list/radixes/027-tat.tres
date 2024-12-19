@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
 
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_vqdkf"]
-[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_bjb1s"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_hhkrv"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_tyvux"]
 
 [resource]
-script = ExtResource("2_bjb1s")
+script = ExtResource("2_tyvux")
 id = 27
 name = "tat"
 description = "For {turns_active} turns, make arena favorable to wind attacks and infavorable for earth attacks"
@@ -16,7 +16,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_vqdkf")]([])
+effect = Array[ExtResource("1_hhkrv")]([])
 constraints = {
 "(nil)": true,
 "al": false,
