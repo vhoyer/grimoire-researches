@@ -4,8 +4,16 @@ class_name Mage
 @export var name: String;
 @export var grimoire: Grimoire;
 
-var hp: int
-var mp: int
+var hp: int:
+	set(value):
+		hp = value
+		updated.emit()
+var mp: int:
+	set(value):
+		mp = value
+		updated.emit()
+
+signal updated
 
 func _init(name: String, grimoire: Grimoire = Grimoire.new()):
 	self.name = name;

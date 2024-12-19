@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c48j0mlyoc2oe"]
+
+[ext_resource type="Script" path="res://stages/_debug/battle/mage.gd" id="1_1kpy5"]
+[ext_resource type="Script" path="res://entities/mages/mage.gd" id="2_1y3sq"]
+[ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="2_j36el"]
+[ext_resource type="PackedScene" uid="uid://cf88lw1hrg055" path="res://modules/UI/prompt_dialog/prompt_dialog.tscn" id="2_wiesm"]
+
+[sub_resource type="Resource" id="Resource_pnbel"]
+script = ExtResource("2_j36el")
+
+[sub_resource type="Resource" id="Resource_bs256"]
+script = ExtResource("2_1y3sq")
+name = "Andrezão"
+grimoire = SubResource("Resource_pnbel")
+
+[node name="mage" type="HBoxContainer"]
+script = ExtResource("1_1kpy5")
+mage = SubResource("Resource_bs256")
+prompt = ExtResource("2_wiesm")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Andre"
+
+[node name="HPMP" type="Label" parent="."]
+layout_mode = 2
+text = "HP: 1000
+MP: 1000"
+
+[node name="AlterHP" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Alter HP"
+
+[node name="AlterMP" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Alter MP
+"
+
+[connection signal="button_down" from="AlterHP" to="." method="_on_alter_hp_button_down"]
+[connection signal="button_down" from="AlterMP" to="." method="_on_alter_mp_button_down"]

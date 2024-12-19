@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" path="res://stages/_debug/spell_select/spell_spinselector.gd" id="1_f4tn8"]
 [ext_resource type="Script" path="res://stages/_debug/spell_select/spell_select.gd" id="1_udffm"]
+[ext_resource type="StyleBox" uid="uid://bg8tf403k7ydc" path="res://modules/UI/backdrop_panel.tres" id="2_1s4xd"]
 [ext_resource type="PackedScene" uid="uid://dai1di82aw08k" path="res://stages/_debug/spell_display/spell_display.tscn" id="3_oahyn"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okk2l"]
-bg_color = Color(0.172549, 0.172549, 0.172549, 0.690196)
 
 [node name="SpellSelect" type="CanvasLayer"]
 script = ExtResource("1_udffm")
@@ -16,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_okk2l")
+theme_override_styles/panel = ExtResource("2_1s4xd")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
