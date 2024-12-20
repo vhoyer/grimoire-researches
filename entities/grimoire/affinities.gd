@@ -42,7 +42,7 @@ func get_opposite_element(el: Spell.Elements) -> Spell.Elements:
 		Spell.Elements.light: return Spell.Elements.dark;
 		Spell.Elements.dark: return Spell.Elements.light;
 	assert(false, "Error, wtf why did it even get here????")
-	return 0;
+	return 0 as Spell.Elements
 
 func increment_affinity(element: Spell.Elements, value: int) -> void:
 	_elements[element] += value
