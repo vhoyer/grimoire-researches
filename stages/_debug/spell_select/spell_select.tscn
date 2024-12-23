@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4err8c6jno10"]
+[gd_scene load_steps=6 format=3 uid="uid://c4err8c6jno10"]
 
 [ext_resource type="Script" path="res://stages/_debug/spell_select/spell_spinselector.gd" id="1_f4tn8"]
 [ext_resource type="Script" path="res://stages/_debug/spell_select/spell_select.gd" id="1_udffm"]
 [ext_resource type="StyleBox" uid="uid://bg8tf403k7ydc" path="res://modules/UI/backdrop_panel.tres" id="2_1s4xd"]
 [ext_resource type="PackedScene" uid="uid://dai1di82aw08k" path="res://stages/_debug/spell_display/spell_display.tscn" id="3_oahyn"]
+[ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="4_vbbdq"]
 
 [node name="SpellSelect" type="CanvasLayer"]
 script = ExtResource("1_udffm")
@@ -53,6 +54,8 @@ item_1/text = "al"
 item_2/text = "-"
 item_3/text = "se"
 item_4/text = "ma"
+script = ExtResource("4_vbbdq")
+source_label = "name"
 
 [node name="Radixes" type="ItemList" parent="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector"]
 unique_name_in_owner = true
@@ -123,6 +126,8 @@ item_58/text = "pil"
 item_59/text = "sok"
 item_60/text = "rev"
 item_61/text = "aza"
+script = ExtResource("4_vbbdq")
+source_label = "name"
 
 [node name="Postfixes" type="ItemList" parent="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector"]
 unique_name_in_owner = true
@@ -134,6 +139,8 @@ item_count = 3
 item_0/text = "tchi"
 item_1/text = "tchu"
 item_2/text = "kai"
+script = ExtResource("4_vbbdq")
+source_label = "name"
 
 [node name="SpellDisplay" parent="MarginContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_oahyn")]
 layout_mode = 2

@@ -1,9 +1,10 @@
 @tool
 extends HBoxContainer
 
-@onready var prefixes: ItemList = $Prefixes
-@onready var radixes: ItemList = $Radixes
-@onready var postfixes: ItemList = $Postfixes
+@onready var prefixes: ItemListSource = $Prefixes
+@onready var radixes: ItemListSource = $Radixes
+@onready var postfixes: ItemListSource = $Postfixes
+@onready var spell_select: CanvasLayer = $"../../../.."
 
 @export var reload := false :
 	set(value):
@@ -11,11 +12,6 @@ extends HBoxContainer
 		reload = value;
 
 func loadparts(spell_list: SpellList) -> void:
-	one_list(prefixes, spell_list.prefixes)
-	one_list(radixes, spell_list.radixes)
-	one_list(postfixes, spell_list.postfixes)
-
-func one_list(it: ItemList, spl: Array):
-	it.clear()
-	for item in spl:
-		it.add_item(item.name.replace('(nil)', '-'))
+	prefixes.source_list = spell_list.prefixes
+	postfixes.source_list = spell_list.postfixes
+	radixes.source_list = spell_list.radixes

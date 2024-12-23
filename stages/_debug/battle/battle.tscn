@@ -23,7 +23,6 @@ layout_mode = 2
 
 [node name="PartyA" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 
 [node name="mage" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
@@ -33,6 +32,24 @@ layout_mode = 2
 
 [node name="mage3" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="GrimoireLeft" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer"]
+layout_mode = 2
+text = "Edit Left Grimoire"
+
+[node name="GrimoireRight" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer"]
+layout_mode = 2
+text = "Edit Right Grimoire"
 
 [node name="PartyB" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2

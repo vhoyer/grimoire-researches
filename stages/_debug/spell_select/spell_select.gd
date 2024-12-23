@@ -9,20 +9,22 @@ extends CanvasLayer
 signal spell_selected;
 signal cancel;
 
-var pre: = SpellPrepostfix.new():
+var pre:= SpellPrepostfix.new():
 	set(value):
 		pre = value
 		spell = spell
-var post: = SpellPrepostfix.new():
+var post:= SpellPrepostfix.new():
 	set(value):
 		post = value
 		spell = spell
-var radix: = SpellRadix.new():
+var radix:= SpellRadix.new():
 	set(value):
 		radix = value
+		load_one_list(prefixes, spell_list.prefixes, radix.constraints)
+		load_one_list(postfixes, spell_list.postfixes, radix.constraints)
 		spell = spell
 
-var spell: = Spell.new():
+var spell:= Spell.new():
 	set(value):
 		spell = value.duplicate(true);
 		spell.pre = pre;
@@ -31,7 +33,7 @@ var spell: = Spell.new():
 		spell_display.set_values(spell);
 
 func _ready() -> void:
-	%spell_spinselector.loadparts(spell_list)
+	load_morphene_lists()
 	prefixes.select(2)
 	_on_prefixes_item_selected(2)
 	radixes.select(0)
@@ -41,17 +43,25 @@ func _ready() -> void:
 
 func select_spell(spell: Spell) -> void:
 	if (spell == null): return
-	
-	var pre = spell.pre
-	select_and_emit(prefixes, spell_list.find_prefix(pre))
-	var post = spell.post
-	select_and_emit(postfixes, spell_list.find_postfix(post))
-	var radix = spell.radix
-	select_and_emit(radixes, spell_list.find_radix(radix))
+
+	select_and_emit(prefixes, spell_list.find_prefix(spell.pre))
+	select_and_emit(postfixes, spell_list.find_postfix(spell.post))
+	select_and_emit(radixes, spell_list.find_radix(spell.radix))
 
 func select_and_emit(item_list: ItemList, index: int) -> void:
 	item_list.select(index)
 	item_list.item_selected.emit(index)
+
+func load_one_list(it: ItemListSource, morphene: Array, constraints: Dictionary):
+	it.source_list = morphene.map(func(item):
+		item.name = item.name.replace('(nil)', '-')
+		return item
+		)
+
+func load_morphene_lists() -> void:
+	load_one_list(prefixes, spell_list.prefixes, radix.constraints)
+	load_one_list(postfixes, spell_list.postfixes, radix.constraints)
+	load_one_list(radixes, spell_list.radixes, {})
 
 func _on_prefixes_item_selected(index: int) -> void:
 	pre = spell_list.prefixes[index];
