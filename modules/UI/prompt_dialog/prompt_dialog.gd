@@ -9,7 +9,6 @@ var value: String:
 	set(value):
 		$CenterContainer/PanelContainer/VBoxContainer/TextEdit.text = value
 
-
 func _on_cancel_button_down() -> void:
 	cancel.emit()
 

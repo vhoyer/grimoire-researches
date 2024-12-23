@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc1yuycjjo3ro"]
+[gd_scene load_steps=18 format=3 uid="uid://cc1yuycjjo3ro"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/battle.gd" id="1_gbsud"]
 [ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/battle/mage.tscn" id="1_wtl8j"]
 [ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="2_euq4x"]
 [ext_resource type="Script" path="res://stages/_debug/battle/party.gd" id="2_fqjpp"]
 [ext_resource type="Script" path="res://entities/mages/mage.gd" id="2_h7mf1"]
-[ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/grimoire/grimoires.tscn" id="2_p1tv0"]
 
 [sub_resource type="Resource" id="Resource_s0v1t"]
 script = ExtResource("2_euq4x")
@@ -57,7 +56,6 @@ grimoire = SubResource("Resource_7iwxn")
 
 [node name="Battle" type="CanvasLayer"]
 script = ExtResource("1_gbsud")
-GrimoiresScene = ExtResource("2_p1tv0")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -127,6 +125,3 @@ mage = SubResource("Resource_owsni")
 [node name="mage3" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_q8xun")
-
-[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireLeft" to="." method="_on_grimoire_left_button_down"]
-[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireRight" to="." method="_on_grimoire_right_button_down"]

@@ -15,7 +15,7 @@ var mp: int:
 
 signal updated
 
-func _init(name: String, grimoire: Grimoire = Grimoire.new()):
+func _init(name: String = 'dummy', grimoire: Grimoire = Grimoire.new()):
 	self.name = name;
 	self.grimoire = grimoire;
 	hp = grimoire.stats.max_hp

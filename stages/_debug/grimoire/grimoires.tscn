@@ -1,10 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://n1056y7etnkk"]
+[gd_scene load_steps=5 format=3 uid="uid://n1056y7etnkk"]
 
-[ext_resource type="Script" path="res://stages/_debug/grimoire/tab_bar.gd" id="1_ag50x"]
 [ext_resource type="PackedScene" uid="uid://k8h78vpoebr5" path="res://stages/_debug/grimoire/spell_slot.tscn" id="1_br3ms"]
+[ext_resource type="Script" path="res://stages/_debug/grimoire/grimoires.gd" id="1_hk2d1"]
+[ext_resource type="StyleBox" uid="uid://bg8tf403k7ydc" path="res://modules/UI/backdrop_panel.tres" id="1_l6ymm"]
 [ext_resource type="Script" path="res://stages/_debug/grimoire/grimoire.gd" id="1_lrpgt"]
 
 [node name="Grimoires" type="CanvasLayer"]
+script = ExtResource("1_hk2d1")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_l6ymm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -21,15 +31,22 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="TabBar" type="TabBar" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="TabBar" type="TabBar" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 current_tab = 0
 tab_alignment = 1
 tab_count = 3
 tab_0/title = "Mage 1"
 tab_1/title = "Mage 2"
 tab_2/title = "Mage 3"
-script = ExtResource("1_ag50x")
+
+[node name="Close" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "close"
 
 [node name="Book" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -325,4 +342,6 @@ layout_mode = 2
 [node name="SpellSlot10" parent="MarginContainer/VBoxContainer/Book/BookPages/PageRight" instance=ExtResource("1_br3ms")]
 layout_mode = 2
 
-[connection signal="tab_changed" from="MarginContainer/VBoxContainer/TabBar" to="MarginContainer/VBoxContainer/TabBar" method="_on_tab_changed"]
+[connection signal="tab_changed" from="MarginContainer/VBoxContainer/HBoxContainer/TabBar" to="." method="_on_tab_bar_tab_changed"]
+[connection signal="tab_changed" from="MarginContainer/VBoxContainer/HBoxContainer/TabBar" to="MarginContainer/VBoxContainer/HBoxContainer/TabBar" method="_on_tab_changed"]
+[connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Close" to="." method="_on_close_button_down"]

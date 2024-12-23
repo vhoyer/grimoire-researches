@@ -1,13 +1,20 @@
 extends HBoxContainer
+class_name MageDisplay
 
-@export var mage: Mage = Mage.new("Dummy")
+@export var mage: Mage:
+	get(): return mage
+	set(value):
+		if (mage): mage.updated.disconnect(update_labels)
+		mage = value
+		mage.updated.connect(update_labels)
 @export var prompt: PackedScene
 
 func _ready() -> void:
-	update_labels()
-	mage.updated.connect(update_labels)
+	if (mage):
+		update_labels()
 
 func update_labels() -> void:
+	$Label.text = mage.name
 	$HPMP.text = """
 	HP: %d
 	MP: %d
