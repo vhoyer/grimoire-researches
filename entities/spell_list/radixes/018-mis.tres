@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://fwd0maq5pdon"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_44gv1"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_7q4h6"]
@@ -19,7 +19,7 @@ turns_casting = 1
 effect = Array[ExtResource("1_44gv1")]([])
 constraints = {
 "(nil)": true,
-"al": false,
+"al": true,
 "in": true,
 "kai": true,
 "ma": true,
@@ -27,3 +27,4 @@ constraints = {
 "tchi": true,
 "tchu": true
 }
+display_name = "mis"

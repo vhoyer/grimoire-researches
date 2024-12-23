@@ -29,6 +29,7 @@ func load_prepostfixes() -> void:
 		prepostfix.chance_primary = SpellModifier.parse(current.chance_primary);
 		prepostfix.chance_secondary = SpellModifier.parse(current.chance_secondary);
 		prepostfix.is_passive = str(current.effect).contains('passive')
+		prepostfix.is_default = str(current.effect).contains('default')
 		
 		ResourceSaver.save(prepostfix, resource_path)
 		prepostfixes.push_back(prepostfix)

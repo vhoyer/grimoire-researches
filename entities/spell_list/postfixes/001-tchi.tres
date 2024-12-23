@@ -1,39 +1,39 @@
-[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3 uid="uid://bvxujw7bp7wj"]
 
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_2oyoq"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_tgp6b"]
 
-[sub_resource type="Resource" id="Resource_7ykjt"]
+[sub_resource type="Resource" id="Resource_n27hs"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_d6vu8"]
+[sub_resource type="Resource" id="Resource_fqthr"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_m00y4"]
+[sub_resource type="Resource" id="Resource_nqteg"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_srptb"]
+[sub_resource type="Resource" id="Resource_gj7c6"]
 script = ExtResource("1_2oyoq")
 type = 1
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_f0eq5"]
+[sub_resource type="Resource" id="Resource_bg7ef"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_8do36"]
+[sub_resource type="Resource" id="Resource_64828"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_13qwx"]
+[sub_resource type="Resource" id="Resource_5fr4j"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
@@ -43,11 +43,13 @@ script = ExtResource("2_tgp6b")
 id = 1
 name = "tchi"
 description = ""
-turns_casting = SubResource("Resource_13qwx")
-turns_active = SubResource("Resource_8do36")
-mp = SubResource("Resource_f0eq5")
-amount = SubResource("Resource_7ykjt")
-circle = SubResource("Resource_srptb")
-chance_primary = SubResource("Resource_d6vu8")
-chance_secondary = SubResource("Resource_m00y4")
+turns_casting = SubResource("Resource_5fr4j")
+turns_active = SubResource("Resource_64828")
+mp = SubResource("Resource_bg7ef")
+amount = SubResource("Resource_n27hs")
+circle = SubResource("Resource_gj7c6")
+chance_primary = SubResource("Resource_fqthr")
+chance_secondary = SubResource("Resource_nqteg")
 is_passive = false
+is_default = true
+display_name = "tchi"

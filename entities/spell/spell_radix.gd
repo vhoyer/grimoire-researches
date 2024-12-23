@@ -17,3 +17,6 @@ class_name SpellRadix
 @export var effect: Array[SpellEffect] = []
 
 @export var constraints: Dictionary = {}
+
+@export var display_name: String:
+	get(): return name

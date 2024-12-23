@@ -1,39 +1,39 @@
-[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3 uid="uid://cjid8u1xe2agw"]
 
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_gwnsv"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_fdvo3"]
 
-[sub_resource type="Resource" id="Resource_44nsp"]
+[sub_resource type="Resource" id="Resource_p1pgu"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 5.0
 
-[sub_resource type="Resource" id="Resource_5nsnq"]
+[sub_resource type="Resource" id="Resource_djoo3"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 3.0
 
-[sub_resource type="Resource" id="Resource_4e84g"]
+[sub_resource type="Resource" id="Resource_bsktv"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_w2ded"]
+[sub_resource type="Resource" id="Resource_yakpt"]
 script = ExtResource("1_gwnsv")
 type = 1
 value = 2.0
 
-[sub_resource type="Resource" id="Resource_p41g3"]
+[sub_resource type="Resource" id="Resource_qph8v"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 4.0
 
-[sub_resource type="Resource" id="Resource_5aw5r"]
+[sub_resource type="Resource" id="Resource_vijkm"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_gylc1"]
+[sub_resource type="Resource" id="Resource_fsooo"]
 script = ExtResource("1_gwnsv")
 type = 0
 value = 2.0
@@ -43,11 +43,13 @@ script = ExtResource("2_fdvo3")
 id = 3
 name = "kai"
 description = ""
-turns_casting = SubResource("Resource_gylc1")
-turns_active = SubResource("Resource_5aw5r")
-mp = SubResource("Resource_p41g3")
-amount = SubResource("Resource_44nsp")
-circle = SubResource("Resource_w2ded")
-chance_primary = SubResource("Resource_5nsnq")
-chance_secondary = SubResource("Resource_4e84g")
+turns_casting = SubResource("Resource_fsooo")
+turns_active = SubResource("Resource_vijkm")
+mp = SubResource("Resource_qph8v")
+amount = SubResource("Resource_p1pgu")
+circle = SubResource("Resource_yakpt")
+chance_primary = SubResource("Resource_djoo3")
+chance_secondary = SubResource("Resource_bsktv")
 is_passive = false
+is_default = false
+display_name = "kai"

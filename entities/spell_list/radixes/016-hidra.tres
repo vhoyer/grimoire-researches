@@ -23,7 +23,7 @@ turns_casting = 1
 effect = Array[ExtResource("1_t8myo")]([SubResource("Resource_52wor")])
 constraints = {
 "(nil)": true,
-"al": false,
+"al": true,
 "in": true,
 "kai": true,
 "ma": true,
@@ -31,3 +31,4 @@ constraints = {
 "tchi": true,
 "tchu": true
 }
+display_name = "hidra"

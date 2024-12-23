@@ -1,39 +1,39 @@
-[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3 uid="uid://5bl7vtr8iyt"]
 
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_ypahs"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_bjo2k"]
 
-[sub_resource type="Resource" id="Resource_m7pgs"]
+[sub_resource type="Resource" id="Resource_n6qwa"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_lr7o0"]
+[sub_resource type="Resource" id="Resource_uh6j3"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_rv4p1"]
+[sub_resource type="Resource" id="Resource_5r3r6"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_3ave3"]
+[sub_resource type="Resource" id="Resource_3u07u"]
 script = ExtResource("1_ypahs")
 type = 0
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_worgk"]
+[sub_resource type="Resource" id="Resource_08u0g"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 2.0
 
-[sub_resource type="Resource" id="Resource_0c6lt"]
+[sub_resource type="Resource" id="Resource_htin7"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_xu0xx"]
+[sub_resource type="Resource" id="Resource_y8l5e"]
 script = ExtResource("1_ypahs")
 type = 1
 value = 0.0
@@ -43,11 +43,13 @@ script = ExtResource("2_bjo2k")
 id = 4
 name = "in"
 description = "Executes the spell once at the start of the battle, target = self"
-turns_casting = SubResource("Resource_xu0xx")
-turns_active = SubResource("Resource_0c6lt")
-mp = SubResource("Resource_worgk")
-amount = SubResource("Resource_m7pgs")
-circle = SubResource("Resource_3ave3")
-chance_primary = SubResource("Resource_lr7o0")
-chance_secondary = SubResource("Resource_rv4p1")
+turns_casting = SubResource("Resource_y8l5e")
+turns_active = SubResource("Resource_htin7")
+mp = SubResource("Resource_08u0g")
+amount = SubResource("Resource_n6qwa")
+circle = SubResource("Resource_3u07u")
+chance_primary = SubResource("Resource_uh6j3")
+chance_secondary = SubResource("Resource_5r3r6")
 is_passive = false
+is_default = false
+display_name = "in"

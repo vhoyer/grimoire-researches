@@ -1,39 +1,39 @@
-[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3]
+[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=10 format=3 uid="uid://dsp7jdeao4cex"]
 
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_jdy7h"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_jym2d"]
 
-[sub_resource type="Resource" id="Resource_ukgih"]
+[sub_resource type="Resource" id="Resource_r5blm"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_acsw5"]
+[sub_resource type="Resource" id="Resource_ugu8n"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 0.333333
 
-[sub_resource type="Resource" id="Resource_a67b2"]
+[sub_resource type="Resource" id="Resource_ev7ny"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 0.2
 
-[sub_resource type="Resource" id="Resource_vk58j"]
+[sub_resource type="Resource" id="Resource_exutm"]
 script = ExtResource("1_jdy7h")
 type = 0
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_0mp5k"]
+[sub_resource type="Resource" id="Resource_vt67g"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 3.0
 
-[sub_resource type="Resource" id="Resource_g3f04"]
+[sub_resource type="Resource" id="Resource_j1jjw"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_akfeu"]
+[sub_resource type="Resource" id="Resource_5svxg"]
 script = ExtResource("1_jdy7h")
 type = 0
 value = 2.0
@@ -43,11 +43,13 @@ script = ExtResource("2_jym2d")
 id = 8
 name = "ma"
 description = "Allow 3 targets (not the same)"
-turns_casting = SubResource("Resource_akfeu")
-turns_active = SubResource("Resource_g3f04")
-mp = SubResource("Resource_0mp5k")
-amount = SubResource("Resource_ukgih")
-circle = SubResource("Resource_vk58j")
-chance_primary = SubResource("Resource_acsw5")
-chance_secondary = SubResource("Resource_a67b2")
+turns_casting = SubResource("Resource_5svxg")
+turns_active = SubResource("Resource_j1jjw")
+mp = SubResource("Resource_vt67g")
+amount = SubResource("Resource_r5blm")
+circle = SubResource("Resource_exutm")
+chance_primary = SubResource("Resource_ugu8n")
+chance_secondary = SubResource("Resource_ev7ny")
 is_passive = false
+is_default = false
+display_name = "ma"

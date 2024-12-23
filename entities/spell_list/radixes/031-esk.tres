@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://cdlg0htd8b2h4"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_gkgww"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_b0w0s"]
@@ -27,3 +27,4 @@ constraints = {
 "tchi": true,
 "tchu": true
 }
+display_name = "esk"
