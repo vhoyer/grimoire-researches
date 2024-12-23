@@ -1,6 +1,8 @@
 extends ItemList
 class_name ItemListSource
 
+var selected_item: Variant
+
 @export var source_label: String
 @export var source_list: Array = []:
 	set(value):
@@ -13,7 +15,11 @@ var source_is_default: Callable = func(item): return false
 signal source_item_selected(item)
 
 func _init():
-	self.item_selected.connect(func(index): source_item_selected.emit(source_list[index]))
+	self.item_selected.connect(_on_item_selected)
+
+func _on_item_selected(index: int) -> void:
+	selected_item = source_list[index]
+	source_item_selected.emit(selected_item)
 
 func must_use_label() -> bool:
 	return source_list.all(func(item): return ![
@@ -30,8 +36,11 @@ func populate_items() -> void:
 		if (source_is_default.call(item)):
 			default_item = item
 	
-	if (default_item):
+	var has_selection = selected_item and source_list.has(selected_item)
+	if (default_item and not has_selection):
 		self.select_item(default_item)
+	elif (has_selection):
+		self.select_item(selected_item)
 
 func select_item(what: Variant) -> void:
 	var index = source_list.find(what)

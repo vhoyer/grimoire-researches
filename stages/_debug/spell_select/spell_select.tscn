@@ -125,7 +125,7 @@ item_2/text = "-"
 item_3/text = "se"
 item_4/text = "ma"
 script = ExtResource("4_vbbdq")
-source_label = "name"
+source_label = "display_name"
 source_list = [ExtResource("6_anx2t"), ExtResource("7_0qk6w"), ExtResource("8_0gc2u"), ExtResource("9_60jvi"), ExtResource("10_0fm0v")]
 
 [node name="Radixes" type="ItemList" parent="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector"]
@@ -198,7 +198,7 @@ item_59/text = "sok"
 item_60/text = "rev"
 item_61/text = "aza"
 script = ExtResource("4_vbbdq")
-source_label = "name"
+source_label = "display_name"
 source_list = [ExtResource("12_5vj3p"), ExtResource("13_sdeay"), ExtResource("14_lw801"), ExtResource("15_qfxgo"), ExtResource("16_jtor8"), ExtResource("17_x2mux"), ExtResource("18_8l381"), ExtResource("19_s3uo0"), ExtResource("20_vf16s"), ExtResource("21_3c64x"), ExtResource("22_vodtf"), ExtResource("23_1kiil"), ExtResource("24_im3x4"), ExtResource("25_kjltv"), ExtResource("26_crmpn"), ExtResource("27_vx33g"), ExtResource("28_qo1i2"), ExtResource("29_4xqlg"), ExtResource("30_41a77"), ExtResource("31_2qtax"), ExtResource("32_yolrr"), ExtResource("33_kxgyq"), ExtResource("34_c20qp"), ExtResource("35_gwim3"), ExtResource("36_su1sm"), ExtResource("37_ep4g5"), ExtResource("38_erbcj"), ExtResource("39_sol84"), ExtResource("40_an4oe"), ExtResource("41_b8rud"), ExtResource("42_0i75m"), ExtResource("43_05ske"), ExtResource("44_r4oh8"), ExtResource("45_7bcua"), ExtResource("46_br5v3"), ExtResource("47_cegsu"), ExtResource("48_8hkkq"), ExtResource("49_jxtws"), ExtResource("50_be8cv"), ExtResource("51_u8iut"), ExtResource("52_1i81k"), ExtResource("53_drp5x"), ExtResource("54_gqw74"), ExtResource("55_180nb"), ExtResource("56_xbnx2"), ExtResource("57_1tdwd"), ExtResource("58_4ipd7"), ExtResource("59_b0dra"), ExtResource("60_6k3ei"), ExtResource("61_8lfjo"), ExtResource("62_aefcj"), ExtResource("63_cbarn"), ExtResource("64_onal4"), ExtResource("65_jvbsx"), ExtResource("66_8ia0o"), ExtResource("67_i45ee"), ExtResource("68_3vowc"), ExtResource("69_ft50l"), ExtResource("70_63ygx"), ExtResource("71_12v64"), ExtResource("72_u5ug4"), ExtResource("73_bjofa")]
 
 [node name="Postfixes" type="ItemList" parent="MarginContainer/PanelContainer/VBoxContainer/spell_spinselector"]
@@ -212,7 +212,7 @@ item_0/text = "tchi"
 item_1/text = "tchu"
 item_2/text = "kai"
 script = ExtResource("4_vbbdq")
-source_label = "name"
+source_label = "display_name"
 source_list = [ExtResource("74_856sy"), ExtResource("75_cx4gp"), ExtResource("76_vhvea")]
 
 [node name="SpellDisplay" parent="MarginContainer/PanelContainer/VBoxContainer" instance=ExtResource("3_oahyn")]

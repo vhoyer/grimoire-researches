@@ -1,18 +1,21 @@
 extends Resource
 class_name Affinities
 
+const MIN = -2
+const MAX = 3
+
 @export var fire: int:
-	get(): return _elements[Spell.Elements.fire]
+	get(): return cap_to_scale(_elements[Spell.Elements.fire])
 @export var water: int:
-	get(): return _elements[Spell.Elements.water]
+	get(): return cap_to_scale(_elements[Spell.Elements.water])
 @export var earth: int:
-	get(): return _elements[Spell.Elements.earth]
+	get(): return cap_to_scale(_elements[Spell.Elements.earth])
 @export var wind: int:
-	get(): return _elements[Spell.Elements.wind]
+	get(): return cap_to_scale(_elements[Spell.Elements.wind])
 @export var light: int:
-	get(): return _elements[Spell.Elements.light]
+	get(): return cap_to_scale(_elements[Spell.Elements.light])
 @export var dark: int:
-	get(): return _elements[Spell.Elements.dark]
+	get(): return cap_to_scale(_elements[Spell.Elements.dark])
 
 var _elements: PackedInt32Array = [0];
 
@@ -46,3 +49,6 @@ func get_opposite_element(el: Spell.Elements) -> Spell.Elements:
 
 func increment_affinity(element: Spell.Elements, value: int) -> void:
 	_elements[element] += value
+
+func cap_to_scale(value: int) -> int:
+	return min(MAX, max(MIN, value))
