@@ -14,3 +14,6 @@ func _on_cancel_button_down() -> void:
 
 func _on_ok_button_down() -> void:
 	ok.emit(value)
+
+func _on_text_edit_text_submitted(new_text: String) -> void:
+	ok.emit(new_text)
