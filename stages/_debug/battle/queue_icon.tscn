@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3iquby55xoeq"]
+
+[ext_resource type="Script" path="res://stages/_debug/battle/queue_icon.gd" id="1_76bj8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqra2"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.172549, 0.172549, 0.172549, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="QueueIcon" type="PanelContainer"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_iqra2")
+script = ExtResource("1_76bj8")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "dummy_mage"

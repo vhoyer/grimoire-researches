@@ -1,3 +1,4 @@
+@tool
 extends HBoxContainer
 class_name MageDisplay
 
@@ -7,6 +8,7 @@ class_name MageDisplay
 		if (mage): mage.updated.disconnect(update_labels)
 		mage = value
 		mage.updated.connect(update_labels)
+		update_labels()
 @export var prompt: PackedScene
 
 func _ready() -> void:

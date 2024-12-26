@@ -16,10 +16,13 @@ var party_right: Array[Mage] = [
 
 @onready var party_a: VBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/PartyA
 @onready var party_b: VBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/PartyB
+@onready var queue: HBoxContainer = $MarginContainer/VBoxContainer/Queue
 
 func _ready() -> void:
 	party_a.set_party(party_left)
 	party_b.set_party(party_right)
+	var members = party_left + party_right
+	queue.init_queue(members)
 
 func show_grimoires_popup(party: Array[Mage]) -> void:
 	var instance = GrimoiresScene.instantiate()

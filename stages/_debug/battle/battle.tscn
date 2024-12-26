@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc1yuycjjo3ro"]
+[gd_scene load_steps=29 format=3 uid="uid://cc1yuycjjo3ro"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/battle.gd" id="1_gbsud"]
 [ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/battle/mage.tscn" id="1_wtl8j"]
@@ -6,6 +6,40 @@
 [ext_resource type="Script" path="res://stages/_debug/battle/party.gd" id="2_fqjpp"]
 [ext_resource type="Script" path="res://entities/mages/mage.gd" id="2_h7mf1"]
 [ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/grimoire/grimoires.tscn" id="2_p1tv0"]
+[ext_resource type="Script" path="res://stages/_debug/battle/queue.gd" id="3_ifwug"]
+[ext_resource type="PackedScene" uid="uid://b3iquby55xoeq" path="res://stages/_debug/battle/queue_icon.tscn" id="4_4e334"]
+
+[sub_resource type="Resource" id="Resource_j2xgo"]
+script = ExtResource("2_euq4x")
+
+[sub_resource type="Resource" id="Resource_q7m43"]
+script = ExtResource("2_h7mf1")
+name = "katharina"
+grimoire = SubResource("Resource_j2xgo")
+
+[sub_resource type="Resource" id="Resource_s78ev"]
+script = ExtResource("2_euq4x")
+
+[sub_resource type="Resource" id="Resource_u36yn"]
+script = ExtResource("2_h7mf1")
+name = "abobrinha"
+grimoire = SubResource("Resource_s78ev")
+
+[sub_resource type="Resource" id="Resource_g00y7"]
+script = ExtResource("2_euq4x")
+
+[sub_resource type="Resource" id="Resource_i354g"]
+script = ExtResource("2_h7mf1")
+name = "aboha"
+grimoire = SubResource("Resource_g00y7")
+
+[sub_resource type="Resource" id="Resource_maqoa"]
+script = ExtResource("2_euq4x")
+
+[sub_resource type="Resource" id="Resource_txctk"]
+script = ExtResource("2_h7mf1")
+name = "dummy"
+grimoire = SubResource("Resource_maqoa")
 
 [sub_resource type="Resource" id="Resource_s0v1t"]
 script = ExtResource("2_euq4x")
@@ -72,6 +106,28 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
+
+[node name="Queue" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("3_ifwug")
+QueueIconScene = ExtResource("4_4e334")
+
+[node name="QueueIcon" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+layout_mode = 2
+mage = SubResource("Resource_q7m43")
+
+[node name="QueueIcon2" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+layout_mode = 2
+mage = SubResource("Resource_u36yn")
+
+[node name="QueueIcon3" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+layout_mode = 2
+mage = SubResource("Resource_i354g")
+
+[node name="QueueIcon4" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+layout_mode = 2
+mage = SubResource("Resource_txctk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

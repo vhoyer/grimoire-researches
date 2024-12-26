@@ -1,8 +1,16 @@
+@tool
 extends Resource
 class_name Mage
 
-@export var name: String;
-@export var grimoire: Grimoire;
+@export var name: String:
+	set(value):
+		name = value
+		updated.emit()
+
+@export var grimoire: Grimoire:
+	set(value):
+		grimoire = value
+		updated.emit()
 
 var hp: int:
 	set(value):
