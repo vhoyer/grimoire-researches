@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cc1yuycjjo3ro"]
+[gd_scene load_steps=31 format=3 uid="uid://cc1yuycjjo3ro"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/battle.gd" id="1_gbsud"]
 [ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/battle/mage.tscn" id="1_wtl8j"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/grimoire/grimoires.tscn" id="2_p1tv0"]
 [ext_resource type="Script" path="res://stages/_debug/battle/queue.gd" id="3_ifwug"]
 [ext_resource type="PackedScene" uid="uid://b3iquby55xoeq" path="res://stages/_debug/battle/queue_icon.tscn" id="4_4e334"]
+[ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="9_vkxu4"]
+[ext_resource type="PackedScene" uid="uid://dmicbiplp74ps" path="res://stages/_debug/spell_display/spell_display_summary.tscn" id="10_u0qq7"]
 
 [sub_resource type="Resource" id="Resource_j2xgo"]
 script = ExtResource("2_euq4x")
@@ -107,27 +109,39 @@ theme_override_constants/margin_bottom = 16
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Queue" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "last"
+
+[node name="Queue" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
 script = ExtResource("3_ifwug")
 QueueIconScene = ExtResource("4_4e334")
 
-[node name="QueueIcon" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+[node name="QueueIcon" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_q7m43")
 
-[node name="QueueIcon2" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+[node name="QueueIcon2" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_u36yn")
 
-[node name="QueueIcon3" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+[node name="QueueIcon3" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_i354g")
 
-[node name="QueueIcon4" parent="MarginContainer/VBoxContainer/Queue" instance=ExtResource("4_4e334")]
+[node name="QueueIcon4" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_txctk")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "first"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -183,6 +197,22 @@ mage = SubResource("Resource_owsni")
 [node name="mage3" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_q8xun")
+
+[node name="Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+
+[node name="ItemListSource" type="ItemList" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+script = ExtResource("9_vkxu4")
+
+[node name="SpellDisplay" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer" instance=ExtResource("10_u0qq7")]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireLeft" to="." method="_on_grimoire_left_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireRight" to="." method="_on_grimoire_right_button_down"]

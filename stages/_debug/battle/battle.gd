@@ -16,7 +16,7 @@ var party_right: Array[Mage] = [
 
 @onready var party_a: VBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/PartyA
 @onready var party_b: VBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/PartyB
-@onready var queue: HBoxContainer = $MarginContainer/VBoxContainer/Queue
+@onready var queue: HBoxContainer = %Queue
 
 func _ready() -> void:
 	party_a.set_party(party_left)

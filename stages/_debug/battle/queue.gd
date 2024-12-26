@@ -1,7 +1,7 @@
 extends HBoxContainer
 
 @export var QueueIconScene: PackedScene;
-var battle_queue: BattleQueue:
+@export var battle_queue: BattleQueue:
 	set(value):
 		battle_queue = value;
 		battle_queue.updated.connect(update_ui)
