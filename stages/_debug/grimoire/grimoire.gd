@@ -16,6 +16,7 @@ func change_grimoire(grimoire: Grimoire) -> void:
 	call_deferred('update_slots')
 	grimoire_changed.emit(self.grimoire)
 
+
 func update_labels():
 	%Fire.text = str(grimoire.affinities.fire);
 	%Water.text = str(grimoire.affinities.water);
@@ -33,6 +34,9 @@ func update_labels():
 
 	%HP.text = str(grimoire.stats.max_hp);
 	%MP.text = str(grimoire.stats.max_mp);
+	%Hash.text = grimoire.hash;
+	$BookPages/PageLeft/VBoxContainer/Label2.text = str(grimoire.hash.length())
+
 
 func update_slots() -> void:
 	for child in page_right.get_children():
@@ -42,3 +46,8 @@ func update_slots() -> void:
 		btn.grimoire = grimoire
 		btn.slot_index = index
 		page_right.add_child(btn)
+
+
+func _on_hash_text_changed(new_text: String) -> void:
+	grimoire.load_hash(new_text)
+	pass # Replace with function body.

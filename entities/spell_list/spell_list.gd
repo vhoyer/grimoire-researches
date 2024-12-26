@@ -16,23 +16,20 @@ func _init() -> void:
 	load_morphemes()
 	create_spells()
 
-func find_prefix(prefix: SpellPrepostfix) -> int:
-	for i in prefixes.size():
-		if prefixes[i].name == prefix.name:
-			return i;
-	return -1;
+func find_prefix_by_id(id: int) -> SpellPrepostfix:
+	for pre in prefixes:
+		if pre.id == id: return pre;
+	return null;
 
-func find_postfix(postfix: SpellPrepostfix) -> int:
-	for i in postfixes.size():
-		if postfixes[i].name == postfix.name:
-			return i;
-	return -1;
+func find_postfix_by_id(id: int) -> SpellPrepostfix:
+	for post in postfixes:
+		if post.id == id: return post;
+	return null;
 
-func find_radix(radix: SpellRadix) -> int:
-	for i in radixes.size():
-		if radixes[i].name == radix.name:
-			return i;
-	return -1;
+func find_radix_by_id(id: int) -> SpellRadix:
+	for radix in radixes:
+		if radix.id == id: return radix;
+	return null;
 
 func load_morphemes() -> void:
 	var prefixes_dir = DirAccess.open(prefixes_path)

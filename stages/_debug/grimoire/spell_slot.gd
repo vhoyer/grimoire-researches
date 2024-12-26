@@ -3,7 +3,11 @@ extends Button
 @export var SpellSelectionScene: PackedScene;
 @export_range(0, Grimoire.SIZE-1, 1) var slot_index: int = 0;
 
-var grimoire: Grimoire;
+var grimoire: Grimoire:
+	set(value):
+		if (grimoire != null): grimoire.updated.disconnect(update_label)
+		grimoire = value
+		grimoire.updated.connect(update_label)
 var spell_select;
 
 var spell: Spell:
