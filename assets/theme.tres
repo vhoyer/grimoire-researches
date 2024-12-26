@@ -1,4 +1,30 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ct34gc4sy6kyj"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ct34gc4sy6kyj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciev3"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.172549, 0.172549, 0.172549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xiv2"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.172549, 0.172549, 0.172549, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vl8hp"]
 content_margin_left = 8.0
@@ -20,6 +46,9 @@ content_margin_right = 16.0
 content_margin_bottom = 16.0
 
 [resource]
+Chip/base_type = &"PanelContainer"
+Chip/styles/active = SubResource("StyleBoxFlat_ciev3")
+Chip/styles/panel = SubResource("StyleBoxFlat_4xiv2")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_vl8hp")
 ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_4e4o4")
 VBoxContainer/constants/separation = 8

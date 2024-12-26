@@ -126,18 +126,22 @@ QueueIconScene = ExtResource("4_4e334")
 [node name="QueueIcon" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_q7m43")
+is_current = null
 
 [node name="QueueIcon2" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_u36yn")
+is_current = null
 
 [node name="QueueIcon3" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_i354g")
+is_current = null
 
 [node name="QueueIcon4" parent="MarginContainer/VBoxContainer/HBoxContainer2/Queue" instance=ExtResource("4_4e334")]
 layout_mode = 2
 mage = SubResource("Resource_txctk")
+is_current = null
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
