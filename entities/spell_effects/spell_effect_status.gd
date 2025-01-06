@@ -1,6 +1,10 @@
 extends Resource
 class_name SpellEffectStatus
 
-#func do_effect(action: BattleAction) -> void:
-	#for target in action.targets:
-		#target.status = 
+@export var status: Status
+
+func do_effect_once(target: Mage, action: BattleAction) -> void:
+	target.status_add(status)
+
+func revert_effect_once(target: Mage, action: BattleAction) -> void:
+	target.status_remove(status)

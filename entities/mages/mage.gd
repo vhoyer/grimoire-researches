@@ -21,6 +21,14 @@ var mp: int:
 		mp = value
 		updated.emit()
 
+var statuses: Array[Status]
+func status_add(status: Status):
+	statuses.push_back(status)
+	updated.emit()
+func status_remove(status: Status):
+	statuses = statuses.filter(func(item): return item != status)
+	updated.emit()
+
 signal updated
 
 func _init(name: String = 'dummy', grimoire: Grimoire = Grimoire.new()):

@@ -1,6 +1,7 @@
 extends Node
 class_name BattleManager
 
+var history:= BattleHistory.new()
 var queue: BattleQueue
 var resolver:= BattleSpellResolver.new()
 
@@ -27,4 +28,5 @@ signal turn_started(member: Mage)
 
 func turn_act(action: BattleAction) -> void:
 	resolver.resolve(action)
+	history.write(action)
 	turn_started.emit(queue.next())

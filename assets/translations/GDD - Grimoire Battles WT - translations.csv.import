@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://buw17v4mwvnps"
+
+[deps]
+
+files=["res://assets/translations/GDD - Grimoire Battles WT - translations.en.translation", "res://assets/translations/GDD - Grimoire Battles WT - translations.pt.translation"]
+
+source_file="res://assets/translations/GDD - Grimoire Battles WT - translations.csv"
+dest_files=["res://assets/translations/GDD - Grimoire Battles WT - translations.en.translation", "res://assets/translations/GDD - Grimoire Battles WT - translations.pt.translation"]
+
+[params]
+
+compress=true
+delimiter=0

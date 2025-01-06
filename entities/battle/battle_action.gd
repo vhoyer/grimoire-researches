@@ -2,10 +2,14 @@ extends Node
 class_name BattleAction
 
 enum Type {
-	magic = 0,
+	system_msg,
+	magic,
 }
 
+
 var type:= Type.magic
+
+var message: String
 
 var spell: Spell
 var caster: Mage
