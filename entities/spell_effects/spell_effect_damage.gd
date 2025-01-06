@@ -1,8 +1,8 @@
 extends SpellEffect
 class_name SpellEffectDamage
 
-func do_effect(spell: Spell, caster: Mage, targets: Array[Mage]):
-	for target in targets:
+func do_effect(action: BattleAction):
+	for target in action.targets:
 		# TODO: deal with affinity damage
-		target.hp -= spell.amount
+		target.hp -= action.spell.amount
 	pass

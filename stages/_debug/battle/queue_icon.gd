@@ -7,7 +7,7 @@ extends PanelContainer
 			mage.updated.disconnect(update_labels)
 		mage = value
 		mage.updated.connect(update_labels)
-		update_labels()
+		self.call_deferred("update_labels")
 
 @export var is_current: bool = false:
 	set(value):
@@ -17,9 +17,6 @@ extends PanelContainer
 			self.add_theme_stylebox_override("panel", active)
 		else:
 			self.remove_theme_stylebox_override("panel")
-
-func _ready() -> void:
-	update_labels()
 
 
 func update_labels():

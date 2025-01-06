@@ -1,24 +1,19 @@
 extends CanvasLayer
 
-@onready var item_list_source: ItemListSource = $MarginContainer/HBoxContainer/ItemListSource
-@onready var label: Label = $MarginContainer/HBoxContainer/Label
-var arr = [
-	{ 'id': 0, 'title': 'a' },
-	{ 'id': 1, 'title': 'b' },
-	{ 'id': 2, 'title': 'a' },
-	{ 'id': 3, 'title': 'c' },
-	{ 'id': 4, 'title': 'a' },
-	{ 'id': 5, 'title': 't' },
-	{ 'id': 6, 'title': 'e' },
-]
+var dict = {
+	'a': [1, 'a'],
+	'b': [2, 'b'],
+	'c': [3, 'c'],
+	'd': [4, 'd'],
+	'e': [5, 'e'],
+	'f': [6, 'f'],
+	'g': [7, 'g'],
+}
 
-func _ready() -> void:
-	item_list_source.source_label = 'title'
+var _dict:
+	get(): return dict
 
 func _on_button_button_down() -> void:
-	item_list_source.source_list = arr;
-
-
-func _on_item_list_source_source_item_selected(item) -> void:
-	print(item)
-	label.text = item.title
+	print(_dict)
+	_dict = {}
+	print(_dict)

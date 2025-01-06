@@ -1,10 +1,12 @@
 extends SpellEffect
 class_name SpellEffectNextAffinity
 
-func do_effect(spell: Spell, caster: Mage, targets: Array[Mage]):
-	for target in targets:
+func do_effect(action: BattleAction):
+	var spell = action.spell
+	for target in action.targets:
 		target.grimoire.affinities.increment_affinity(spell.element, spell.amount)
 
-func revert_effect(spell: Spell, caster: Mage, targets: Array[Mage]) -> void:
-	for target in targets:
+func revert_effect(action: BattleAction) -> void:
+	var spell = action.spell
+	for target in action.targets:
 		target.grimoire.affinities.increment_affinity(spell.element, -spell.amount)

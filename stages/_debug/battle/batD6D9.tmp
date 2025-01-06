@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cc1yuycjjo3ro"]
+[gd_scene load_steps=31 format=3 uid="uid://cc1yuycjjo3ro"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/battle.gd" id="1_gbsud"]
 [ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/battle/mage.tscn" id="1_wtl8j"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/grimoire/grimoires.tscn" id="2_p1tv0"]
 [ext_resource type="Script" path="res://stages/_debug/battle/queue.gd" id="3_ifwug"]
 [ext_resource type="PackedScene" uid="uid://b3iquby55xoeq" path="res://stages/_debug/battle/queue_icon.tscn" id="4_4e334"]
-[ext_resource type="Script" path="res://stages/_debug/battle/action_select.gd" id="9_sxo3i"]
 [ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="9_vkxu4"]
 [ext_resource type="PackedScene" uid="uid://dmicbiplp74ps" path="res://stages/_debug/spell_display/spell_display_summary.tscn" id="10_u0qq7"]
 
@@ -199,26 +198,21 @@ mage = SubResource("Resource_owsni")
 layout_mode = 2
 mage = SubResource("Resource_q8xun")
 
-[node name="ActionSelect" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="Panel" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-script = ExtResource("9_sxo3i")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ActionSelect"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Panel"]
 layout_mode = 2
 
-[node name="ActionList" type="ItemList" parent="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer"]
+[node name="ItemListSource" type="ItemList" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 script = ExtResource("9_vkxu4")
-source_label = "name"
 
-[node name="SpellDisplay" parent="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer" instance=ExtResource("10_u0qq7")]
+[node name="SpellDisplay" parent="MarginContainer/VBoxContainer/Panel/HBoxContainer" instance=ExtResource("10_u0qq7")]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireLeft" to="." method="_on_grimoire_left_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireRight" to="." method="_on_grimoire_right_button_down"]
-[connection signal="source_item_actived" from="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer/ActionList" to="MarginContainer/VBoxContainer/ActionSelect" method="_on_action_list_source_item_actived"]
-[connection signal="source_item_selected" from="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer/ActionList" to="MarginContainer/VBoxContainer/ActionSelect" method="_on_action_list_source_item_selected"]

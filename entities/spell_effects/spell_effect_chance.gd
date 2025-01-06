@@ -1,5 +1,12 @@
 extends Resource
-class_name SpellEffect
+class_name SpellEffectChance
+
+enum Mode {
+	Primary,
+	Secondary,
+}
+
+@export var mode: Mode;
 
 func do_effect(action: BattleAction) -> void:
 	pass

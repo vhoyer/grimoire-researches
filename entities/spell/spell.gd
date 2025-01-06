@@ -58,3 +58,18 @@ func modify(what: String, value: float) -> float:
 func pcent(raw: float) -> String:
 	var value = floor(raw * 100)
 	return str(value) + '%'
+
+func charge_cost(caster: Mage):
+	caster.mp -= mp
+
+func do_effect(action: BattleAction) -> void:
+	for effect in radix.effect:
+		effect.do_effect(action)
+
+func revert_effect(action: BattleAction) -> void:
+	for effect in radix.effect:
+		effect.revert_effect(action)
+
+func turn_effect(action: BattleAction) -> void:
+	for effect in radix.effect:
+		effect.turn_effect(action)

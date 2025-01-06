@@ -13,13 +13,19 @@ var selected_item: Variant
 var source_is_default: Callable = func(item): return false
 
 signal source_item_selected(item)
+signal source_item_actived(item)
 
 func _init():
 	self.item_selected.connect(_on_item_selected)
+	self.item_activated.connect(_on_item_actived)
 
 func _on_item_selected(index: int) -> void:
 	selected_item = source_list[index]
 	source_item_selected.emit(selected_item)
+
+func _on_item_actived(index: int) -> void:
+	selected_item = source_list[index]
+	source_item_actived.emit(selected_item)
 
 func must_use_label() -> bool:
 	return source_list.all(func(item): return ![

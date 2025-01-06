@@ -2,36 +2,36 @@ extends CanvasLayer
 
 @export var GrimoiresScene: PackedScene
 
-var party_left: Array[Mage] = [
-	Mage.new("André"),
-	Mage.new("Doka"),
-	Mage.new("Julio"),
-]
-
-var party_right: Array[Mage] = [
-	Mage.new("Tristam"),
-	Mage.new("Patrick"),
-	Mage.new("Lucas"),
-]
+@export var manager: BattleManager
 
 @onready var party_a: VBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/PartyA
 @onready var party_b: VBoxContainer = $MarginContainer/VBoxContainer/HBoxContainer/PartyB
 @onready var queue: HBoxContainer = %Queue
 
 func _ready() -> void:
-	party_a.set_party(party_left)
-	party_b.set_party(party_right)
-	var members = party_left + party_right
-	queue.init_queue(members)
+	manager = BattleManager.new()
+	party_a.set_party(manager.party_a)
+	party_b.set_party(manager.party_b)
+	queue.init_queue(manager.queue)
+	
+	manager.turn_started.connect(start_turn)
+	%ActionSelect.action_selected.connect(manager.turn_act)
+	call_deferred('start_turn', manager.queue.current)
+
+func start_turn(member: Mage) -> void:
+	%ActionSelect.setup(member);
 
 func show_grimoires_popup(party: Array[Mage]) -> void:
 	var instance = GrimoiresScene.instantiate()
 	get_tree().root.add_child(instance)
 	instance.party = party
-	instance.close.connect(func(): instance.queue_free())
+	instance.close.connect(func():
+		instance.queue_free()
+		start_turn(manager.queue.current)
+		)
 
 func _on_grimoire_left_button_down() -> void:
-	show_grimoires_popup(party_left)
+	show_grimoires_popup(manager.party_a)
 
 func _on_grimoire_right_button_down() -> void:
-	show_grimoires_popup(party_right)
+	show_grimoires_popup(manager.party_b)

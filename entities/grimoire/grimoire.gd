@@ -4,6 +4,8 @@ class_name Grimoire
 const SIZE := 10
 
 var _list: Array[Spell] = []
+var spells: Array[Spell]:
+	get(): return _list.filter(func(item): return item != null);
 
 var affinities:= Affinities.new();
 var stats:= Stats.new();
@@ -39,7 +41,7 @@ func recalculate() -> void:
 		if (spell.is_passive):
 			for effect in spell.radix.effect:
 				var dummy_mage = Mage.new("dummy", self)
-				effect.do_effect(spell, dummy_mage, [dummy_mage])
+				effect.do_effect(BattleAction.new(spell, dummy_mage, [dummy_mage]))
 		
 	updated.emit();
 

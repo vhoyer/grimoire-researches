@@ -1,21 +1,21 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3iquby55xoeq"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/queue_icon.gd" id="1_76bj8"]
-[ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="2_lh2ya"]
-[ext_resource type="Script" path="res://entities/mages/mage.gd" id="3_aduee"]
+[ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="2_kxnh8"]
+[ext_resource type="Script" path="res://entities/mages/mage.gd" id="3_1t8lf"]
 
-[sub_resource type="Resource" id="Resource_446bq"]
-script = ExtResource("2_lh2ya")
+[sub_resource type="Resource" id="Resource_8cnyo"]
+script = ExtResource("2_kxnh8")
 
-[sub_resource type="Resource" id="Resource_5g5sj"]
-script = ExtResource("3_aduee")
+[sub_resource type="Resource" id="Resource_c6a37"]
+script = ExtResource("3_1t8lf")
 name = "dummy"
-grimoire = SubResource("Resource_446bq")
+grimoire = SubResource("Resource_8cnyo")
 
 [node name="QueueIcon" type="PanelContainer"]
 theme_type_variation = &"Chip"
 script = ExtResource("1_76bj8")
-mage = SubResource("Resource_5g5sj")
+mage = SubResource("Resource_c6a37")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

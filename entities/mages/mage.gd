@@ -28,3 +28,8 @@ func _init(name: String = 'dummy', grimoire: Grimoire = Grimoire.new()):
 	self.grimoire = grimoire;
 	hp = grimoire.stats.max_hp
 	mp = grimoire.stats.max_mp
+
+# TODO actually use this function on the action selection
+func can_cast_spell(spell: Spell) -> bool:
+	if (spell.mp > self.mp): return false
+	return true
