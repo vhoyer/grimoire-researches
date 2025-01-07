@@ -1,8 +1,6 @@
 extends Node
 class_name BattleSpellResolver
 
-var global_in_progress: Dictionary;
-
 func resolve(action: BattleAction) -> void:
 	add(action)
 	process(action.caster)
@@ -11,7 +9,7 @@ func add(action: BattleAction) -> void:
 	var caster = action.caster
 	var spell = action.spell
 	
-	var in_progress = global_in_progress.get_or_add(caster, {}) as Dictionary
+	var in_progress = caster.in_progress
 	in_progress.get_or_add(spell, action)
 	
 	for wip_action: BattleAction in in_progress.values():
@@ -24,7 +22,7 @@ func add(action: BattleAction) -> void:
 	in_progress[spell].turns_casting += 1
 
 func process(caster: Mage) -> void:
-	var in_progress = global_in_progress.get_or_add(caster, {}) as Dictionary
+	var in_progress = caster.in_progress
 	for action: BattleAction in in_progress.values():
 		if action.is_casting: continue
 		var spell = action.spell

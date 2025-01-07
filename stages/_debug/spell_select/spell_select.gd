@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 @onready var spell_display: SpellDisplay = $MarginContainer/PanelContainer/VBoxContainer/SpellDisplay
-@onready var spell_list = SpellList.new()
 @onready var prefixes: ItemListSource = %Prefixes
 @onready var radixes: ItemListSource = %Radixes
 @onready var postfixes: ItemListSource = %Postfixes
@@ -20,8 +19,8 @@ var post:= SpellPrepostfix.new():
 var radix:= SpellRadix.new():
 	set(value):
 		radix = value
-		load_one_list(prefixes, spell_list.prefixes, radix.constraints)
-		load_one_list(postfixes, spell_list.postfixes, radix.constraints)
+		load_one_list(prefixes, SpellList.prefixes, radix.constraints)
+		load_one_list(postfixes, SpellList.postfixes, radix.constraints)
 		spell = spell
 
 var spell:= Spell.new():
@@ -45,14 +44,14 @@ func select_spell(spell: Spell) -> void:
 func load_one_list(it: ItemListSource, morphene: Array, constraints: Dictionary):
 	var filter = func(item):
 		return constraints[item.name]
-	
+
 	it.source_is_default = func(item): return item.is_default
 	it.source_list = morphene if constraints.is_empty() else morphene.filter(filter)
 
 func load_morphene_lists() -> void:
-	load_one_list(prefixes, spell_list.prefixes, radix.constraints)
-	load_one_list(postfixes, spell_list.postfixes, radix.constraints)
-	radixes.source_list = spell_list.radixes
+	load_one_list(prefixes, SpellList.prefixes, radix.constraints)
+	load_one_list(postfixes, SpellList.postfixes, radix.constraints)
+	radixes.source_list = SpellList.radixes
 
 func _on_select_spell_button_down() -> void:
 	spell_selected.emit(spell)

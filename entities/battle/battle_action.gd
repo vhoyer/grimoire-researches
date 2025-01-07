@@ -9,7 +9,7 @@ enum Type {
 
 var type:= Type.magic
 
-var label: String = "":
+var label: String:
 	get():
 		if label: return label
 		if spell: return spell.name

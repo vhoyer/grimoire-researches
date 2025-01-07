@@ -1,9 +1,9 @@
 extends Node
 class_name BattleTurn
 	
-var member: Mage
+var combatant: Mage
 var is_temporary: bool
 
-func _init(member = Mage.new(), is_temporary = false):
-	self.member = member
+func _init(combatant = Mage.new(), is_temporary = false):
+	self.combatant = combatant
 	self.is_temporary = is_temporary

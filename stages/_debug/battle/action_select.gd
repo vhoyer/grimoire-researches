@@ -6,8 +6,8 @@ extends PanelContainer
 signal action_selected(action: BattleAction)
 
 
-func setup(member: Mage) -> void:
-	action_list.source_list = member.get_action_list()
+func setup(combatant: Mage) -> void:
+	action_list.source_list = combatant.get_action_list()
 
 
 func _on_action_list_source_item_selected(action: BattleAction) -> void:

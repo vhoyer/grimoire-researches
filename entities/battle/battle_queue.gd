@@ -6,11 +6,11 @@ signal updated
 var queue: Array[BattleTurn] = []
 var current: Mage:
 	get():
-		return queue[0].member
+		return queue[0].combatant
 
-func _init(members: Array[Mage]) -> void:
-	for member in members:
-		queue.push_back(BattleTurn.new(member))
+func _init(combatants: Array[Mage]) -> void:
+	for combatant in combatants:
+		queue.push_back(BattleTurn.new(combatant))
 	queue.shuffle()
 
 func next() -> Mage:

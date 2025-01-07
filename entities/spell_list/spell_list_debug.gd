@@ -12,7 +12,7 @@ func load_prepostfixes() -> void:
 		id += 1
 		var current = prepost.current;
 		var resource_path = "%s/%s-%s.tres" % [
-			SpellList.postfixes_path if current.slot == 'post' else SpellList.prefixes_path,
+			SpellList.POSTFIXES_PATH if current.slot == 'post' else SpellList.PREFIXES_PATH,
 			str(id).pad_zeros(3),
 			current.name,
 		];
@@ -29,8 +29,9 @@ func load_prepostfixes() -> void:
 		prepostfix.chance_primary = SpellModifier.parse(current.chance_primary);
 		prepostfix.chance_secondary = SpellModifier.parse(current.chance_secondary);
 		prepostfix.is_passive = str(current.effect).contains('passive')
+		prepostfix.is_initial = str(current.effect).contains('initial')
 		prepostfix.is_default = str(current.effect).contains('default')
-		
+
 		ResourceSaver.save(prepostfix, resource_path)
 		prepostfixes.push_back(prepostfix)
 	prepost.close()
@@ -41,7 +42,7 @@ func load_radixes() -> void:
 	while (radix_list.next()):
 		id += 1
 		var current = radix_list.current;
-		var resource_path = "%s/%s-%s.tres" % [SpellList.radixes_path, str(id).pad_zeros(3), current["spell radix"]];
+		var resource_path = "%s/%s-%s.tres" % [SpellList.RADIXES_PATH, str(id).pad_zeros(3), current["spell radix"]];
 		var file_exists = ResourceLoader.exists(resource_path, "SpellRadix")
 		var radix: SpellRadix = ResourceLoader.load(resource_path, "SpellRadix") if file_exists else SpellRadix.new()
 		radix.id = id
@@ -57,7 +58,7 @@ func load_radixes() -> void:
 		radix.constraints = {}
 		for prepost in prepostfixes:
 			radix.constraints[prepost.name] = (current[prepost.name] == '')
-		
+
 		ResourceSaver.save(radix, resource_path)
 	radix_list.close()
 
@@ -68,12 +69,11 @@ func _on_save_resources_from_csv_button_down() -> void:
 
 
 func _on_clear_resource_folders_button_down() -> void:
-	clear_dir(SpellList.postfixes_path)
-	clear_dir(SpellList.prefixes_path)
-	clear_dir(SpellList.radixes_path)
+	clear_dir(SpellList.POSTFIXES_PATH)
+	clear_dir(SpellList.PREFIXES_PATH)
+	clear_dir(SpellList.RADIXES_PATH)
 
 func clear_dir(path: String) -> void:
 	var dir = DirAccess.open(path)
 	for filepath in dir.get_files():
 		dir.remove(filepath)
-	

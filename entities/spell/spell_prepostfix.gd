@@ -13,6 +13,7 @@ class_name SpellPrepostfix
 @export var chance_primary: SpellModifier = SpellModifier.new()
 @export var chance_secondary: SpellModifier = SpellModifier.new()
 @export var is_passive: bool = false;
+@export var is_initial: bool = false;
 @export var is_default: bool = false;
 
 @export var display_name: String:

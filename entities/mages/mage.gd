@@ -29,6 +29,17 @@ func status_remove(status: Status):
 	statuses = statuses.filter(func(item): return item != status)
 	updated.emit()
 
+## Memory of in_progress spells be it passives or casting
+var in_progress: Dictionary = {}
+var in_casting: Array[BattleAction]:
+	get():
+		var casting = [] as Array[BattleAction]
+		for action: BattleAction in in_progress.values():
+			if !action.spell.is_castable: continue
+			casting.push_back(action)
+		casting.make_read_only()
+		return casting
+
 signal updated
 
 func _init(name: String = 'dummy', grimoire: Grimoire = Grimoire.new()):
@@ -45,8 +56,18 @@ func can_cast_spell(spell: Spell) -> bool:
 func get_action_list() -> Array[BattleAction]:
 	var actions: Array[BattleAction] = []
 	
-	actions.append_array(grimoire.spells.map(func(spell: Spell):
-		return BattleAction.new(spell, self)
-		))
+	actions.append_array(grimoire.spells
+		.filter(func(spell: Spell):
+			return !spell.is_passive and !spell.is_initial
+			)
+		.map(func(spell: Spell):
+			return BattleAction.new(spell, self)
+			))
+	
+	for action: BattleAction in in_casting:
+		action.label = tr("KEEP_CAST").format({
+			'spell_name': action.spell.name,
+			})
+		actions.push_front(action)
 	
 	return actions

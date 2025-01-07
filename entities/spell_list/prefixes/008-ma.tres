@@ -3,37 +3,37 @@
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_jdy7h"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_jym2d"]
 
-[sub_resource type="Resource" id="Resource_r5blm"]
+[sub_resource type="Resource" id="Resource_nblwy"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_ugu8n"]
+[sub_resource type="Resource" id="Resource_3g3vy"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 0.333333
 
-[sub_resource type="Resource" id="Resource_ev7ny"]
+[sub_resource type="Resource" id="Resource_nler3"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 0.2
 
-[sub_resource type="Resource" id="Resource_exutm"]
+[sub_resource type="Resource" id="Resource_52wkh"]
 script = ExtResource("1_jdy7h")
 type = 0
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_vt67g"]
+[sub_resource type="Resource" id="Resource_7sx5g"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 3.0
 
-[sub_resource type="Resource" id="Resource_j1jjw"]
+[sub_resource type="Resource" id="Resource_4idge"]
 script = ExtResource("1_jdy7h")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_5svxg"]
+[sub_resource type="Resource" id="Resource_8p6os"]
 script = ExtResource("1_jdy7h")
 type = 0
 value = 2.0
@@ -43,13 +43,14 @@ script = ExtResource("2_jym2d")
 id = 8
 name = "ma"
 description = "Allow 3 targets (not the same)"
-turns_casting = SubResource("Resource_5svxg")
-turns_active = SubResource("Resource_j1jjw")
-mp = SubResource("Resource_vt67g")
-amount = SubResource("Resource_r5blm")
-circle = SubResource("Resource_exutm")
-chance_primary = SubResource("Resource_ugu8n")
-chance_secondary = SubResource("Resource_ev7ny")
+turns_casting = SubResource("Resource_8p6os")
+turns_active = SubResource("Resource_4idge")
+mp = SubResource("Resource_7sx5g")
+amount = SubResource("Resource_nblwy")
+circle = SubResource("Resource_52wkh")
+chance_primary = SubResource("Resource_3g3vy")
+chance_secondary = SubResource("Resource_nler3")
 is_passive = false
+is_initial = false
 is_default = false
 display_name = "ma"

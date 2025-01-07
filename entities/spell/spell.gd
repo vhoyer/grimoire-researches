@@ -51,6 +51,10 @@ var chance_secondary: float:
 	get(): return max(0.0, min(1.0, modify('chance_secondary', radix.chance_secondary)))
 var is_passive: bool:
 	get(): return pre.is_passive
+var is_initial: bool:
+	get(): return pre.is_initial
+var is_castable: bool:
+	get(): return !pre.is_initial and !pre.is_passive
 
 func modify(what: String, value: float) -> float:
 	return pre[what].mod(post[what].mod(value));

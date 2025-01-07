@@ -3,37 +3,37 @@
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_er52s"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_8ytsk"]
 
-[sub_resource type="Resource" id="Resource_jhu16"]
+[sub_resource type="Resource" id="Resource_wpwqm"]
 script = ExtResource("1_er52s")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_hlku2"]
+[sub_resource type="Resource" id="Resource_fue2y"]
 script = ExtResource("1_er52s")
 type = 2
 value = 0.5
 
-[sub_resource type="Resource" id="Resource_oa0m3"]
+[sub_resource type="Resource" id="Resource_o3njp"]
 script = ExtResource("1_er52s")
 type = 2
 value = 0.25
 
-[sub_resource type="Resource" id="Resource_ucmef"]
+[sub_resource type="Resource" id="Resource_ke3ly"]
 script = ExtResource("1_er52s")
 type = 0
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_j1ww6"]
+[sub_resource type="Resource" id="Resource_yhxgb"]
 script = ExtResource("1_er52s")
 type = 2
 value = 2.0
 
-[sub_resource type="Resource" id="Resource_qhwuo"]
+[sub_resource type="Resource" id="Resource_1tgro"]
 script = ExtResource("1_er52s")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_cxcvg"]
+[sub_resource type="Resource" id="Resource_raykq"]
 script = ExtResource("1_er52s")
 type = 0
 value = 1.0
@@ -43,13 +43,14 @@ script = ExtResource("2_8ytsk")
 id = 7
 name = "se"
 description = "Allow 2 targets (not the same)"
-turns_casting = SubResource("Resource_cxcvg")
-turns_active = SubResource("Resource_qhwuo")
-mp = SubResource("Resource_j1ww6")
-amount = SubResource("Resource_jhu16")
-circle = SubResource("Resource_ucmef")
-chance_primary = SubResource("Resource_hlku2")
-chance_secondary = SubResource("Resource_oa0m3")
+turns_casting = SubResource("Resource_raykq")
+turns_active = SubResource("Resource_1tgro")
+mp = SubResource("Resource_yhxgb")
+amount = SubResource("Resource_wpwqm")
+circle = SubResource("Resource_ke3ly")
+chance_primary = SubResource("Resource_fue2y")
+chance_secondary = SubResource("Resource_o3njp")
 is_passive = false
+is_initial = false
 is_default = false
 display_name = "se"

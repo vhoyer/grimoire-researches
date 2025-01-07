@@ -47,7 +47,6 @@ func recalculate() -> void:
 
 func load_hash(hash: String) -> void:
 	var posthash = Marshalls.base64_to_variant(hash, true)
-	var spell_list = SpellList.new()
 	for i in SIZE:
 		if (posthash[i] == []): continue
 		var code = posthash[i] as Array[int]
@@ -55,7 +54,7 @@ func load_hash(hash: String) -> void:
 		var id_radix = code.pop_front()
 		var id_post = code.pop_front()
 		var spell: Spell = Spell.new()
-		spell.pre = spell_list.find_prefix_by_id(id_pre)
-		spell.radix = spell_list.find_radix_by_id(id_radix)
-		spell.post = spell_list.find_postfix_by_id(id_post)
+		spell.pre = SpellList.find_prefix_by_id(id_pre)
+		spell.radix = SpellList.find_radix_by_id(id_radix)
+		spell.post = SpellList.find_postfix_by_id(id_post)
 		set_spell(i, spell)

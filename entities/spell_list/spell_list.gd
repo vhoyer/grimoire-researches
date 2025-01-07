@@ -1,54 +1,75 @@
 extends Resource
 class_name SpellList
 
-const prefixes_path = "res://entities/spell_list/prefixes/"
-const postfixes_path = "res://entities/spell_list/postfixes/"
-const radixes_path = "res://entities/spell_list/radixes/"
+const PREFIXES_PATH = "res://entities/spell_list/prefixes/"
+const POSTFIXES_PATH = "res://entities/spell_list/postfixes/"
+const RADIXES_PATH = "res://entities/spell_list/radixes/"
 
-var spells: Array[Spell] = [];
+static var all: Array[Spell]:
+	get():
+		if all: return all
+		for radix in radixes:
+			var spell = Spell.new()
+			spell.radix = radix
+			for post in postfixes:
+				if not radix.constraints[post.name]: continue;
+				spell.post = post;
+				for pre in prefixes:
+					if not radix.constraints[pre.name]: continue;
+					var clone = spell.duplicate(true)
+					clone.pre = pre;
+					all.push_back(clone)
+		all.make_read_only()
+		return all
 
-var prefixes: Array[SpellPrepostfix] = [];
-var radixes: Array[SpellRadix] = [];
-var postfixes: Array[SpellPrepostfix] = [];
+static var prefixes: Array[SpellPrepostfix]:
+	get():
+		if prefixes: return prefixes
+		load_one_morphene(PREFIXES_PATH, prefixes)
+		prefixes.make_read_only()
+		return prefixes
 
-func _init() -> void:
-	load_morphenes()
-	create_spells()
+static var postfixes: Array[SpellPrepostfix]:
+	get():
+		if postfixes: return postfixes
+		load_one_morphene(POSTFIXES_PATH, postfixes)
+		postfixes.make_read_only()
+		return postfixes
 
-func find_prefix_by_id(id: int) -> SpellPrepostfix:
-	for pre in prefixes:
-		if pre.id == id: return pre;
-	return null;
+static var radixes: Array[SpellRadix]:
+	get():
+		if radixes: return radixes
+		load_one_morphene(RADIXES_PATH, radixes)
+		radixes.make_read_only()
+		return radixes
 
-func find_postfix_by_id(id: int) -> SpellPrepostfix:
-	for post in postfixes:
-		if post.id == id: return post;
-	return null;
 
-func find_radix_by_id(id: int) -> SpellRadix:
-	for radix in radixes:
-		if radix.id == id: return radix;
-	return null;
-
-func load_morphenes() -> void:
-	load_one_morphene(prefixes_path, prefixes)
-	load_one_morphene(postfixes_path, postfixes)
-	load_one_morphene(radixes_path, radixes)
-
-func load_one_morphene(path: String, collection: Array) -> void:
+static func load_one_morphene(path: String, collection: Array) -> void:
 	var dir = DirAccess.open(path)
 	for filepath in dir.get_files():
 		collection.push_back(load(path.path_join(filepath.replace(".remap", ""))))
 
-func create_spells() -> void:
+
+static func find_prefix_by_id(id: int) -> SpellPrepostfix:
+	for pre in prefixes:
+		if pre.id == id: return pre;
+	return null;
+
+static func find_postfix_by_id(id: int) -> SpellPrepostfix:
+	for post in postfixes:
+		if post.id == id: return post;
+	return null;
+
+static func find_radix_by_id(id: int) -> SpellRadix:
 	for radix in radixes:
-		var spell = Spell.new()
-		spell.radix = radix
-		for post in postfixes:
-			if not radix.constraints[post.name]: continue;
-			spell.post = post;
-			for pre in prefixes:
-				if not radix.constraints[pre.name]: continue;
-				var clone = spell.duplicate(true)
-				clone.pre = pre;
-				spells.push_back(clone)
+		if radix.id == id: return radix;
+	return null;
+
+static func generate_grimoire() -> Grimoire:
+	var grimoire = Grimoire.new()
+	var spells = all.duplicate()
+	spells.shuffle()
+	var list = spells.slice(0, grimoire.SIZE)
+	for index in grimoire.SIZE:
+		grimoire.set_spell(index, list[index])
+	return grimoire

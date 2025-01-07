@@ -3,37 +3,37 @@
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_gwnsv"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_fdvo3"]
 
-[sub_resource type="Resource" id="Resource_p1pgu"]
+[sub_resource type="Resource" id="Resource_cinht"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 5.0
 
-[sub_resource type="Resource" id="Resource_djoo3"]
+[sub_resource type="Resource" id="Resource_6ig8p"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 3.0
 
-[sub_resource type="Resource" id="Resource_bsktv"]
+[sub_resource type="Resource" id="Resource_cmm3a"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_yakpt"]
+[sub_resource type="Resource" id="Resource_p4qlx"]
 script = ExtResource("1_gwnsv")
 type = 1
 value = 2.0
 
-[sub_resource type="Resource" id="Resource_qph8v"]
+[sub_resource type="Resource" id="Resource_gn6j5"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 4.0
 
-[sub_resource type="Resource" id="Resource_vijkm"]
+[sub_resource type="Resource" id="Resource_sofxl"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_fsooo"]
+[sub_resource type="Resource" id="Resource_yd4qm"]
 script = ExtResource("1_gwnsv")
 type = 0
 value = 2.0
@@ -43,13 +43,14 @@ script = ExtResource("2_fdvo3")
 id = 3
 name = "kai"
 description = ""
-turns_casting = SubResource("Resource_fsooo")
-turns_active = SubResource("Resource_vijkm")
-mp = SubResource("Resource_qph8v")
-amount = SubResource("Resource_p1pgu")
-circle = SubResource("Resource_yakpt")
-chance_primary = SubResource("Resource_djoo3")
-chance_secondary = SubResource("Resource_bsktv")
+turns_casting = SubResource("Resource_yd4qm")
+turns_active = SubResource("Resource_sofxl")
+mp = SubResource("Resource_gn6j5")
+amount = SubResource("Resource_cinht")
+circle = SubResource("Resource_p4qlx")
+chance_primary = SubResource("Resource_6ig8p")
+chance_secondary = SubResource("Resource_cmm3a")
 is_passive = false
+is_initial = false
 is_default = false
 display_name = "kai"

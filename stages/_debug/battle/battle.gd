@@ -18,8 +18,8 @@ func _ready() -> void:
 	%ActionSelect.action_selected.connect(manager.turn_act)
 	call_deferred('start_turn', manager.queue.current)
 
-func start_turn(member: Mage) -> void:
-	%ActionSelect.setup(member);
+func start_turn(combatant: Mage) -> void:
+	%ActionSelect.setup(combatant);
 
 func show_grimoires_popup(party: Array[Mage]) -> void:
 	var instance = GrimoiresScene.instantiate()

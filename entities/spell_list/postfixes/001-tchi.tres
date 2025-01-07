@@ -3,37 +3,37 @@
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_2oyoq"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_tgp6b"]
 
-[sub_resource type="Resource" id="Resource_n27hs"]
+[sub_resource type="Resource" id="Resource_vgqx3"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_fqthr"]
+[sub_resource type="Resource" id="Resource_6ysfu"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_nqteg"]
+[sub_resource type="Resource" id="Resource_34p11"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_gj7c6"]
+[sub_resource type="Resource" id="Resource_1ixw2"]
 script = ExtResource("1_2oyoq")
 type = 1
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_bg7ef"]
+[sub_resource type="Resource" id="Resource_utiq1"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_64828"]
+[sub_resource type="Resource" id="Resource_ip8a2"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_5fr4j"]
+[sub_resource type="Resource" id="Resource_8pnbv"]
 script = ExtResource("1_2oyoq")
 type = 2
 value = 1.0
@@ -43,13 +43,14 @@ script = ExtResource("2_tgp6b")
 id = 1
 name = "tchi"
 description = ""
-turns_casting = SubResource("Resource_5fr4j")
-turns_active = SubResource("Resource_64828")
-mp = SubResource("Resource_bg7ef")
-amount = SubResource("Resource_n27hs")
-circle = SubResource("Resource_gj7c6")
-chance_primary = SubResource("Resource_fqthr")
-chance_secondary = SubResource("Resource_nqteg")
+turns_casting = SubResource("Resource_8pnbv")
+turns_active = SubResource("Resource_ip8a2")
+mp = SubResource("Resource_utiq1")
+amount = SubResource("Resource_vgqx3")
+circle = SubResource("Resource_1ixw2")
+chance_primary = SubResource("Resource_6ysfu")
+chance_secondary = SubResource("Resource_34p11")
 is_passive = false
+is_initial = false
 is_default = true
 display_name = "tchi"

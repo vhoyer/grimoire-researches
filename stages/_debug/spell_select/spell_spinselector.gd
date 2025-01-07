@@ -8,10 +8,10 @@ extends HBoxContainer
 
 @export var reload := false :
 	set(value):
-		loadparts(SpellList.new())
+		loadparts()
 		reload = value;
 
-func loadparts(spell_list: SpellList) -> void:
-	prefixes.source_list = spell_list.prefixes
-	postfixes.source_list = spell_list.postfixes
-	radixes.source_list = spell_list.radixes
+func loadparts() -> void:
+	prefixes.source_list = SpellList.prefixes
+	postfixes.source_list = SpellList.postfixes
+	radixes.source_list = SpellList.radixes
