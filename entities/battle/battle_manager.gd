@@ -1,6 +1,13 @@
 extends Node
 class_name BattleManager
 
+static var instance: BattleManager:
+	set(value):
+		if instance:
+			print_debug("INFO: battle manager singleton is being cleared")
+			instance.queue_free()
+		instance = value
+
 var history:= BattleHistory.new()
 var queue: BattleQueue
 var resolver:= BattleSpellResolver.new()
@@ -21,6 +28,7 @@ var combatants: Array[Mage]:
 	get(): return party_a + party_b
 
 func _init() -> void:
+	BattleManager.instance = self
 	queue = BattleQueue.new(combatants)
 	turn_started.emit(queue.current)
 
@@ -28,5 +36,6 @@ signal turn_started(combatant: Mage)
 
 func turn_act(action: BattleAction) -> void:
 	resolver.resolve(action)
+	action = action.caster.statuses.process('action_modifier', [action])
 	history.write(action)
 	turn_started.emit(queue.next())

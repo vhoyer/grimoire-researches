@@ -21,13 +21,7 @@ var mp: int:
 		mp = value
 		updated.emit()
 
-var statuses: Array[Status]
-func status_add(status: Status):
-	statuses.push_back(status)
-	updated.emit()
-func status_remove(status: Status):
-	statuses = statuses.filter(func(item): return item != status)
-	updated.emit()
+var statuses:= MageStatuses.new(updated)
 
 ## Memory of in_progress spells be it passives or casting
 var in_progress: Dictionary = {}

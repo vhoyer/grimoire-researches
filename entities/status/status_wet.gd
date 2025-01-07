@@ -1,6 +1,8 @@
 extends Status
 class_name StatusWet
 
+func name() -> String: return "wet"
+
 var chance = ChanceManager.new()
 var FAIL_CHANCE = 1.0/3
 

@@ -1,8 +1,11 @@
 extends Status
 class_name StatusEnraged
 
-func filter_spell_list(caster: Mage, spells: Array[Spell]) -> Array[Spell]:
-	return spells.filter(func(spell: Spell):
+func name() -> String: return "enraged"
+
+func filter_action_list(actions: Array[BattleAction]) -> Array[BattleAction]:
+	return actions.filter(func(action: BattleAction):
+		var caster = action.caster
 		var last_action = self.battle_manager.history.get_last_action(caster)
-		return last_action.spell == spell
+		return last_action.spell == action.spell
 		);

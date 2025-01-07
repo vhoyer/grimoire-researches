@@ -1,7 +1,9 @@
 extends Status
 class_name StatusFreezing
 
-func filter_spell_list(caster: Mage, spells: Array[Spell]) -> Array[Spell]:
-	return spells.filter(func(spell: Spell):
-		return spell.circle <= 1
+func name() -> String: return "freezing"
+
+func filter_action_list(actions: Array[BattleAction]) -> Array[BattleAction]:
+	return actions.filter(func(action: BattleAction):
+		return action.spell.circle <= 1
 		);

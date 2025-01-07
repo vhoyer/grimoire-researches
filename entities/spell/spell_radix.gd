@@ -13,6 +13,7 @@ class_name SpellRadix
 @export var chance_secondary: float = 1.0/6
 @export var circle: int = 1
 @export var turns_casting: int = 1
+@export var targets: int = 1
 
 @export var effect: Array[SpellEffect] = []
 

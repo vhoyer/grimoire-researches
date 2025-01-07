@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=11 format=3 uid="uid://b4idn2m7qfu2s"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_aeoji"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_2ebw7"]
@@ -35,6 +35,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
+targets = 1
 effect = Array[ExtResource("1_aeoji")]([SubResource("Resource_8sivq"), SubResource("Resource_gqikn")])
 constraints = {
 "(nil)": true,

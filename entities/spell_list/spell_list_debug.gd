@@ -31,6 +31,7 @@ func load_prepostfixes() -> void:
 		prepostfix.is_passive = str(current.effect).contains('passive')
 		prepostfix.is_initial = str(current.effect).contains('initial')
 		prepostfix.is_default = str(current.effect).contains('default')
+		prepostfix.targets = SpellModifier.parse(current['targets'])
 
 		ResourceSaver.save(prepostfix, resource_path)
 		prepostfixes.push_back(prepostfix)
@@ -54,6 +55,7 @@ func load_radixes() -> void:
 		radix.turns_active = current["turns_active"]
 		radix.chance_primary = float(current["chance_primary"])
 		radix.chance_secondary = float(current["chance_secondary"])
+		radix.targets = current["targets"]
 
 		radix.constraints = {}
 		for prepost in prepostfixes:

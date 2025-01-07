@@ -36,35 +36,37 @@ var description: String:
 var element: Elements:
 	get(): return radix.element
 var mp: int:
-	get(): return ceil(modify('mp', radix.mp))
+	get(): return ceil(modify('mp'))
 var turns_casting: int:
-	get(): return ceil(modify('turns_casting', radix.turns_casting))
+	get(): return ceil(modify('turns_casting'))
 var turns_active: int:
-	get(): return ceil(modify('turns_active', radix.turns_active))
+	get(): return ceil(modify('turns_active'))
 var circle: int:
-	get(): return ceil(modify('circle', radix.circle))
+	get(): return ceil(modify('circle'))
 var amount: int:
-	get(): return ceil(modify('amount', radix.amount))
+	get(): return ceil(modify('amount'))
 var chance_primary: float:
-	get(): return max(0.0, min(1.0, modify('chance_primary', radix.chance_primary)))
+	get(): return max(0.0, min(1.0, modify('chance_primary')))
 var chance_secondary: float:
-	get(): return max(0.0, min(1.0, modify('chance_secondary', radix.chance_secondary)))
+	get(): return max(0.0, min(1.0, modify('chance_secondary')))
 var is_passive: bool:
 	get(): return pre.is_passive
 var is_initial: bool:
 	get(): return pre.is_initial
 var is_castable: bool:
 	get(): return !pre.is_initial and !pre.is_passive
+var targets: int:
+	get(): return max(0, min(3, modify('targets')))
 
-func modify(what: String, value: float) -> float:
-	return pre[what].mod(post[what].mod(value));
+func modify(what: String) -> float:
+	return pre[what].mod(post[what].mod(radix[what]));
 
 func pcent(raw: float) -> String:
 	var value = floor(raw * 100)
 	return str(value) + '%'
 
 func charge_cost(caster: Mage):
-	caster.mp -= mp
+	caster.mp -= caster.statuses.process('spell_cost_modifier', [mp])
 
 func do_effect(action: BattleAction) -> void:
 	for effect in radix.effect:

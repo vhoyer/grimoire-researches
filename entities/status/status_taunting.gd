@@ -1,6 +1,8 @@
 extends Status
 class_name StatusTaunting
 
+func name() -> String: return "taunting"
+
 func action_modifier(action: BattleAction) -> BattleAction:
 	if action.targets.find(self.bearer) == -1:
 		action.targets.shuffle()
