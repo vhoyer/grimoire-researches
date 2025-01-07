@@ -1,7 +1,16 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://bptsdw4d5xta7"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=7 format=3 uid="uid://bptsdw4d5xta7"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_as5lb"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_stat.gd" id="2_1hkko"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_ux0u2"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_invert.gd" id="3_84vi8"]
+
+[sub_resource type="Resource" id="Resource_cnoe6"]
+script = ExtResource("2_1hkko")
+
+[sub_resource type="Resource" id="Resource_4gkd8"]
+script = ExtResource("3_84vi8")
+effect = SubResource("Resource_cnoe6")
 
 [resource]
 script = ExtResource("2_ux0u2")
@@ -16,7 +25,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_as5lb")]([])
+effect = Array[ExtResource("1_as5lb")]([SubResource("Resource_4gkd8")])
 constraints = {
 "(nil)": true,
 "al": false,

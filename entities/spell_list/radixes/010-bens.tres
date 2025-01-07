@@ -1,7 +1,22 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://ccmu7r136k4x5"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=9 format=3 uid="uid://ccmu7r136k4x5"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_spuwr"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_status.gd" id="2_bby7t"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_pn6qp"]
+[ext_resource type="Script" path="res://entities/status/status_blessed.gd" id="3_3blnn"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_chance.gd" id="4_e0ddt"]
+
+[sub_resource type="Resource" id="Resource_pelmo"]
+script = ExtResource("3_3blnn")
+
+[sub_resource type="Resource" id="Resource_11jxt"]
+script = ExtResource("2_bby7t")
+status = SubResource("Resource_pelmo")
+
+[sub_resource type="Resource" id="Resource_pawup"]
+script = ExtResource("4_e0ddt")
+mode = 0
+effect = SubResource("Resource_11jxt")
 
 [resource]
 script = ExtResource("2_pn6qp")
@@ -16,7 +31,7 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-effect = Array[ExtResource("1_spuwr")]([])
+effect = Array[ExtResource("1_spuwr")]([SubResource("Resource_pawup")])
 constraints = {
 "(nil)": true,
 "al": false,

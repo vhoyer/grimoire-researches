@@ -1,4 +1,4 @@
-extends Resource
+extends SpellEffect
 class_name SpellEffectChance
 
 enum Mode {
