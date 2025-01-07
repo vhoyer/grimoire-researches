@@ -11,9 +11,8 @@ var prefixes: Array[SpellPrepostfix] = [];
 var radixes: Array[SpellRadix] = [];
 var postfixes: Array[SpellPrepostfix] = [];
 
-
 func _init() -> void:
-	load_morphemes()
+	load_morphenes()
 	create_spells()
 
 func find_prefix_by_id(id: int) -> SpellPrepostfix:
@@ -31,18 +30,15 @@ func find_radix_by_id(id: int) -> SpellRadix:
 		if radix.id == id: return radix;
 	return null;
 
-func load_morphemes() -> void:
-	var prefixes_dir = DirAccess.open(prefixes_path)
-	for filepath in prefixes_dir.get_files():
-		prefixes.push_back(ResourceLoader.load(prefixes_path + filepath))
-	
-	var postfixes_dir = DirAccess.open(postfixes_path)
-	for filepath in postfixes_dir.get_files():
-		postfixes.push_back(ResourceLoader.load(postfixes_path + filepath))
-	
-	var radixes_dir = DirAccess.open(radixes_path)
-	for filepath in radixes_dir.get_files():
-		radixes.push_back(ResourceLoader.load(radixes_path + filepath))
+func load_morphenes() -> void:
+	load_one_morphene(prefixes_path, prefixes)
+	load_one_morphene(postfixes_path, postfixes)
+	load_one_morphene(radixes_path, radixes)
+
+func load_one_morphene(path: String, collection: Array) -> void:
+	var dir = DirAccess.open(path)
+	for filepath in dir.get_files():
+		collection.push_back(load(path.path_join(filepath.replace(".remap", ""))))
 
 func create_spells() -> void:
 	for radix in radixes:
