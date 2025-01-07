@@ -212,7 +212,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 script = ExtResource("9_vkxu4")
-source_label = "name"
+source_label = "label"
 
 [node name="SpellDisplay" parent="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer" instance=ExtResource("10_u0qq7")]
 layout_mode = 2

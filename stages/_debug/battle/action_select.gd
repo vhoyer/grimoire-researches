@@ -5,17 +5,14 @@ extends PanelContainer
 
 signal action_selected(action: BattleAction)
 
-var caster:= Mage.new()
 
 func setup(member: Mage) -> void:
-	caster = member
-	action_list.source_list = member.grimoire.spells
+	action_list.source_list = member.get_action_list()
 
 
-func _on_action_list_source_item_selected(spell: Spell) -> void:
-	spell_display.set_values(spell)
+func _on_action_list_source_item_selected(action: BattleAction) -> void:
+	spell_display.set_values(action.spell)
 
 
-func _on_action_list_source_item_actived(spell: Spell) -> void:
-	var action = BattleAction.new(spell, caster)
+func _on_action_list_source_item_actived(action: BattleAction) -> void:
 	action_selected.emit(action)

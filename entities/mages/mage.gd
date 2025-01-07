@@ -41,3 +41,12 @@ func _init(name: String = 'dummy', grimoire: Grimoire = Grimoire.new()):
 func can_cast_spell(spell: Spell) -> bool:
 	if (spell.mp > self.mp): return false
 	return true
+
+func get_action_list() -> Array[BattleAction]:
+	var actions: Array[BattleAction] = []
+	
+	actions.append_array(grimoire.spells.map(func(spell: Spell):
+		return BattleAction.new(spell, self)
+		))
+	
+	return actions

@@ -1,2 +1,3 @@
 key,en,pt_br
 WET_FAIL,You've slipped and lost your turn,Você escorregou e perdeu o turno
+KEEP_CAST,Continue casting {spell_name},Continue conjurando {spell_name}

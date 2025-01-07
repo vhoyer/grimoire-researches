@@ -9,6 +9,12 @@ enum Type {
 
 var type:= Type.magic
 
+var label: String = "":
+	get():
+		if label: return label
+		if spell: return spell.name
+		assert(false, "Error getting a label text")
+		return "undefined"
 var message: String
 
 var spell: Spell
