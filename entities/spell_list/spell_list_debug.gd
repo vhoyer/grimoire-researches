@@ -10,24 +10,24 @@ func load_prepostfixes() -> void:
 	var id = 0
 	while (prepost.next()):
 		id += 1
-		var current = prepost.current;
+		var current = prepost.current
 		var resource_path = "%s/%s-%s.tres" % [
 			SpellList.POSTFIXES_PATH if current.slot == 'post' else SpellList.PREFIXES_PATH,
 			str(id).pad_zeros(3),
 			current.name,
-		];
+		]
 		var file_exists = ResourceLoader.exists(resource_path, "SpellPrepostfix")
 		var prepostfix: SpellPrepostfix = ResourceLoader.load(resource_path, "SpellPrepostfix") if file_exists else SpellPrepostfix.new()
 		prepostfix.id = id
-		prepostfix.name = current.name;
-		prepostfix.description = current.description;
-		prepostfix.turns_casting = SpellModifier.parse(current.turns_casting);
-		prepostfix.turns_active = SpellModifier.parse(current.turns_active);
-		prepostfix.mp = SpellModifier.parse(current.mp);
-		prepostfix.amount = SpellModifier.parse(current.amount);
-		prepostfix.circle = SpellModifier.parse(current.circle);
-		prepostfix.chance_primary = SpellModifier.parse(current.chance_primary);
-		prepostfix.chance_secondary = SpellModifier.parse(current.chance_secondary);
+		prepostfix.name = current.name
+		prepostfix.description = current.description
+		prepostfix.turns_casting = SpellModifier.parse(current.turns_casting)
+		prepostfix.turns_active = SpellModifier.parse(current.turns_active)
+		prepostfix.mp = SpellModifier.parse(current.mp)
+		prepostfix.amount = SpellModifier.parse(current.amount)
+		prepostfix.circle = SpellModifier.parse(current.circle)
+		prepostfix.chance_primary = SpellModifier.parse(current.chance_primary)
+		prepostfix.chance_secondary = SpellModifier.parse(current.chance_secondary)
 		prepostfix.is_passive = str(current.effect).contains('passive')
 		prepostfix.is_initial = str(current.effect).contains('initial')
 		prepostfix.is_default = str(current.effect).contains('default')
