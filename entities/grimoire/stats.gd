@@ -10,7 +10,7 @@ class_name Stats
 
 @export var max_hp: int:
 	get():
-		return 1000 + 100 * (vitality - 1)
+		return 1000 + 200 * (vitality - 1)
 
 @export var max_mp: int:
 	get():

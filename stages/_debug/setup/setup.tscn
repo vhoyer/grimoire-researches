@@ -1,0 +1,158 @@
+[gd_scene load_steps=20 format=3 uid="uid://dj4ic5djjd050"]
+
+[ext_resource type="Script" path="res://stages/_debug/battle/party.gd" id="1_7i3xl"]
+[ext_resource type="Script" path="res://stages/_debug/setup/setup.gd" id="1_d630f"]
+[ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/mage_display/mage.tscn" id="2_xs4ru"]
+[ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="3_royxn"]
+[ext_resource type="Script" path="res://entities/mages/mage.gd" id="4_xsfde"]
+[ext_resource type="Script" path="res://modules/UI/button_scene_changer.gd" id="5_q5scf"]
+[ext_resource type="PackedScene" uid="uid://cc1yuycjjo3ro" path="res://stages/_debug/battle/battle.tscn" id="6_whj2k"]
+
+[sub_resource type="Resource" id="Resource_s0v1t"]
+script = ExtResource("3_royxn")
+
+[sub_resource type="Resource" id="Resource_4wogj"]
+script = ExtResource("4_xsfde")
+name = "Andre"
+grimoire = SubResource("Resource_s0v1t")
+hp = 1000
+mp = 1000
+
+[sub_resource type="Resource" id="Resource_7qva7"]
+script = ExtResource("3_royxn")
+
+[sub_resource type="Resource" id="Resource_lmpre"]
+script = ExtResource("4_xsfde")
+name = "Doka"
+grimoire = SubResource("Resource_7qva7")
+hp = 1000
+mp = 1000
+
+[sub_resource type="Resource" id="Resource_oqlgt"]
+script = ExtResource("3_royxn")
+
+[sub_resource type="Resource" id="Resource_171of"]
+script = ExtResource("4_xsfde")
+name = "Julio"
+grimoire = SubResource("Resource_oqlgt")
+hp = 1000
+mp = 1000
+
+[sub_resource type="Resource" id="Resource_14f1f"]
+script = ExtResource("3_royxn")
+
+[sub_resource type="Resource" id="Resource_hie87"]
+script = ExtResource("4_xsfde")
+name = "Tristam"
+grimoire = SubResource("Resource_14f1f")
+hp = 1000
+mp = 1000
+
+[sub_resource type="Resource" id="Resource_o455t"]
+script = ExtResource("3_royxn")
+
+[sub_resource type="Resource" id="Resource_yl62l"]
+script = ExtResource("4_xsfde")
+name = "Lucas"
+grimoire = SubResource("Resource_o455t")
+hp = 1000
+mp = 1000
+
+[sub_resource type="Resource" id="Resource_7iwxn"]
+script = ExtResource("3_royxn")
+
+[sub_resource type="Resource" id="Resource_fkx2l"]
+script = ExtResource("4_xsfde")
+name = "Patrick"
+grimoire = SubResource("Resource_7iwxn")
+hp = 1000
+mp = 1000
+
+[node name="Setup" type="CanvasLayer"]
+script = ExtResource("1_d630f")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="PartyA" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_7i3xl")
+MageDisplayScene = ExtResource("2_xs4ru")
+
+[node name="mage" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("2_xs4ru")]
+layout_mode = 2
+mage = SubResource("Resource_4wogj")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="mage2" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("2_xs4ru")]
+layout_mode = 2
+mage = SubResource("Resource_lmpre")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="mage3" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("2_xs4ru")]
+layout_mode = 2
+mage = SubResource("Resource_171of")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="GrimoireLeft" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer"]
+layout_mode = 2
+text = "Edit Left Grimoire"
+
+[node name="GrimoireRight" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer"]
+layout_mode = 2
+text = "Edit Right Grimoire"
+
+[node name="ButtonSceneChanger" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
+layout_mode = 2
+text = "battle!"
+script = ExtResource("5_q5scf")
+scene = ExtResource("6_whj2k")
+
+[node name="PartyB" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("1_7i3xl")
+MageDisplayScene = ExtResource("2_xs4ru")
+
+[node name="mage" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("2_xs4ru")]
+layout_mode = 2
+mage = SubResource("Resource_hie87")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="mage2" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("2_xs4ru")]
+layout_mode = 2
+mage = SubResource("Resource_yl62l")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="mage3" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("2_xs4ru")]
+layout_mode = 2
+mage = SubResource("Resource_fkx2l")
+allow_manual_edit = false
+allow_name_edit = true

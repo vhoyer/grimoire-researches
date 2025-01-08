@@ -12,11 +12,11 @@ class_name Mage
 		grimoire = value
 		updated.emit()
 
-var hp: int:
+@export var hp: int:
 	set(value):
 		hp = value
 		updated.emit()
-var mp: int:
+@export var mp: int:
 	set(value):
 		mp = value
 		updated.emit()

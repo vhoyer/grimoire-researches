@@ -21,9 +21,9 @@ var hash: String:
 
 signal updated;
 
-func _init() -> void:
+func _init(hash: String = "") -> void:
 	_list.resize(SIZE)
-	pass
+	if hash: load_hash(hash)
 
 func set_spell(idx: int, spell: Spell) -> void:
 	_list[idx] = spell;
@@ -34,7 +34,8 @@ func get_spell(idx: int) -> Spell:
 	return _list[idx];
 
 func recalculate() -> void:
-	affinities = Affinities.new();
+	affinities = Affinities.new()
+	stats = Stats.new()
 	for spell in _list:
 		if spell == null: continue;
 		affinities.process_spell(spell);

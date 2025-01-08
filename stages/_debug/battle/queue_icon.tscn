@@ -11,6 +11,8 @@ script = ExtResource("2_kxnh8")
 script = ExtResource("3_1t8lf")
 name = "dummy"
 grimoire = SubResource("Resource_8cnyo")
+hp = 1000
+mp = 1000
 
 [node name="QueueIcon" type="PanelContainer"]
 theme_type_variation = &"Chip"

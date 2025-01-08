@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://cc1yuycjjo3ro"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/battle.gd" id="1_gbsud"]
-[ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/battle/mage.tscn" id="1_wtl8j"]
+[ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/mage_display/mage.tscn" id="1_wtl8j"]
 [ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="2_euq4x"]
 [ext_resource type="Script" path="res://stages/_debug/battle/party.gd" id="2_fqjpp"]
 [ext_resource type="Script" path="res://entities/mages/mage.gd" id="2_h7mf1"]
@@ -12,85 +12,105 @@
 [ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="9_vkxu4"]
 [ext_resource type="PackedScene" uid="uid://dmicbiplp74ps" path="res://stages/_debug/spell_display/spell_display_summary.tscn" id="10_u0qq7"]
 
-[sub_resource type="Resource" id="Resource_j2xgo"]
+[sub_resource type="Resource" id="Resource_4geh4"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_q7m43"]
 script = ExtResource("2_h7mf1")
 name = "katharine"
-grimoire = SubResource("Resource_j2xgo")
+grimoire = SubResource("Resource_4geh4")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_s78ev"]
+[sub_resource type="Resource" id="Resource_0k56o"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_u36yn"]
 script = ExtResource("2_h7mf1")
 name = "abobrinha"
-grimoire = SubResource("Resource_s78ev")
+grimoire = SubResource("Resource_0k56o")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_g00y7"]
+[sub_resource type="Resource" id="Resource_pexv6"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_i354g"]
 script = ExtResource("2_h7mf1")
 name = "aboha"
-grimoire = SubResource("Resource_g00y7")
+grimoire = SubResource("Resource_pexv6")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_maqoa"]
+[sub_resource type="Resource" id="Resource_vd37y"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_txctk"]
 script = ExtResource("2_h7mf1")
 name = "dummy"
-grimoire = SubResource("Resource_maqoa")
+grimoire = SubResource("Resource_vd37y")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_s0v1t"]
+[sub_resource type="Resource" id="Resource_3pj06"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_y5xyy"]
 script = ExtResource("2_h7mf1")
 name = "Andre"
-grimoire = SubResource("Resource_s0v1t")
+grimoire = SubResource("Resource_3pj06")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_7qva7"]
+[sub_resource type="Resource" id="Resource_ay7ok"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_rwc2p"]
 script = ExtResource("2_h7mf1")
 name = "Doka"
-grimoire = SubResource("Resource_7qva7")
+grimoire = SubResource("Resource_ay7ok")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_oqlgt"]
+[sub_resource type="Resource" id="Resource_8kppp"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_v04q8"]
 script = ExtResource("2_h7mf1")
 name = "Julio"
-grimoire = SubResource("Resource_oqlgt")
+grimoire = SubResource("Resource_8kppp")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_14f1f"]
+[sub_resource type="Resource" id="Resource_8h6u2"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_sjrrb"]
 script = ExtResource("2_h7mf1")
 name = "Tristam"
-grimoire = SubResource("Resource_14f1f")
+grimoire = SubResource("Resource_8h6u2")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_o455t"]
+[sub_resource type="Resource" id="Resource_gcnmb"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_owsni"]
 script = ExtResource("2_h7mf1")
 name = "Lucas"
-grimoire = SubResource("Resource_o455t")
+grimoire = SubResource("Resource_gcnmb")
+hp = 1000
+mp = 1000
 
-[sub_resource type="Resource" id="Resource_7iwxn"]
+[sub_resource type="Resource" id="Resource_gyrh1"]
 script = ExtResource("2_euq4x")
 
 [sub_resource type="Resource" id="Resource_q8xun"]
 script = ExtResource("2_h7mf1")
 name = "Patrick"
-grimoire = SubResource("Resource_7iwxn")
+grimoire = SubResource("Resource_gyrh1")
+hp = 1000
+mp = 1000
 
 [node name="Battle" type="CanvasLayer"]
 script = ExtResource("1_gbsud")
@@ -155,14 +175,17 @@ MageDisplayScene = ExtResource("1_wtl8j")
 [node name="mage" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_y5xyy")
+allow_name_edit = false
 
 [node name="mage2" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_rwc2p")
+allow_name_edit = false
 
 [node name="mage3" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyA" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_v04q8")
+allow_name_edit = false
 
 [node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -190,14 +213,17 @@ MageDisplayScene = ExtResource("1_wtl8j")
 [node name="mage" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_sjrrb")
+allow_name_edit = false
 
 [node name="mage2" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_owsni")
+allow_name_edit = false
 
 [node name="mage3" parent="MarginContainer/VBoxContainer/HBoxContainer/PartyB" instance=ExtResource("1_wtl8j")]
 layout_mode = 2
 mage = SubResource("Resource_q8xun")
+allow_name_edit = false
 
 [node name="ActionSelect" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

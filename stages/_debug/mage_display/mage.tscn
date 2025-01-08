@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c48j0mlyoc2oe"]
 
-[ext_resource type="Script" path="res://stages/_debug/battle/mage.gd" id="1_1kpy5"]
+[ext_resource type="Script" path="res://stages/_debug/mage_display/mage.gd" id="1_1kpy5"]
 [ext_resource type="PackedScene" uid="uid://cf88lw1hrg055" path="res://modules/UI/prompt_dialog/prompt_dialog.tscn" id="2_wiesm"]
 
 [node name="mage" type="HBoxContainer"]
-offset_right = 439.0
+offset_right = 767.0
 offset_bottom = 101.0
 script = ExtResource("1_1kpy5")
 prompt = ExtResource("2_wiesm")
@@ -35,5 +35,12 @@ size_flags_vertical = 4
 text = "Alter MP
 "
 
+[node name="AlterName" type="Button" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+text = "Alter Name"
+
 [connection signal="button_down" from="AlterHP" to="." method="_on_alter_hp_button_down"]
 [connection signal="button_down" from="AlterMP" to="." method="_on_alter_mp_button_down"]
+[connection signal="button_down" from="AlterName" to="." method="_on_alter_name_button_down"]

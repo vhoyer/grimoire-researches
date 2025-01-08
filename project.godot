@@ -22,7 +22,7 @@ resources_spreadsheet_view/fold_docks=false
 [application]
 
 config/name="Grimore Researches"
-run/main_scene="res://stages/_debug/battle/battle.tscn"
+run/main_scene="res://stages/_debug/setup/setup.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
