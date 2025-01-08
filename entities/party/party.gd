@@ -22,7 +22,6 @@ var hash: String:
 				mage.name,
 				mage.grimoire.hash,
 			])
-		#return Marshalls.variant_to_base64(prehash, true)
 		return JSON.stringify(prehash)
 
 
@@ -31,7 +30,6 @@ func _init(members: Array[Mage] = []):
 
 
 func load_hash(hash: String) -> void:
-	#var raw = Marshalls.base64_to_variant(hash, true)
 	var raw = JSON.parse_string(hash)
 	if raw == null:
 		self.hash = self.hash

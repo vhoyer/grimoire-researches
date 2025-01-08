@@ -17,7 +17,6 @@ var hash: String:
 		for index in SIZE:
 			var spell = _list[index]
 			prehash[index] = [] if spell == null else [spell.pre.id, spell.radix.id, spell.post.id]
-		#return Marshalls.variant_to_base64(prehash, true)
 		return JSON.stringify(prehash)
 
 signal updated;
@@ -48,7 +47,6 @@ func recalculate() -> void:
 	updated.emit();
 
 func load_hash(hash: String) -> void:
-	#var posthash = Marshalls.base64_to_variant(hash, true)
 	var posthash = JSON.parse_string(hash)
 	if posthash == null:
 		self.hash = self.hash
