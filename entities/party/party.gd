@@ -43,3 +43,8 @@ func load_hash(hash: String) -> void:
 		var mage = Mage.new(name, Grimoire.new(grimoire_hash))
 		new_members.push_back(mage)
 	members = new_members
+
+
+func reset_combat_state() -> void:
+	for mage in members:
+		mage.reset_combat_state()

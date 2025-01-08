@@ -9,10 +9,10 @@ class_name Mage
 
 @export var grimoire: Grimoire:
 	set(value):
-		if (grimoire and grimoire.updated.is_connected(updated.emit)):
-			grimoire.updated.disconnect(updated.emit)
+		if (grimoire and grimoire.updated.is_connected(_on_grimoire_updated)):
+			grimoire.updated.disconnect(_on_grimoire_updated)
 		grimoire = value
-		grimoire.updated.connect(updated.emit)
+		grimoire.updated.connect(_on_grimoire_updated)
 		updated.emit()
 
 @export var hp: int:
@@ -42,8 +42,12 @@ signal updated
 func _init(name: String = 'dummy', grimoire: Grimoire = Grimoire.new()):
 	self.name = name;
 	self.grimoire = grimoire;
+	reset_combat_state()
+
+func reset_combat_state() -> void:
 	hp = grimoire.stats.max_hp
 	mp = grimoire.stats.max_mp
+	statuses = MageStatuses.new(updated)
 
 # TODO actually use this function on the action selection
 func can_cast_spell(spell: Spell) -> bool:
@@ -68,3 +72,8 @@ func get_action_list() -> Array[BattleAction]:
 		actions.push_front(action)
 	
 	return actions
+
+
+func _on_grimoire_updated() -> void:
+	reset_combat_state()
+	updated.emit()

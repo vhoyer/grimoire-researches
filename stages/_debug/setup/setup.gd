@@ -18,6 +18,10 @@ func _ready() -> void:
 	party_setup(&'party_a', party_a)
 	party_setup(&'party_b', party_b)
 
+func _exit_tree() -> void:
+	party_a.reset_combat_state()
+	party_b.reset_combat_state()
+
 
 func party_setup(side: StringName, party: Party) -> void:
 	var set_payload = SceneManager.set_payload.bind(side, party)
