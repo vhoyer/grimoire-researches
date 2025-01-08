@@ -108,6 +108,7 @@ layout_mode = 2
 
 [node name="PartyA" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("7_m5ets")]
 layout_mode = 2
+allow_manual_edit = true
 
 [node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -129,6 +130,7 @@ text = "Edit Right Grimoire"
 
 [node name="PartyB" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("7_m5ets")]
 layout_mode = 2
+allow_manual_edit = true
 
 [node name="ActionSelect" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

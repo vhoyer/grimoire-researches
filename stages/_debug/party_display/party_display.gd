@@ -3,12 +3,26 @@ extends VBoxContainer
 class_name PartyDisplay
 
 @onready var hash_holder: PanelContainer = $HashHolder
+@onready var mage_holder: VBoxContainer = $MageHolder
 
 @export var MageDisplayScene: PackedScene
 @export var display_hash: bool = false:
 	set(value):
 		display_hash = value
 		if hash_holder: hash_holder.visible = value
+		
+@export var allow_manual_edit: bool:
+	get():
+		return (mage_holder.get_child(0) as MageDisplay).allow_manual_edit
+	set(value):
+		for display in mage_holder.get_children():
+			(display as MageDisplay).allow_manual_edit = value
+@export var allow_name_edit: bool:
+	get():
+		return (mage_holder.get_child(0) as MageDisplay).allow_name_edit
+	set(value):
+		for display in mage_holder.get_children():
+			(display as MageDisplay).allow_name_edit = value
 
 var party: Party:
 	set(value):
@@ -27,7 +41,7 @@ func set_party(party: Party) -> void:
 	self.party = party
 
 func update_labels() -> void:
-	var holder = $MageHolder
+	var holder = mage_holder
 	for index in party.members.size():
 		var mage = party.members[index]
 		var display = holder.get_child(index) as MageDisplay
