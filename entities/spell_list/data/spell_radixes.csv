@@ -24,12 +24,12 @@ yhidra,water,"Until after the next water attack, decreases water affinity by {am
 ydiv,light,"Until after the next light attack, decreases light affinity by {amount}",12,-next_affinity,0.33,0.17,0,1,2,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 ymis,dark,"Until after the next dark attack, decreases dark affinity by {amount}",12,-next_affinity,0.33,0.17,0,1,2,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 abs,light,"For {turns_active} turns, increases elemental affinity by {amount} of the element of the last attack used against the target",12,turn_affinity_last,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
-jis,earth,"For {turns_active} turns, make arena favorable to earth attacks and infavorable for wind attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,,-,,,
-tat,wind,"For {turns_active} turns, make arena favorable to wind attacks and infavorable for earth attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,,-,,,
-vul,fire,"For {turns_active} turns, make arena favorable to fire attacks and infavorable for water attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,,-,,,
-tsu,water,"For {turns_active} turns, make arena favorable to water attacks and infavorable for fire attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,,-,,,
-rel,light,"For {turns_active} turns, make arena favorable to light attacks and infavorable for dark attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,,-,,,
-esk,dark,"For {turns_active} turns, make arena favorable to dark attacks and infavorable for light attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,,-,,,
+jis,earth,"For {turns_active} turns, make arena favorable to earth attacks and infavorable for wind attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
+tat,wind,"For {turns_active} turns, make arena favorable to wind attacks and infavorable for earth attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
+vul,fire,"For {turns_active} turns, make arena favorable to fire attacks and infavorable for water attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
+tsu,water,"For {turns_active} turns, make arena favorable to water attacks and infavorable for fire attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
+rel,light,"For {turns_active} turns, make arena favorable to light attacks and infavorable for dark attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
+esk,dark,"For {turns_active} turns, make arena favorable to dark attacks and infavorable for light attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
 vit,water,Increases vitality stat by {amount} for {turns_active} turns,12,stat,0.33,0.17,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,
 agi,wind,Increases agility stat by {amount} for {turns_active} turns,12,stat,0.33,0.17,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,
 of,fire,Increases power stat by {amount} for {turns_active} turns,12,stat,0.33,0.17,1,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,,

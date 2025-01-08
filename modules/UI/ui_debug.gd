@@ -1,19 +1,29 @@
 extends CanvasLayer
+@onready var item_list_source: ItemListSource = $MarginContainer/HBoxContainer/ItemListSource
 
-var dict = {
-	'a': [1, 'a'],
-	'b': [2, 'b'],
-	'c': [3, 'c'],
-	'd': [4, 'd'],
-	'e': [5, 'e'],
-	'f': [6, 'f'],
-	'g': [7, 'g'],
-}
+var array = [
+	{ 'label': 'dog' },
+	{ 'label': 'cat' },
+	{ 'label': 'cow' },
+	{ 'label': 'ape' },
+	{ 'label': 'elk' },
+	{ 'label': 'bee' },
+	{ 'label': 'fox' },
+]
 
-var _dict:
-	get(): return dict
+func _ready():
+	item_list_source.source_label = 'label'
+	item_list_source.source_list = array
 
-func _on_button_button_down() -> void:
-	print(_dict)
-	_dict = {}
-	print(_dict)
+
+
+func _on_item_list_source_item_activated(index: int) -> void:
+	print('activated ', index)
+
+
+func _on_item_list_source_item_selected(index: int) -> void:
+	print('item selected ', index)
+
+
+func _on_item_list_source_multi_selected(index: int, selected: bool) -> void:
+	print('multi selected ', index, selected)

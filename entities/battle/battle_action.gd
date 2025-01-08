@@ -3,6 +3,7 @@ class_name BattleAction
 
 enum Type {
 	system_msg,
+	keep_casting,
 	magic,
 }
 

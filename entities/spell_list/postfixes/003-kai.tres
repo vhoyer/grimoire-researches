@@ -1,44 +1,44 @@
-[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=11 format=3]
+[gd_resource type="Resource" script_class="SpellPrepostfix" load_steps=11 format=3 uid="uid://cjid8u1xe2agw"]
 
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_gwnsv"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_fdvo3"]
 
-[sub_resource type="Resource" id="Resource_pvsuy"]
+[sub_resource type="Resource" id="Resource_ywn53"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 5.0
 
-[sub_resource type="Resource" id="Resource_risq2"]
+[sub_resource type="Resource" id="Resource_qpr8t"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 3.0
 
-[sub_resource type="Resource" id="Resource_bhhy0"]
+[sub_resource type="Resource" id="Resource_ip4wr"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_swovb"]
+[sub_resource type="Resource" id="Resource_v2l1q"]
 script = ExtResource("1_gwnsv")
 type = 1
 value = 2.0
 
-[sub_resource type="Resource" id="Resource_fyom3"]
+[sub_resource type="Resource" id="Resource_gtldf"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 4.0
 
-[sub_resource type="Resource" id="Resource_yrjvf"]
+[sub_resource type="Resource" id="Resource_cd6ap"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_n0a53"]
+[sub_resource type="Resource" id="Resource_atuo0"]
 script = ExtResource("1_gwnsv")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_wfq77"]
+[sub_resource type="Resource" id="Resource_ygnan"]
 script = ExtResource("1_gwnsv")
 type = 0
 value = 2.0
@@ -48,14 +48,14 @@ script = ExtResource("2_fdvo3")
 id = 3
 name = "kai"
 description = ""
-turns_casting = SubResource("Resource_wfq77")
-turns_active = SubResource("Resource_n0a53")
-mp = SubResource("Resource_fyom3")
-amount = SubResource("Resource_pvsuy")
-circle = SubResource("Resource_swovb")
-chance_primary = SubResource("Resource_risq2")
-chance_secondary = SubResource("Resource_bhhy0")
-targets = SubResource("Resource_yrjvf")
+turns_casting = SubResource("Resource_ygnan")
+turns_active = SubResource("Resource_atuo0")
+mp = SubResource("Resource_gtldf")
+amount = SubResource("Resource_ywn53")
+circle = SubResource("Resource_v2l1q")
+chance_primary = SubResource("Resource_qpr8t")
+chance_secondary = SubResource("Resource_ip4wr")
+targets = SubResource("Resource_cd6ap")
 is_passive = false
 is_initial = false
 is_default = false

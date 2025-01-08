@@ -211,24 +211,19 @@ layout_mode = 2
 [node name="ActionList" type="ItemList" parent="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
+item_count = 1
 script = ExtResource("9_vkxu4")
 source_label = "label"
-is_disabled = true
 
 [node name="SpellDisplay" parent="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer" instance=ExtResource("10_u0qq7")]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TargetList" type="ItemList" parent="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-select_mode = 1
-script = ExtResource("9_vkxu4")
-source_label = "name"
-is_disabled = true
 
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireLeft" to="." method="_on_grimoire_left_button_down"]
 [connection signal="button_down" from="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer/GrimoireRight" to="." method="_on_grimoire_right_button_down"]
 [connection signal="source_item_actived" from="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer/ActionList" to="MarginContainer/VBoxContainer/ActionSelect" method="_on_action_list_source_item_actived"]
 [connection signal="source_item_selected" from="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer/ActionList" to="MarginContainer/VBoxContainer/ActionSelect" method="_on_action_list_source_item_selected"]
-[connection signal="source_multi_selected" from="MarginContainer/VBoxContainer/ActionSelect/HBoxContainer/TargetList" to="MarginContainer/VBoxContainer/ActionSelect" method="_on_target_list_source_multi_selected"]

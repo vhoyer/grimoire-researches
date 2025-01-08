@@ -40,6 +40,8 @@ static var radixes: Array[SpellRadix]:
 	get():
 		if radixes: return radixes
 		load_one_morphene(RADIXES_PATH, radixes)
+		radixes = radixes.filter(func(radix: SpellRadix):
+			return radix.constraints.find_key(true))
 		radixes.make_read_only()
 		return radixes
 
@@ -47,7 +49,8 @@ static var radixes: Array[SpellRadix]:
 static func load_one_morphene(path: String, collection: Array) -> void:
 	var dir = DirAccess.open(path)
 	for filepath in dir.get_files():
-		collection.push_back(load(path.path_join(filepath.replace(".remap", ""))))
+		var morphene = load(path.path_join(filepath.replace(".remap", "")))
+		collection.push_back(morphene)
 
 
 static func find_prefix_by_id(id: int) -> SpellPrepostfix:

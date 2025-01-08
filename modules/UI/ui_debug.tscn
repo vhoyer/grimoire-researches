@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://wq57dpmione1"]
+[gd_scene load_steps=3 format=3 uid="uid://wq57dpmione1"]
 
 [ext_resource type="Script" path="res://modules/UI/ui_debug.gd" id="1_a1bva"]
+[ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="2_m1fvr"]
 
 [node name="UiDebug" type="CanvasLayer"]
 script = ExtResource("1_a1bva")
@@ -19,8 +20,13 @@ theme_override_constants/margin_bottom = 56
 [node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+[node name="ItemListSource" type="ItemList" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-text = "populate"
+size_flags_vertical = 3
+select_mode = 1
+script = ExtResource("2_m1fvr")
+is_disabled = true
 
-[connection signal="button_down" from="MarginContainer/HBoxContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="item_activated" from="MarginContainer/HBoxContainer/ItemListSource" to="." method="_on_item_list_source_item_activated"]
+[connection signal="item_selected" from="MarginContainer/HBoxContainer/ItemListSource" to="." method="_on_item_list_source_item_selected"]
+[connection signal="multi_selected" from="MarginContainer/HBoxContainer/ItemListSource" to="." method="_on_item_list_source_multi_selected"]
