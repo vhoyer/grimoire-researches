@@ -13,7 +13,7 @@ func _ready() -> void:
 	party_a.set_party(manager.party_a)
 	party_b.set_party(manager.party_b)
 	queue.init_queue(manager.queue)
-	
+
 	manager.turn_started.connect(start_turn)
 	%ActionSelect.action_selected.connect(manager.turn_act)
 	call_deferred('start_turn', manager.queue.current)
@@ -21,7 +21,7 @@ func _ready() -> void:
 func start_turn(combatant: Mage) -> void:
 	%ActionSelect.setup(combatant);
 
-func show_grimoires_popup(party: Array[Mage]) -> void:
+func show_grimoires_popup(party: Party) -> void:
 	var instance = GrimoiresScene.instantiate()
 	get_tree().root.add_child(instance)
 	instance.party = party

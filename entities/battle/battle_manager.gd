@@ -12,20 +12,20 @@ var history:= BattleHistory.new()
 var queue: BattleQueue
 var resolver:= BattleSpellResolver.new()
 
-var party_a: Array[Mage] = [
+var party_a:= Party.new([
 	Mage.new("André", SpellList.generate_grimoire()),
 	Mage.new("Doka", SpellList.generate_grimoire()),
 	Mage.new("Julio", SpellList.generate_grimoire()),
-]
+])
 
-var party_b: Array[Mage] = [
+var party_b:= Party.new([
 	Mage.new("Tristam", SpellList.generate_grimoire()),
 	Mage.new("Patrick", SpellList.generate_grimoire()),
 	Mage.new("Lucas", SpellList.generate_grimoire()),
-]
+])
 
 var combatants: Array[Mage]:
-	get(): return party_a + party_b
+	get(): return party_a.members + party_b.members
 
 func _init() -> void:
 	BattleManager.instance = self
