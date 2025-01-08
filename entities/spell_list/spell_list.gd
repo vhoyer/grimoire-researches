@@ -17,7 +17,7 @@ static var all: Array[Spell]:
 				for pre in prefixes:
 					if not radix.constraints[pre.name]: continue;
 					var clone = spell.duplicate(true)
-					clone.pre = pre;
+					clone.pre = pre
 					all.push_back(clone)
 		all.make_read_only()
 		return all

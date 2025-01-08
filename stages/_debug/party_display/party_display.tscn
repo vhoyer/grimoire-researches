@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://bdltqd0o0mciq"]
+
+[ext_resource type="Script" path="res://stages/_debug/party_display/party_display.gd" id="1_70dv4"]
+[ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/party_display/mage_display.tscn" id="2_38r2a"]
+[ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="3_dtb51"]
+[ext_resource type="Script" path="res://entities/mages/mage.gd" id="4_yymw5"]
+
+[sub_resource type="Resource" id="Resource_s0v1t"]
+script = ExtResource("3_dtb51")
+
+[sub_resource type="Resource" id="Resource_4wogj"]
+script = ExtResource("4_yymw5")
+name = "dummy1"
+grimoire = SubResource("Resource_s0v1t")
+hp = 1000
+mp = 1000
+
+[sub_resource type="Resource" id="Resource_7qva7"]
+script = ExtResource("3_dtb51")
+
+[sub_resource type="Resource" id="Resource_lmpre"]
+script = ExtResource("4_yymw5")
+name = "dummy2"
+grimoire = SubResource("Resource_7qva7")
+hp = 1000
+mp = 1000
+
+[sub_resource type="Resource" id="Resource_oqlgt"]
+script = ExtResource("3_dtb51")
+
+[sub_resource type="Resource" id="Resource_171of"]
+script = ExtResource("4_yymw5")
+name = "dummy3"
+grimoire = SubResource("Resource_oqlgt")
+hp = 1000
+mp = 1000
+
+[node name="PartyDisplay" type="VBoxContainer"]
+script = ExtResource("1_70dv4")
+MageDisplayScene = ExtResource("2_38r2a")
+
+[node name="MageHolder" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="mage" parent="MageHolder" instance=ExtResource("2_38r2a")]
+layout_mode = 2
+mage = SubResource("Resource_4wogj")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="mage2" parent="MageHolder" instance=ExtResource("2_38r2a")]
+layout_mode = 2
+mage = SubResource("Resource_lmpre")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="mage3" parent="MageHolder" instance=ExtResource("2_38r2a")]
+layout_mode = 2
+mage = SubResource("Resource_171of")
+allow_manual_edit = false
+allow_name_edit = true
+
+[node name="HashHolder" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HashHolder"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="HashHolder/VBoxContainer"]
+layout_mode = 2
+text = "Grimoire's Hash"
+
+[node name="Hash" type="LineEdit" parent="HashHolder/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HashHolder/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="text_changed" from="HashHolder/VBoxContainer/Hash" to="." method="_on_hash_text_changed"]

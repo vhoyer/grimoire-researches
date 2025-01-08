@@ -9,7 +9,10 @@ extends CanvasLayer
 @onready var queue: HBoxContainer = %Queue
 
 func _ready() -> void:
-	manager = BattleManager.new()
+	manager = BattleManager.new(
+		SceneManager.get_payload(&'party_a'),
+		SceneManager.get_payload(&'party_b'),
+	)
 	party_a.set_party(manager.party_a)
 	party_b.set_party(manager.party_b)
 	queue.init_queue(manager.queue)

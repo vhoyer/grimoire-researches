@@ -1,9 +1,18 @@
 extends Resource
 class_name Party
 
+signal updated
 const SIZE = 3
 
-@export var members: Array[Mage] = []
+@export var members: Array[Mage] = []:
+	set(value):
+		for mage in members:
+			if mage.updated.is_connected(updated.emit):
+				mage.updated.disconnect(updated.emit)
+		members = value
+		for mage in members:
+			mage.updated.connect(updated.emit)
+		updated.emit()
 
 var hash: String:
 	get():
@@ -13,7 +22,8 @@ var hash: String:
 				mage.name,
 				mage.grimoire.hash,
 			])
-		return Marshalls.variant_to_base64(prehash, true)
+		#return Marshalls.variant_to_base64(prehash, true)
+		return JSON.stringify(prehash)
 
 
 func _init(members: Array[Mage] = []):
@@ -21,12 +31,17 @@ func _init(members: Array[Mage] = []):
 
 
 func load_hash(hash: String) -> void:
-	var posthash = Marshalls.base64_to_variant(hash, true) as PackedStringArray
-	members.clear()
+	#var raw = Marshalls.base64_to_variant(hash, true)
+	var raw = JSON.parse_string(hash)
+	if raw == null:
+		self.hash = self.hash
+		return
+	var posthash = raw as PackedStringArray
+	var new_members = [] as Array[Mage]
 	for i in SIZE:
-		var chunk = posthash.slice(i, i * 2 + 2)
+		var chunk = posthash.slice(i * 2, i * 2 + 2)
 		var name = chunk[0]
 		var grimoire_hash = chunk[1]
 		var mage = Mage.new(name, Grimoire.new(grimoire_hash))
-		members.push_back(mage)
-		
+		new_members.push_back(mage)
+	members = new_members

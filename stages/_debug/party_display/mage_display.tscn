@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c48j0mlyoc2oe"]
 
-[ext_resource type="Script" path="res://stages/_debug/mage_display/mage.gd" id="1_1kpy5"]
-[ext_resource type="PackedScene" uid="uid://cf88lw1hrg055" path="res://modules/UI/prompt_dialog/prompt_dialog.tscn" id="2_wiesm"]
+[ext_resource type="Script" path="res://stages/_debug/party_display/mage_display.gd" id="1_83tqv"]
+[ext_resource type="PackedScene" uid="uid://cf88lw1hrg055" path="res://modules/UI/prompt_dialog/prompt_dialog.tscn" id="2_ixv5m"]
 
 [node name="mage" type="HBoxContainer"]
 offset_right = 767.0
 offset_bottom = 101.0
-script = ExtResource("1_1kpy5")
-prompt = ExtResource("2_wiesm")
+script = ExtResource("1_83tqv")
+prompt = ExtResource("2_ixv5m")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

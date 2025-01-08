@@ -9,7 +9,10 @@ class_name Mage
 
 @export var grimoire: Grimoire:
 	set(value):
+		if (grimoire and grimoire.updated.is_connected(updated.emit)):
+			grimoire.updated.disconnect(updated.emit)
 		grimoire = value
+		grimoire.updated.connect(updated.emit)
 		updated.emit()
 
 @export var hp: int:

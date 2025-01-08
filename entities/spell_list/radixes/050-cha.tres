@@ -16,16 +16,16 @@ chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
-targets = 1
+targets = 0
 effect = Array[ExtResource("1_sui2q")]([])
 constraints = {
 "(nil)": true,
 "al": false,
 "in": true,
-"kai": true,
-"ma": true,
-"se": true,
+"kai": false,
+"ma": false,
+"se": false,
 "tchi": true,
-"tchu": true
+"tchu": false
 }
 display_name = "cha"
