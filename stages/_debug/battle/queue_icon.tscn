@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3iquby55xoeq"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/queue_icon.gd" id="1_76bj8"]
-[ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="2_kxnh8"]
+[ext_resource type="Script" path="res://entities/mages/grimoire.gd" id="2_kxnh8"]
 [ext_resource type="Script" path="res://entities/mages/mage.gd" id="3_1t8lf"]
 
 [sub_resource type="Resource" id="Resource_8cnyo"]

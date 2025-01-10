@@ -8,6 +8,13 @@ signal action_selected(action: BattleAction)
 
 var current_action: BattleAction
 
+
+func _ready() -> void:
+	action_list.source_is_disabled = func(action: BattleAction):
+		if action.type == BattleAction.Type.magic:
+			return !action.caster.can_cast_spell(action.spell)
+		return false
+
 func setup(combatant: Mage) -> void:
 	action_list.source_list = combatant.get_action_list()
 	target_list.visible = false

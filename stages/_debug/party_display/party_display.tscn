@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://stages/_debug/party_display/party_display.gd" id="1_70dv4"]
 [ext_resource type="PackedScene" uid="uid://c48j0mlyoc2oe" path="res://stages/_debug/party_display/mage_display.tscn" id="2_38r2a"]
-[ext_resource type="Script" path="res://entities/grimoire/grimoire.gd" id="3_dtb51"]
+[ext_resource type="Script" path="res://entities/mages/grimoire.gd" id="3_dtb51"]
 [ext_resource type="Script" path="res://entities/mages/mage.gd" id="4_yymw5"]
 
 [sub_resource type="Resource" id="Resource_s0v1t"]
@@ -38,6 +38,7 @@ mp = 1000
 [node name="PartyDisplay" type="VBoxContainer"]
 script = ExtResource("1_70dv4")
 MageDisplayScene = ExtResource("2_38r2a")
+allow_name_edit = true
 
 [node name="MageHolder" type="VBoxContainer" parent="."]
 layout_mode = 2

@@ -21,6 +21,8 @@ var selected_item: Variant
 
 ## if this callable returns true when re-populating the source list, automatically selects that item
 var source_is_default: Callable = func(item): return false
+var source_is_disabled: Callable = func(item): return false
+var source_is_selectable: Callable = func(item): return true
 
 signal source_multi_selected(multi_selection: Array)
 signal source_item_selected(item: Variant)
@@ -54,8 +56,11 @@ func populate_items() -> void:
 	assert(must_use_label() and source_label, 'Error: must use label!')
 	self.clear()
 	var default_item = source_list[0] if source_list.size() > 0 else null
-	for item in source_list:
+	for index in source_list.size():
+		var item = source_list[index]
 		self.add_item(item[source_label] if source_label else item)
+		self.set_item_disabled(index, source_is_disabled.call(item))
+		self.set_item_selectable(index, source_is_selectable.call(item))
 		if (source_is_default.call(item)):
 			default_item = item
 	

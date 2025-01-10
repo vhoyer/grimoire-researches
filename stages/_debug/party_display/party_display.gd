@@ -10,19 +10,21 @@ class_name PartyDisplay
 	set(value):
 		display_hash = value
 		if hash_holder: hash_holder.visible = value
-		
+
+@export_group("mage display")
 @export var allow_manual_edit: bool:
 	get():
 		return (mage_holder.get_child(0) as MageDisplay).allow_manual_edit
 	set(value):
-		for display in mage_holder.get_children():
-			(display as MageDisplay).allow_manual_edit = value
+		self.call_deferred("modify_mage_displays", "allow_manual_edit", value)
 @export var allow_name_edit: bool:
 	get():
 		return (mage_holder.get_child(0) as MageDisplay).allow_name_edit
 	set(value):
-		for display in mage_holder.get_children():
-			(display as MageDisplay).allow_name_edit = value
+		self.call_deferred("modify_mage_displays", "allow_name_edit", value)
+func modify_mage_displays(key: String, value: Variant) -> void:
+	for display in mage_holder.get_children():
+		display[key] = value
 
 var party: Party:
 	set(value):

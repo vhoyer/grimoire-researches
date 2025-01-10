@@ -26,6 +26,9 @@ class_name Mage
 
 var statuses:= MageStatuses.new(updated)
 
+var affinities: Affinities:
+	get(): return grimoire.affinities
+
 ## Memory of in_progress spells be it passives or casting
 var in_progress: Dictionary = {}
 var in_casting: Array[BattleAction]:
@@ -49,7 +52,6 @@ func reset_combat_state() -> void:
 	mp = grimoire.stats.max_mp
 	statuses = MageStatuses.new(updated)
 
-# TODO actually use this function on the action selection
 func can_cast_spell(spell: Spell) -> bool:
 	if (spell.mp > self.mp): return false
 	return true

@@ -52,3 +52,14 @@ func increment_affinity(element: Spell.Elements, value: int) -> void:
 
 func cap_to_scale(value: int) -> int:
 	return min(MAX, max(MIN, value))
+
+
+func modify_damage(spell: Spell) -> int:
+	var affinity = _elements[spell.element]
+	match affinity:
+		-2: return spell.amount * 2
+		-1: return int(spell.amount * 1.5)
+		_: return spell.amount
+		1: return int(spell.amount * 0.5)
+		2: return 0
+		3: return -1 * int(spell.amount * 0.5)
