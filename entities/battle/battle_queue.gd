@@ -6,7 +6,7 @@ signal updated
 var queue: Array[BattleTurn] = []
 var current: Mage:
 	get():
-		return queue[0].combatant
+		return queue.front().combatant
 
 func _init(combatants: Array[Mage]) -> void:
 	for combatant in combatants:

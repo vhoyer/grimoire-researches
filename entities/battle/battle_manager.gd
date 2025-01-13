@@ -30,7 +30,7 @@ var combatants: Array[Mage]:
 func _init(party_a: Party, party_b: Party) -> void:
 	self.party_a = party_a
 	self.party_b = party_b
-	
+
 	BattleManager.instance = self
 	queue = BattleQueue.new(combatants)
 	turn_started.emit(queue.current)

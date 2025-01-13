@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc1yuycjjo3ro"]
+[gd_scene load_steps=20 format=3 uid="uid://cc1yuycjjo3ro"]
 
 [ext_resource type="Script" path="res://stages/_debug/battle/battle.gd" id="1_gbsud"]
 [ext_resource type="Script" path="res://entities/mages/grimoire.gd" id="2_euq4x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://stages/_debug/battle/queue.gd" id="3_ifwug"]
 [ext_resource type="PackedScene" uid="uid://b3iquby55xoeq" path="res://stages/_debug/battle/queue_icon.tscn" id="4_4e334"]
 [ext_resource type="PackedScene" uid="uid://bdltqd0o0mciq" path="res://stages/_debug/party_display/party_display.tscn" id="7_m5ets"]
+[ext_resource type="Script" path="res://modules/UI/button_scene_changer.gd" id="8_d0o0i"]
 [ext_resource type="Script" path="res://stages/_debug/battle/action_select.gd" id="9_sxo3i"]
 [ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="9_vkxu4"]
 [ext_resource type="PackedScene" uid="uid://dmicbiplp74ps" path="res://stages/_debug/spell_display/spell_display_summary.tscn" id="10_u0qq7"]
@@ -113,7 +114,8 @@ allow_name_edit = false
 
 [node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+theme_override_constants/separation = 24
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
@@ -128,6 +130,12 @@ text = "Edit Left Grimoire"
 [node name="GrimoireRight" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer"]
 layout_mode = 2
 text = "Edit Right Grimoire"
+
+[node name="ButtonSceneChanger" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
+layout_mode = 2
+text = "Back"
+script = ExtResource("8_d0o0i")
+go_back = true
 
 [node name="PartyB" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("7_m5ets")]
 layout_mode = 2

@@ -16,7 +16,6 @@ func _ready():
 	item_list_source.source_list = array
 
 
-
 func _on_item_list_source_item_activated(index: int) -> void:
 	print('activated ', index)
 

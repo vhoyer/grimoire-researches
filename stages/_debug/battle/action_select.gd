@@ -35,6 +35,7 @@ func _on_action_list_source_item_actived(action: BattleAction) -> void:
 
 
 func _on_target_list_source_multi_selected(targets_selected: Array) -> void:
+	if current_action == null: return
 	var max_targets = current_action.spell.targets
 	if targets_selected.size() < max_targets: return
 	
@@ -43,3 +44,4 @@ func _on_target_list_source_multi_selected(targets_selected: Array) -> void:
 	current_action.targets = targets
 	
 	action_selected.emit(current_action)
+	current_action = null

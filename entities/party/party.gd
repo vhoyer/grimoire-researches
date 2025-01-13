@@ -26,6 +26,12 @@ var hash: String:
 
 
 func _init(members: Array[Mage] = []):
+	if members.size() == 0:
+		members.append_array([
+			Mage.new("dummy1"),
+			Mage.new("dummy2"),
+			Mage.new("dummy3"),
+		])
 	self.members = members
 
 

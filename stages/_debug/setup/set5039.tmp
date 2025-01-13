@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj4ic5djjd050"]
+
+[ext_resource type="Script" path="res://stages/_debug/setup/setup.gd" id="1_d630f"]
+[ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/grimoire/grimoires.tscn" id="2_3j6f0"]
+[ext_resource type="PackedScene" uid="uid://bdltqd0o0mciq" path="res://stages/_debug/party_display/party_display.tscn" id="3_unou1"]
+[ext_resource type="PackedScene" uid="uid://wq57dpmione1" path="res://modules/UI/ui_debug.tscn" id="5_cvuc7"]
+[ext_resource type="Script" path="res://modules/UI/button_scene_changer.gd" id="5_q5scf"]
+
+[node name="Setup" type="CanvasLayer"]
+script = ExtResource("1_d630f")
+GrimoiresScene = ExtResource("2_3j6f0")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="party_a" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_unou1")]
+unique_name_in_owner = true
+layout_mode = 2
+display_hash = true
+allow_name_edit = false
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="grimoire_party_a" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Edit Left Grimoire"
+
+[node name="grimoire_party_b" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Edit Right Grimoire"
+
+[node name="ButtonSceneChanger" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/Controls"]
+layout_mode = 2
+text = "battle!"
+script = ExtResource("5_q5scf")
+scene = ExtResource("5_cvuc7")
+
+[node name="party_b" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("3_unou1")]
+unique_name_in_owner = true
+layout_mode = 2
+display_hash = true
+allow_name_edit = false
