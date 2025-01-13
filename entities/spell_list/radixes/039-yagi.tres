@@ -1,16 +1,11 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=7 format=3 uid="uid://bft3jq5n34lbw"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=5 format=3 uid="uid://bft3jq5n34lbw"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_3p3yl"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_g8qvf"]
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect_stat.gd" id="2_toksn"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_invert.gd" id="3_uj5qv"]
 
-[sub_resource type="Resource" id="Resource_cnoe6"]
+[sub_resource type="Resource" id="Resource_cf1ac"]
 script = ExtResource("2_toksn")
-
-[sub_resource type="Resource" id="Resource_bpqox"]
-script = ExtResource("3_uj5qv")
-effect = SubResource("Resource_cnoe6")
 
 [resource]
 script = ExtResource("2_g8qvf")
@@ -19,14 +14,14 @@ name = "yagi"
 description = "Decreases agility stat by {amount} for {turns_active} turns"
 element = 3
 mp = 12
-amount = 1
+amount = -1
 turns_active = 3
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
 targets = 1
-effect = Array[ExtResource("1_3p3yl")]([SubResource("Resource_bpqox")])
+effect = Array[ExtResource("1_3p3yl")]([SubResource("Resource_cf1ac")])
 constraints = {
 "(nil)": true,
 "al": false,

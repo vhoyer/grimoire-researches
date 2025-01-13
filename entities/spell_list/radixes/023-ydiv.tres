@@ -1,16 +1,7 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=7 format=3 uid="uid://dyf13arbkdc1e"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://dyf13arbkdc1e"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_h8irt"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_6y5hv"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_next_affinity.gd" id="2_rs8yc"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_invert.gd" id="3_cit8p"]
-
-[sub_resource type="Resource" id="Resource_271hb"]
-script = ExtResource("2_rs8yc")
-
-[sub_resource type="Resource" id="Resource_84ijy"]
-script = ExtResource("3_cit8p")
-effect = SubResource("Resource_271hb")
 
 [resource]
 script = ExtResource("2_6y5hv")
@@ -19,14 +10,14 @@ name = "ydiv"
 description = "Until after the next light attack, decreases light affinity by {amount}"
 element = 4
 mp = 12
-amount = 2
+amount = -2
 turns_active = 0
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
 targets = 1
-effect = Array[ExtResource("1_h8irt")]([SubResource("Resource_84ijy")])
+effect = Array[ExtResource("1_h8irt")]([])
 constraints = {
 "(nil)": true,
 "al": false,

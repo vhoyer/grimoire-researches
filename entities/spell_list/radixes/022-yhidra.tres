@@ -1,16 +1,7 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=7 format=3 uid="uid://yv4n61jjgn0f"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://yv4n61jjgn0f"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_avyyf"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_ubq1m"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_next_affinity.gd" id="2_xe8ga"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_invert.gd" id="3_rte5b"]
-
-[sub_resource type="Resource" id="Resource_4t4q4"]
-script = ExtResource("2_xe8ga")
-
-[sub_resource type="Resource" id="Resource_6cwwg"]
-script = ExtResource("3_rte5b")
-effect = SubResource("Resource_4t4q4")
 
 [resource]
 script = ExtResource("2_ubq1m")
@@ -19,14 +10,14 @@ name = "yhidra"
 description = "Until after the next water attack, decreases water affinity by {amount}"
 element = 1
 mp = 12
-amount = 2
+amount = -2
 turns_active = 0
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
 targets = 1
-effect = Array[ExtResource("1_avyyf")]([SubResource("Resource_6cwwg")])
+effect = Array[ExtResource("1_avyyf")]([])
 constraints = {
 "(nil)": true,
 "al": false,

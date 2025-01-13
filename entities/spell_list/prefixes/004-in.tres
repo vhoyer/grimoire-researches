@@ -3,42 +3,42 @@
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_ypahs"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_bjo2k"]
 
-[sub_resource type="Resource" id="Resource_fn2wu"]
+[sub_resource type="Resource" id="Resource_aaq1v"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_g70ma"]
+[sub_resource type="Resource" id="Resource_li16w"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_mofas"]
+[sub_resource type="Resource" id="Resource_ppw8y"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_hbjje"]
+[sub_resource type="Resource" id="Resource_dj7j8"]
 script = ExtResource("1_ypahs")
 type = 0
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_w0lkm"]
+[sub_resource type="Resource" id="Resource_irhf7"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 2.0
 
-[sub_resource type="Resource" id="Resource_lmmri"]
+[sub_resource type="Resource" id="Resource_l6kux"]
 script = ExtResource("1_ypahs")
 type = 1
 value = 0.0
 
-[sub_resource type="Resource" id="Resource_tt86w"]
+[sub_resource type="Resource" id="Resource_500py"]
 script = ExtResource("1_ypahs")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_la6o3"]
+[sub_resource type="Resource" id="Resource_m642f"]
 script = ExtResource("1_ypahs")
 type = 1
 value = 0.0
@@ -48,14 +48,14 @@ script = ExtResource("2_bjo2k")
 id = 4
 name = "in"
 description = "Executes the spell once at the start of the battle, target = self"
-turns_casting = SubResource("Resource_la6o3")
-turns_active = SubResource("Resource_tt86w")
-mp = SubResource("Resource_w0lkm")
-amount = SubResource("Resource_fn2wu")
-circle = SubResource("Resource_hbjje")
-chance_primary = SubResource("Resource_g70ma")
-chance_secondary = SubResource("Resource_mofas")
-targets = SubResource("Resource_lmmri")
+turns_casting = SubResource("Resource_m642f")
+turns_active = SubResource("Resource_500py")
+mp = SubResource("Resource_irhf7")
+amount = SubResource("Resource_aaq1v")
+circle = SubResource("Resource_dj7j8")
+chance_primary = SubResource("Resource_li16w")
+chance_secondary = SubResource("Resource_ppw8y")
+targets = SubResource("Resource_l6kux")
 is_passive = false
 is_initial = true
 is_default = false

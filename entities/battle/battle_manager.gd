@@ -39,6 +39,13 @@ signal turn_started(combatant: Mage)
 
 func turn_act(action: BattleAction) -> void:
 	resolver.resolve(action)
+	
 	action = action.caster.statuses.process('action_modifier', [action])
+	
+	action.caster.statuses.auto_clear(action)
+	for target in action.targets:
+		target.statuses.auto_clear(action)
+	
 	history.write(action)
+	
 	turn_started.emit(queue.next())

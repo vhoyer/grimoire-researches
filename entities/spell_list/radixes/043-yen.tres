@@ -1,16 +1,11 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=7 format=3 uid="uid://5am8nskra0f6"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=5 format=3 uid="uid://5am8nskra0f6"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_jeulo"]
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect_stat.gd" id="2_e7hce"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_qe73k"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_invert.gd" id="3_7xly4"]
 
-[sub_resource type="Resource" id="Resource_cnoe6"]
+[sub_resource type="Resource" id="Resource_6psw6"]
 script = ExtResource("2_e7hce")
-
-[sub_resource type="Resource" id="Resource_v23ko"]
-script = ExtResource("3_7xly4")
-effect = SubResource("Resource_cnoe6")
 
 [resource]
 script = ExtResource("2_qe73k")
@@ -19,14 +14,14 @@ name = "yen"
 description = "Decreases energy stat by {amount} for {turns_active} turns"
 element = 5
 mp = 12
-amount = 1
+amount = -1
 turns_active = 3
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
 targets = 1
-effect = Array[ExtResource("1_jeulo")]([SubResource("Resource_v23ko")])
+effect = Array[ExtResource("1_jeulo")]([SubResource("Resource_6psw6")])
 constraints = {
 "(nil)": true,
 "al": false,

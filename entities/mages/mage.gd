@@ -26,8 +26,13 @@ class_name Mage
 
 var statuses:= MageStatuses.new(updated)
 
-var affinities: Affinities
-var stats: Stats
+var affinities: Affinities:
+	get():
+		return statuses.process('affinity_modifier', [grimoire.affinities])
+
+var stats: Stats:
+	get():
+		return statuses.process('stats_modifier', [grimoire.stats])
 
 ## Memory of in_progress spells be it passives or casting
 var in_progress: Dictionary = {}
@@ -50,8 +55,6 @@ func _init(name: String = 'dummy', grimoire: Grimoire = Grimoire.new()):
 func reset_combat_state() -> void:
 	hp = grimoire.stats.max_hp
 	mp = grimoire.stats.max_mp
-	affinities = grimoire.affinities
-	stats = grimoire.stats
 	statuses = MageStatuses.new(updated)
 
 func can_cast_spell(spell: Spell) -> bool:

@@ -1,16 +1,7 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=7 format=3 uid="uid://rgfcn8vyie3g"]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://rgfcn8vyie3g"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_dukdu"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_next_affinity.gd" id="2_7tanw"]
-[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_invert.gd" id="2_d6snk"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_fi252"]
-
-[sub_resource type="Resource" id="Resource_42nru"]
-script = ExtResource("2_7tanw")
-
-[sub_resource type="Resource" id="Resource_n8m6d"]
-script = ExtResource("2_d6snk")
-effect = SubResource("Resource_42nru")
 
 [resource]
 script = ExtResource("2_fi252")
@@ -19,14 +10,14 @@ name = "yter"
 description = "Until after the next earth attack, decreases earth affinity by {amount}"
 element = 2
 mp = 12
-amount = 2
+amount = -2
 turns_active = 0
 chance_primary = 0.33
 chance_secondary = 0.17
 circle = 1
 turns_casting = 1
 targets = 1
-effect = Array[ExtResource("1_dukdu")]([SubResource("Resource_n8m6d")])
+effect = Array[ExtResource("1_dukdu")]([])
 constraints = {
 "(nil)": true,
 "al": false,

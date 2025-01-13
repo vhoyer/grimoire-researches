@@ -29,7 +29,7 @@ var description: String:
 			.replace('{turns_active}', str(turns_active))
 			.replace('{chance_secondary}', pcent(chance_secondary))
 			.replace('{chance_primary}', pcent(chance_primary))
-			.replace('{amount}', str(amount)),
+			.replace('{amount}', str(absi(amount))),
 			pre.description,
 		])
 
