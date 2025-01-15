@@ -49,3 +49,4 @@ func process(caster: Mage) -> void:
 		if action.turns_active > 0 and not action.is_active:
 			spell.revert_effect(action)
 			in_progress.erase(spell)
+			caster.updated.emit()

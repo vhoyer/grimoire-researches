@@ -4,6 +4,8 @@ class_name StatusQuickCast
 
 var state: String = 'begin'
 
+func name() -> String: return "quick_cast"
+
 func clear_type() -> ClearType:
 	return ClearType.custom
 

@@ -1,6 +1,15 @@
 extends Resource
 class_name Stats
 
+enum Type {
+	power,
+	vitality,
+	endurance,
+	agility,
+	luck,
+	energy,
+}
+
 @export var power = 1;
 @export var vitality = 1;
 @export var endurance = 1;
@@ -26,3 +35,7 @@ func increment_stat_by_element(element: Spell.Elements, value: int) -> void:
 		Spell.Elements.dark: 'energy',
 	}
 	self[stat_map[element]] += value;
+
+
+func increment_stat(stat: Type, value: int) -> void:
+	self[Type.find_key(stat)] += value;

@@ -42,6 +42,8 @@ var in_casting: BattleAction:
 		var casting = [] as Array[BattleAction]
 		for action: BattleAction in in_progress.values():
 			if !action.spell.is_castable: continue
+			if !action.updated.is_connected(updated.emit):
+				action.updated.connect(updated.emit)
 			return action
 		return null
 

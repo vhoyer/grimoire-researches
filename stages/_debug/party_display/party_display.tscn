@@ -36,9 +36,10 @@ hp = 1000
 mp = 1000
 
 [node name="PartyDisplay" type="VBoxContainer"]
+offset_right = 214.0
+offset_bottom = 319.0
 script = ExtResource("1_70dv4")
 MageDisplayScene = ExtResource("2_38r2a")
-allow_name_edit = true
 
 [node name="MageHolder" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -46,20 +47,14 @@ layout_mode = 2
 [node name="mage" parent="MageHolder" instance=ExtResource("2_38r2a")]
 layout_mode = 2
 mage = SubResource("Resource_4wogj")
-allow_manual_edit = false
-allow_name_edit = true
 
 [node name="mage2" parent="MageHolder" instance=ExtResource("2_38r2a")]
 layout_mode = 2
 mage = SubResource("Resource_lmpre")
-allow_manual_edit = false
-allow_name_edit = true
 
 [node name="mage3" parent="MageHolder" instance=ExtResource("2_38r2a")]
 layout_mode = 2
 mage = SubResource("Resource_171of")
-allow_manual_edit = false
-allow_name_edit = true
 
 [node name="HashHolder" type="PanelContainer" parent="."]
 visible = false

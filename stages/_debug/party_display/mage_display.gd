@@ -1,5 +1,5 @@
 @tool
-extends HBoxContainer
+extends HBoxContainerOrderable
 class_name MageDisplay
 
 @onready var alter_hp: Button = $AlterHP
@@ -31,11 +31,18 @@ func _ready() -> void:
 		update_labels()
 
 func update_labels() -> void:
-	$Label.text = mage.name
-	$HPMP.text = """
+	%Label.text = mage.name
+	%HPMP.text = """
 	HP: %d
 	MP: %d
-	""" % [mage.hp, mage.mp]
+	""".strip_edges() % [mage.hp, mage.mp]
+	
+	%casting.visible = mage.in_casting != null
+	if mage.in_casting != null:
+		%casting.text = "".join([
+			"◉".repeat(mage.in_casting.turns_casting),
+			"○".repeat(mage.in_casting.turns_casting_needed - mage.in_casting.turns_casting)
+		])
 
 func _on_alter_hp_button_down() -> void:
 	var prompt = self.prompt.instantiate()

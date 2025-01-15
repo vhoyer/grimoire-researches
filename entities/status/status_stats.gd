@@ -1,14 +1,12 @@
 extends Status
 class_name StatusStats
 
-var element: Spell.Elements:
-	get(): return self.spell_origin.element
+@export var stat: Stats.Type
 
-
-func name() -> String: return "stat_" + Spell.Elements.find_key(element)
+func name() -> String: return "stat_" + Stats.Type.find_key(stat)
 
 
 func stats_modifier(stats: Stats) -> Stats:
 	var modded = stats.duplicate()
-	modded.increment_stat_by_element(element, self.spell_origin.amount)
+	modded.increment_stat(stat, self.spell_origin.amount)
 	return modded
