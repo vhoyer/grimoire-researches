@@ -53,7 +53,6 @@ func update_labels() -> void:
 
 func update_hash() -> void:
 	%Hash.text = party.hash
-	$HashHolder/VBoxContainer/Label2.text = str(party.hash.length())
 
 
 func _on_hash_text_changed(new_text: String) -> void:

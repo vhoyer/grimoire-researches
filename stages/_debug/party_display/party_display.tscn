@@ -77,7 +77,4 @@ text = "Grimoire's Hash"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label2" type="Label" parent="HashHolder/VBoxContainer"]
-layout_mode = 2
-
 [connection signal="text_changed" from="HashHolder/VBoxContainer/Hash" to="." method="_on_hash_text_changed"]

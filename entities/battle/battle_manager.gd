@@ -31,6 +31,9 @@ func _init(party_a: Party, party_b: Party) -> void:
 	self.party_a = party_a
 	self.party_b = party_b
 
+	for mage in combatants:
+		resolver.populate_in_progress_spells(mage)
+
 	BattleManager.instance = self
 	queue = BattleQueue.new(combatants)
 	turn_started.emit(queue.current)
@@ -49,3 +52,8 @@ func turn_act(action: BattleAction) -> void:
 	history.write(action)
 	
 	turn_started.emit(queue.next())
+
+
+func end_battle() -> void:
+	for mage in combatants:
+		mage.in_progress = {}

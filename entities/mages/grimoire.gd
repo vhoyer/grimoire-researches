@@ -19,6 +19,8 @@ var hash: String:
 			prehash[index] = [] if spell == null else [spell.pre.id, spell.radix.id, spell.post.id]
 		return JSON.stringify(prehash)
 
+var mp_per_turn: int = 0
+
 signal updated;
 
 func _init(hash: String = "") -> void:
@@ -35,11 +37,13 @@ func get_spell(idx: int) -> Spell:
 func recalculate() -> void:
 	affinities = Affinities.new()
 	stats = Stats.new()
+	mp_per_turn = 0
 	
 	for spell in _list:
 		if spell == null: continue;
 		affinities.process_spell(spell);
 		if (spell.is_passive):
+			mp_per_turn += spell.mp
 			for effect in spell.radix.effect:
 				apply_spell_effect_onto_grimoire(effect, spell)
 	

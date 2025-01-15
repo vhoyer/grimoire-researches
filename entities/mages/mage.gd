@@ -34,6 +34,7 @@ var stats: Stats:
 	get():
 		return statuses.process('stats_modifier', [grimoire.stats])
 
+
 ## Memory of in_progress spells be it passives or casting
 var in_progress: Dictionary = {}
 var in_casting: Array[BattleAction]:

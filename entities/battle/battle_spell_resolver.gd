@@ -1,6 +1,14 @@
 extends Node
 class_name BattleSpellResolver
 
+func populate_in_progress_spells(caster: Mage) -> void:
+	var passives = caster.grimoire.spells.filter(func(spell: Spell):
+		return !spell.is_castable
+		)
+	for spell in passives:
+		add(BattleAction.new(spell, caster, [caster]))
+
+
 func resolve(action: BattleAction) -> void:
 	add(action)
 	process(action.caster)

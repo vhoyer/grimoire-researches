@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dj4ic5djjd050"]
 
 [ext_resource type="Script" path="res://stages/_debug/setup/setup.gd" id="1_d630f"]
-[ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/grimoire/grimoires.tscn" id="2_3j6f0"]
+[ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/party/party.tscn" id="2_3j6f0"]
 [ext_resource type="PackedScene" uid="uid://bdltqd0o0mciq" path="res://stages/_debug/party_display/party_display.tscn" id="3_unou1"]
 [ext_resource type="Script" path="res://modules/UI/button_scene_changer.gd" id="5_q5scf"]
 [ext_resource type="PackedScene" uid="uid://cc1yuycjjo3ro" path="res://stages/_debug/battle/battle.tscn" id="6_whj2k"]

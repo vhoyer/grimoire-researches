@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://stages/_debug/battle/battle.gd" id="1_gbsud"]
 [ext_resource type="Script" path="res://entities/mages/grimoire.gd" id="2_euq4x"]
 [ext_resource type="Script" path="res://entities/mages/mage.gd" id="2_h7mf1"]
-[ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/grimoire/grimoires.tscn" id="2_p1tv0"]
+[ext_resource type="PackedScene" uid="uid://n1056y7etnkk" path="res://stages/_debug/party/party.tscn" id="2_p1tv0"]
 [ext_resource type="Script" path="res://stages/_debug/battle/queue.gd" id="3_ifwug"]
 [ext_resource type="PackedScene" uid="uid://b3iquby55xoeq" path="res://stages/_debug/battle/queue_icon.tscn" id="4_4e334"]
 [ext_resource type="PackedScene" uid="uid://bdltqd0o0mciq" path="res://stages/_debug/party_display/party_display.tscn" id="7_m5ets"]

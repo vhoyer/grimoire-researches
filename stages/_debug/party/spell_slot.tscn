@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://k8h78vpoebr5"]
 
-[ext_resource type="Script" path="res://stages/_debug/grimoire/spell_slot.gd" id="1_6m6rt"]
+[ext_resource type="Script" path="res://stages/_debug/party/spell_slot.gd" id="1_6m6rt"]
 [ext_resource type="PackedScene" uid="uid://c4err8c6jno10" path="res://stages/_debug/spell_select/spell_select.tscn" id="2_41hp8"]
 
 [node name="SpellSlot" type="Button"]
