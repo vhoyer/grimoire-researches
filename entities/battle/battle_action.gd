@@ -24,7 +24,9 @@ var targets: Array[Mage]
 
 var turns_casting = 0
 var is_casting: bool:
-	get(): return turns_casting < spell.turns_casting
+	get():
+		var modded = caster.statuses.process("spell_modifier", [spell]) as Spell
+		return turns_casting < modded.turns_casting
 	
 var turns_active = 0
 var is_active: bool:

@@ -30,8 +30,8 @@ func filter_action_list(actions: Array[BattleAction]) -> Array[BattleAction]:
 func action_modifier(action: BattleAction) -> BattleAction:
 	return action
 
-func spell_cost_modifier(cost: int) -> int:
-	return cost
+func spell_modifier(spell: Spell) -> Spell:
+	return spell
 
 func affinities_modifier(affinities: Affinities) -> Affinities:
 	return affinities

@@ -66,7 +66,8 @@ func pcent(raw: float) -> String:
 	return str(value) + '%'
 
 func charge_cost(caster: Mage):
-	caster.mp -= caster.statuses.process('spell_cost_modifier', [mp])
+	var modded = caster.statuses.process('spell_modifier', [self])
+	caster.mp -= modded.mp
 
 func do_effect(action: BattleAction) -> void:
 	for effect in radix.effect:

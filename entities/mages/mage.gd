@@ -37,14 +37,13 @@ var stats: Stats:
 
 ## Memory of in_progress spells be it passives or casting
 var in_progress: Dictionary = {}
-var in_casting: Array[BattleAction]:
+var in_casting: BattleAction:
 	get():
 		var casting = [] as Array[BattleAction]
 		for action: BattleAction in in_progress.values():
 			if !action.spell.is_castable: continue
-			casting.push_back(action)
-		casting.make_read_only()
-		return casting
+			return action
+		return null
 
 signal updated
 
@@ -73,11 +72,11 @@ func get_action_list() -> Array[BattleAction]:
 			return BattleAction.new(spell, self)
 			))
 	
-	for action: BattleAction in in_casting:
-		action.label = tr("KEEP_CAST").format({
-			'spell_name': action.spell.name,
+	if in_casting:
+		in_casting.label = tr("KEEP_CAST").format({
+			'spell_name': in_casting.spell.name,
 			})
-		actions.push_front(action)
+		actions.push_front(in_casting)
 	
 	return actions
 
