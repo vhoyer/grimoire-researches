@@ -48,7 +48,7 @@ tiv,fire,Pushs the target forward by {amount} turns,12,tiv,0.33,0.17,0,1,0,,,,,,
 bar,earth,Create a barrier that nulifies the damage of the next attack the target receives,24,bar,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,,-,,,
 cas,water,"Creates a barrier that sets the chance of receiving an status ailment to zero, works only once per status roll",24,cas,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,,-,,,
 pri,dark,Prevents target from using the last spell it used for {turns_active} turns,12,,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
-cha,fire,Makes all targets aim only at the caster for {turns_active} turns,12,,0.33,0.17,1,0,0,,,,,,,,x,,,,,,,,,,,,,-,-,,-,,-,-
+cha,fire,Makes all spells target (at least) the caster for {turns_active} turns,12,,0.33,0.17,1,0,0,,,,,,,,x,,,,,,,,,,,,,-,-,,-,,-,-
 rep,water,Makes the target use the same spell used last for {turns_active} turns,12,,0.33,0.17,0,1,0,,,,,,,x,,,,,,,,,,,,,,,,-,-,,,
 sop,wind,Removes all stat buffs from target,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,
 lam,earth,Removes all stat debuffs from target,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,

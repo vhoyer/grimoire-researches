@@ -29,6 +29,11 @@ func _on_action_list_source_item_actived(action: BattleAction) -> void:
 	if !action.targets.is_empty():
 		action_selected.emit(action)
 		return
+	
+	if action.spell.targets == 0:
+		action.targets = [action.caster]
+		return
+	
 	target_list.visible = true
 	target_list.source_list = BattleManager.instance.combatants
 	current_action = action
