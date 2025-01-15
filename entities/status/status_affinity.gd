@@ -21,9 +21,10 @@ func name() -> String:
 	return "affinity_" + Spell.Elements.find_key(element)
 
 func status_begin() -> void:
-	var last_action = self.battle_manager.history.get_last_action_targeted(self.bearer)
-	var last_element = last_action.spell.element
-	element = last_element
+	if type == Type.last:
+		var last_action = self.battle_manager.history.get_last_action_targeted(self.bearer)
+		var last_element = last_action.spell.element
+		element = last_element
 
 
 func affinities_modifier(affinities: Affinities) -> Affinities:
@@ -33,7 +34,10 @@ func affinities_modifier(affinities: Affinities) -> Affinities:
 
 
 func clear_type() -> ClearType:
+	if type == Type.last:
+		return ClearType.turn
 	return ClearType.custom
+	
 
 func should_clear(action: BattleAction) -> bool:
 	if not action.targets.has(self.bearer): return false

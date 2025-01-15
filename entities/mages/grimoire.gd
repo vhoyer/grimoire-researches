@@ -28,7 +28,6 @@ func _init(hash: String = "") -> void:
 func set_spell(idx: int, spell: Spell) -> void:
 	_list[idx] = spell;
 	recalculate();
-	pass
 	
 func get_spell(idx: int) -> Spell:
 	return _list[idx];
@@ -36,15 +35,22 @@ func get_spell(idx: int) -> Spell:
 func recalculate() -> void:
 	affinities = Affinities.new()
 	stats = Stats.new()
+	
 	for spell in _list:
 		if spell == null: continue;
 		affinities.process_spell(spell);
 		if (spell.is_passive):
 			for effect in spell.radix.effect:
-				var dummy_mage = Mage.new("dummy", self)
-				effect.do_effect(BattleAction.new(spell, dummy_mage, [dummy_mage]))
+				apply_spell_effect_onto_grimoire(effect, spell)
 		
 	updated.emit();
+
+func apply_spell_effect_onto_grimoire(effect: SpellEffect, spell: Spell) -> void:
+	var dummy_mage = Mage.new("dummy", self)
+	effect.do_effect(BattleAction.new(spell, dummy_mage, [dummy_mage]))
+	stats = dummy_mage.stats
+	affinities = dummy_mage.affinities
+
 
 func load_hash(hash: String) -> void:
 	var posthash = JSON.parse_string(hash)

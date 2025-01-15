@@ -28,7 +28,7 @@ var statuses:= MageStatuses.new(updated)
 
 var affinities: Affinities:
 	get():
-		return statuses.process('affinity_modifier', [grimoire.affinities])
+		return statuses.process('affinities_modifier', [grimoire.affinities])
 
 var stats: Stats:
 	get():
