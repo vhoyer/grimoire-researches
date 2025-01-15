@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3]
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=3 format=3 uid="uid://c7xoeseaxsjsc"]
 
 [ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_8t8a6"]
 [ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_jyltr"]

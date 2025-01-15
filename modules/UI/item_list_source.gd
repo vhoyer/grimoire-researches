@@ -72,8 +72,12 @@ func populate_items() -> void:
 	
 	self.is_disabled
 
-func select_item(what: Variant) -> void:
-	var index = source_list.find(what)
+func select_item(what: Variant, find_method: Callable = (func(a, b): return a == b)) -> void:
+	var specimen = source_list \
+		.filter(func(a): return find_method.call(a, what)) \
+		.pop_front()
+		
+	var index = source_list.find(specimen)
 	self.select(index)
 	self.ensure_current_is_visible()
 	self.item_selected.emit(index)

@@ -11,25 +11,31 @@ signal cancel;
 var pre:= SpellPrepostfix.new():
 	set(value):
 		pre = value
-		spell = spell
+		build_spell()
 var post:= SpellPrepostfix.new():
 	set(value):
 		post = value
-		spell = spell
+		build_spell()
 var radix:= SpellRadix.new():
 	set(value):
 		radix = value
 		load_one_list(prefixes, SpellList.prefixes, radix.constraints)
 		load_one_list(postfixes, SpellList.postfixes, radix.constraints)
-		spell = spell
+		build_spell()
 
 var spell:= Spell.new():
 	set(value):
-		spell = value.duplicate(true);
-		spell.pre = pre;
-		spell.post = post;
-		spell.radix = radix;
+		spell = value;
 		spell_display.set_values(spell);
+
+
+func build_spell() -> void:
+	var spell = Spell.new()
+	spell.radix = radix
+	spell.post = post
+	spell.pre = pre
+	self.spell = spell
+
 
 func _ready() -> void:
 	load_morphene_lists()
@@ -37,9 +43,12 @@ func _ready() -> void:
 func select_spell(spell: Spell) -> void:
 	if (spell == null): return
 
-	radixes.select_item(spell.radix)
-	prefixes.select_item(spell.pre)
-	postfixes.select_item(spell.post)
+	var find_by_id = func(a, b):
+		return a.id == b.id
+
+	radixes.select_item(spell.radix, find_by_id)
+	prefixes.select_item(spell.pre, find_by_id)
+	postfixes.select_item(spell.post, find_by_id)
 
 func load_one_list(it: ItemListSource, morphene: Array, constraints: Dictionary):
 	var filter = func(item):
