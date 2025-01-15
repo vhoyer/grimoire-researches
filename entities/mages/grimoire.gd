@@ -42,8 +42,8 @@ func recalculate() -> void:
 		if (spell.is_passive):
 			for effect in spell.radix.effect:
 				apply_spell_effect_onto_grimoire(effect, spell)
-		
-	updated.emit();
+	
+	updated.emit()
 
 func apply_spell_effect_onto_grimoire(effect: SpellEffect, spell: Spell) -> void:
 	var dummy_mage = Mage.new("dummy", self)
@@ -57,8 +57,14 @@ func load_hash(hash: String) -> void:
 	if posthash == null:
 		self.hash = self.hash
 		return
+	
+	if posthash is Array:
+		posthash.resize(SIZE)
+	
 	for i in SIZE:
-		if (posthash[i] == []): continue
+		if (posthash[i] == null or posthash[i] == []):
+			set_spell(i, null)
+			continue
 		var code = posthash[i] as Array[int]
 		var id_pre = code.pop_front()
 		var id_radix = code.pop_front()

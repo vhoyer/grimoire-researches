@@ -50,4 +50,7 @@ func update_slots() -> void:
 
 func _on_hash_text_changed(new_text: String) -> void:
 	grimoire.load_hash(new_text)
-	pass # Replace with function body.
+
+
+func _on_clear_button_button_down() -> void:
+	grimoire.load_hash('[]')
