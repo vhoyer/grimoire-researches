@@ -70,8 +70,6 @@ static func find_radix_by_id(id: int) -> SpellRadix:
 
 static func generate_grimoire() -> Grimoire:
 	var grimoire = Grimoire.new()
-	print(all[15])
-	var what = all
 	var spells = all.duplicate()
 	spells.shuffle()
 	var list = spells.slice(0, grimoire.SIZE)
