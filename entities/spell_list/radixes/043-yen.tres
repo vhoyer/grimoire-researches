@@ -8,6 +8,7 @@
 [sub_resource type="Resource" id="Resource_vs8na"]
 script = ExtResource("3_j6q6s")
 stat = 5
+indicator = "-"
 
 [sub_resource type="Resource" id="Resource_fnwrn"]
 script = ExtResource("2_6mgn8")

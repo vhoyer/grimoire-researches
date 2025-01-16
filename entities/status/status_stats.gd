@@ -2,8 +2,9 @@ extends Status
 class_name StatusStats
 
 @export var stat: Stats.Type
+@export_enum("-", "+") var indicator: String = "+"
 
-func name() -> String: return "stat_" + Stats.Type.find_key(stat)
+func name() -> String: return indicator + "stat_" + Stats.Type.find_key(stat)
 
 
 func stats_modifier(stats: Stats) -> Stats:

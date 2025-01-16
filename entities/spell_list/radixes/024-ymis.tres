@@ -9,6 +9,7 @@
 script = ExtResource("3_4114r")
 type = 1
 element = 5
+indicator = "-"
 
 [sub_resource type="Resource" id="Resource_wwmwf"]
 script = ExtResource("2_eb38k")

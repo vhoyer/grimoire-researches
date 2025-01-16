@@ -9,12 +9,13 @@ enum Type {
 @export var type: Type = Type.next
 
 @export var element: Spell.Elements = Spell.Elements.dark
+@export_enum("-", "+") var indicator: String = "+"
 
 
 func name() -> String:
 	if type == Type.last:
 		return "affinity_last"
-	return "affinity_" + Spell.Elements.find_key(element)
+	return indicator + "affinity_" + Spell.Elements.find_key(element)
 
 func status_begin() -> void:
 	if type == Type.last:
