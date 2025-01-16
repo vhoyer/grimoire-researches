@@ -8,11 +8,7 @@ enum Type {
 
 @export var type: Type = Type.next
 
-var element: Spell.Elements:
-	get():
-		if element:
-			return element
-		return self.spell_origin.element
+@export var element: Spell.Elements = Spell.Elements.dark
 
 
 func name() -> String:

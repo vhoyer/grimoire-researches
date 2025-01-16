@@ -7,6 +7,7 @@ func populate_in_progress_spells(caster: Mage) -> void:
 		)
 	for spell in passives:
 		add(BattleAction.new(spell, caster, [caster]))
+	process(caster)
 
 
 func resolve(action: BattleAction) -> void:

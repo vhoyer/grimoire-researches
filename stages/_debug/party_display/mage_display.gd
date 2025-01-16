@@ -43,6 +43,10 @@ func update_labels() -> void:
 			"◉".repeat(mage.in_casting.turns_casting),
 			"○".repeat(mage.in_casting.turns_casting_needed - mage.in_casting.turns_casting)
 		])
+	%statuses.visible = mage.statuses.list.size() > 0
+	%statuses.text = ", ".join(
+		mage.statuses.list.map(func(s: Status): return s.name())
+		)
 
 func _on_alter_hp_button_down() -> void:
 	var prompt = self.prompt.instantiate()

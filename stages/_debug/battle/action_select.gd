@@ -8,7 +8,6 @@ signal action_selected(action: BattleAction)
 
 var current_action: BattleAction
 
-
 func _ready() -> void:
 	action_list.source_is_disabled = func(action: BattleAction):
 		if action.type == BattleAction.Type.magic:

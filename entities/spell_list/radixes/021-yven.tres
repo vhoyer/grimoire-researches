@@ -8,6 +8,7 @@
 [sub_resource type="Resource" id="Resource_8onk1"]
 script = ExtResource("3_alg7b")
 type = 1
+element = 3
 
 [sub_resource type="Resource" id="Resource_q8vcd"]
 script = ExtResource("2_2d0va")

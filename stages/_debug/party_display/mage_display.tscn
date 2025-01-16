@@ -30,6 +30,15 @@ text = "mage_name"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 2
+text = "◉◉◉○○"
+
+[node name="statuses" type="Label" parent="MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wet, Blessed"
+autowrap_mode = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

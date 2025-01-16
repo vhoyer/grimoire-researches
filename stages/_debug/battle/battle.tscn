@@ -106,6 +106,7 @@ text = "first"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="PartyA" parent="MarginContainer/VBoxContainer/HBoxContainer" instance=ExtResource("7_m5ets")]
 layout_mode = 2
@@ -142,8 +143,8 @@ allow_manual_edit = true
 
 [node name="ActionSelect" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
-size_flags_vertical = 3
 script = ExtResource("9_sxo3i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/ActionSelect"]

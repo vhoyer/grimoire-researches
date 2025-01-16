@@ -22,7 +22,7 @@ func _ready() -> void:
 	call_deferred('start_turn', manager.queue.current)
 
 func start_turn(combatant: Mage) -> void:
-	%ActionSelect.setup(combatant);
+	%ActionSelect.setup(combatant)
 
 func show_grimoires_popup(party: Party) -> void:
 	var instance = GrimoiresScene.instantiate()

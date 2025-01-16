@@ -7,6 +7,7 @@
 
 [sub_resource type="Resource" id="Resource_vs8na"]
 script = ExtResource("3_dkt5o")
+stat = 5
 
 [sub_resource type="Resource" id="Resource_yrood"]
 script = ExtResource("2_f628o")

@@ -75,6 +75,7 @@ func get_action_list() -> Array[BattleAction]:
 			))
 	
 	if in_casting:
+		in_casting.type = BattleAction.Type.keep_casting
 		in_casting.label = tr("KEEP_CAST").format({
 			'spell_name': in_casting.spell.name,
 			})
