@@ -22,10 +22,11 @@ func status_begin() -> void:
 		var last_action = self.battle_manager.history.get_last_action_targeted(self.bearer)
 		var last_element = last_action.spell.element
 		element = last_element
+		# TODO: if there are no actions in the history, fail the spell
 
 
 func affinities_modifier(affinities: Affinities) -> Affinities:
-	var modded = affinities.duplicate()
+	var modded = affinities.duplicate(true) as Affinities
 	modded.increment_affinity(element, self.spell_origin.amount)
 	return modded
 

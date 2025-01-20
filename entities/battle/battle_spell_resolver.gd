@@ -3,10 +3,12 @@ class_name BattleSpellResolver
 
 func populate_in_progress_spells(caster: Mage) -> void:
 	var passives = caster.grimoire.spells.filter(func(spell: Spell):
-		return !spell.is_castable
+		return spell.is_initial
 		)
 	for spell in passives:
-		add(BattleAction.new(spell, caster, [caster]))
+		var action = BattleAction.new(spell, caster, [caster])
+		caster.in_progress.get_or_add(spell, action)
+		spell.charge_cost(caster)
 	process(caster)
 
 

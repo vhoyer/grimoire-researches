@@ -17,7 +17,7 @@ const MAX = 3
 @export var dark: int:
 	get(): return cap_to_scale(_elements[Spell.Elements.dark])
 
-var _elements: PackedInt32Array = [0];
+@export_storage var _elements: PackedInt32Array = [0];
 
 const CIRCLE_PENALTY = {
 	1: 0,
@@ -33,7 +33,7 @@ func _init() -> void:
 func process_spell(spell: Spell) -> void:
 	var opposite_index = get_opposite_element(spell.element)
 	var affinity = CIRCLE_PENALTY[spell.circle]
-	_elements[opposite_index] = min(_elements[opposite_index], affinity)
+	increment_affinity(opposite_index, min(_elements[opposite_index], affinity))
 	pass
 
 func get_opposite_element(el: Spell.Elements) -> Spell.Elements:
@@ -57,9 +57,9 @@ func cap_to_scale(value: int) -> int:
 func modify_damage(spell: Spell) -> int:
 	var affinity = _elements[spell.element]
 	match affinity:
-		-2: return spell.amount * 2
+		var x when x <= -2: return spell.amount * 2
 		-1: return int(spell.amount * 1.5)
-		_: return spell.amount
 		1: return int(spell.amount * 0.5)
 		2: return 0
-		3: return -1 * int(spell.amount * 0.5)
+		var x when x >= 3: return -1 * int(spell.amount * 0.5)
+		_: return spell.amount
