@@ -3,42 +3,42 @@
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_au7yj"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_o8vaw"]
 
-[sub_resource type="Resource" id="Resource_n8t5k"]
+[sub_resource type="Resource" id="Resource_mmrks"]
 script = ExtResource("1_au7yj")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_ifffi"]
+[sub_resource type="Resource" id="Resource_l07g0"]
 script = ExtResource("1_au7yj")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_1flb3"]
+[sub_resource type="Resource" id="Resource_mnu6c"]
 script = ExtResource("1_au7yj")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_jet6n"]
+[sub_resource type="Resource" id="Resource_y2aid"]
 script = ExtResource("1_au7yj")
 type = 0
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_i3wcy"]
+[sub_resource type="Resource" id="Resource_mcjc1"]
 script = ExtResource("1_au7yj")
 type = 2
-value = 2.0
+value = 0.5
 
-[sub_resource type="Resource" id="Resource_0ak2d"]
+[sub_resource type="Resource" id="Resource_wut7d"]
 script = ExtResource("1_au7yj")
 type = 1
 value = 0.0
 
-[sub_resource type="Resource" id="Resource_sq8l7"]
+[sub_resource type="Resource" id="Resource_n788e"]
 script = ExtResource("1_au7yj")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_trf65"]
+[sub_resource type="Resource" id="Resource_68gme"]
 script = ExtResource("1_au7yj")
 type = 1
 value = 0.0
@@ -48,14 +48,14 @@ script = ExtResource("2_o8vaw")
 id = 5
 name = "al"
 description = "Ignore mention of \"turns\", this spell is always active"
-turns_casting = SubResource("Resource_trf65")
-turns_active = SubResource("Resource_sq8l7")
-mp = SubResource("Resource_i3wcy")
-amount = SubResource("Resource_n8t5k")
-circle = SubResource("Resource_jet6n")
-chance_primary = SubResource("Resource_ifffi")
-chance_secondary = SubResource("Resource_1flb3")
-targets = SubResource("Resource_0ak2d")
+turns_casting = SubResource("Resource_68gme")
+turns_active = SubResource("Resource_n788e")
+mp = SubResource("Resource_mcjc1")
+amount = SubResource("Resource_mmrks")
+circle = SubResource("Resource_y2aid")
+chance_primary = SubResource("Resource_l07g0")
+chance_secondary = SubResource("Resource_mnu6c")
+targets = SubResource("Resource_wut7d")
 is_passive = true
 is_initial = false
 is_default = false

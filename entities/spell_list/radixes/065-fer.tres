@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=9 format=3 uid="uid://jhsqgpcjnbmw"]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_vxfgd"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_3d0sj"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_status.gd" id="2_pqxbj"]
+[ext_resource type="Script" path="res://entities/status/status_rooted.gd" id="3_of05x"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_chance.gd" id="4_1v5xc"]
+
+[sub_resource type="Resource" id="Resource_eg4w0"]
+script = ExtResource("3_of05x")
+
+[sub_resource type="Resource" id="Resource_1afnn"]
+script = ExtResource("2_pqxbj")
+status = SubResource("Resource_eg4w0")
+
+[sub_resource type="Resource" id="Resource_0pxpy"]
+script = ExtResource("4_1v5xc")
+mode = 0
+effect = SubResource("Resource_1afnn")
+
+[resource]
+script = ExtResource("2_3d0sj")
+id = 65
+name = "fer"
+description = "Has a {chance_primary} chance of applying Rooted status"
+element = 2
+mp = 12
+amount = 0
+turns_active = 0
+chance_primary = 0.33
+chance_secondary = 0.17
+circle = 1
+turns_casting = 1
+targets = 1
+effect = Array[ExtResource("1_vxfgd")]([SubResource("Resource_0pxpy")])
+constraints = {
+"(nil)": true,
+"al": false,
+"in": false,
+"kai": true,
+"ma": true,
+"se": true,
+"tchi": true,
+"tchu": true
+}
+display_name = "fer"

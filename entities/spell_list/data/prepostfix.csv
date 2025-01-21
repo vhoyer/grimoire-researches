@@ -3,7 +3,7 @@ post,tchi,,default,*1,*1,*1,*1,=1,*1,*1,*1
 post,tchu,,,+1,*2,*3,*1,=2,*2,*1,*1
 post,kai,,,+2,*4,*5,*1,=2,*3,*1,*1
 pre,in,"Executes the spell once at the start of the battle, target = self",initial,=0,*2,*1,*1,+1,*1,*1,=0
-pre,al,"Ignore mention of ""turns"", this spell is always active",passive,=0,*2,*1,*1,+1,*1,*1,=0
+pre,al,"Ignore mention of ""turns"", this spell is always active",passive,=0,/2,*1,*1,+1,*1,*1,=0
 pre,(nil),,default,*1,*1,*1,*1,*1,*1,*1,*1
 pre,se,Allow 2 targets (not the same),,+1,*2,*1,*1,+1,/2,/4,*2
 pre,ma,Allow 3 targets (not the same),,+2,*3,*1,*1,+1,/3,/5,*3

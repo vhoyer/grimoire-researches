@@ -23,7 +23,7 @@ yven,wind,"Until after the next wind attack, decreases wind affinity by {amount}
 yhidra,water,"Until after the next water attack, decreases water affinity by {amount}",12,-next_affinity,0.33,0.17,0,1,-2,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 ydiv,light,"Until after the next light attack, decreases light affinity by {amount}",12,-next_affinity,0.33,0.17,0,1,-2,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 ymis,dark,"Until after the next dark attack, decreases dark affinity by {amount}",12,-next_affinity,0.33,0.17,0,1,-2,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
-abs,light,"For {turns_active} turns, increases elemental affinity by {amount} of the element of the last attack used against the target",12,turn_affinity_last,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
+abs,light,"For {turns_active} turns, increases elemental affinity by {amount} of the element of the last attack used against the target",12,turn_affinity_last,0.33,0.17,1,1,2,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 jis,earth,"For {turns_active} turns, make arena favorable to earth attacks and infavorable for wind attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
 tat,wind,"For {turns_active} turns, make arena favorable to wind attacks and infavorable for earth attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
 vul,fire,"For {turns_active} turns, make arena favorable to fire attacks and infavorable for water attacks",12,arena_affinity,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,-,-,-,-,-,-,-,-
@@ -42,14 +42,14 @@ yof,fire,Decreases power stat by {amount} for {turns_active} turns,12,-stat,0.33
 ydef,earth,Decreases endurance stat by {amount} for {turns_active} turns,12,-stat,0.33,0.17,3,1,-1,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 ysor,light,Decreases lucky stat by {amount} for {turns_active} turns,12,-stat,0.33,0.17,3,1,-1,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 yen,dark,Decreases energy stat by {amount} for {turns_active} turns,12,-stat,0.33,0.17,3,1,-1,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
-cor,wind,Reduces {amount} turns (min 1) nedded to cast the next spell or the current spell for the target,12,cor,0.33,0.17,0,1,1,,,,,,,,,,,,,,,,,,,,,,,,,,-,-
-ycor,wind,Increases {amount} turns nedded to cast the next spell or the current spell for the target,12,-cor,0.33,0.17,0,1,-1,,,,,,,,,,,,,,,,,,,,,,,,,,-,-
-tiv,fire,Pushs the target forward by {amount} turns,12,tiv,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,-,,,
+cor,wind,Reduces {amount} turns (min 1) nedded to cast the next spell or the current spell for the target,12,cor,0.33,0.17,0,1,1,,,,,,,,,,,,,,,,,,,,,,-,,-,,-,-
+ycor,wind,Increases {amount} turns nedded to cast the next spell or the current spell for the target,12,-cor,0.33,0.17,0,1,-1,,,,,,,,,,,,,,,,,,,,,,-,-,-,,-,-
+tiv,fire,Pushs the target's turn forward by {amount} turns,12,tiv,0.33,0.17,0,1,1,,,,,,,,,,,,,,,,,,,,,,,,-,,,
 bar,earth,Create a barrier that nulifies the damage of the next attack the target receives,24,bar,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,,-,,,
 cas,water,"Creates a barrier that sets the chance of receiving an status ailment to zero, works only once per status roll",24,cas,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,,-,,,
-pri,dark,Prevents target from using the last spell it used for {turns_active} turns,12,,0.33,0.17,1,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
+pri,dark,Prevents target from using the last spell it used for {amount} turns,12,,0.33,0.17,0,1,2,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
 cha,fire,Makes all spells target (at least) the caster for {turns_active} turns,12,,0.33,0.17,1,0,0,,,,,,,,x,,,,,,,,,,,,,-,-,,-,,-,-
-rep,water,Makes the target use the same spell used last for {turns_active} turns,12,,0.33,0.17,0,1,0,,,,,,,x,,,,,,,,,,,,,,,,-,-,,,
+rep,water,Makes the target use the same spell used last for {amount} turns,12,,0.33,0.17,0,1,2,,,,,,,x,,,,,,,,,,,,,,,,-,-,,,
 sop,wind,Removes all stat buffs from target,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,
 lam,earth,Removes all stat debuffs from target,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,
 mir,light,Create a temporary turn for the target at the end of the queue,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,
@@ -57,7 +57,11 @@ ban,water,Negates once the next water based technical damage,12,,0.33,0.17,0,1,0
 mak,wind,Negates once the next wind based technical damage,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,
 inf,fire,Negates once the next fire based technical damage,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,
 tou,earth,Negates once the next earth based technical damage,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,-,-,-,-,,,
-pil,light,Regenerate {amount} of health every turn for {turns_active} turns,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,,,,,
-sok,dark,Revives target with half HP,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
-rev,light,Revives target with full HP,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
-aza,dark,Has {chance_primary} chance of one-hit killing a target,12,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
+pil,light,Regenerate {amount} of health every turn for {turns_active} turns,12,,0.33,0.17,3,1,50,,,,,,,,,,,,,,,,,,,,,,,,,,,
+sok,dark,Revives target with half HP,48,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
+rev,light,Revives target with full HP,96,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
+aza,dark,Has {chance_primary} chance of one-hit killing a target,36,,0.33,0.17,0,1,0,,,,,,,,,,,,,,,,,,,,,,,-,-,,,
+fai,fire,Has a {chance_primary} chance of applying Buring status,12,,0.33,0.17,0,1,0,x,,,,,,,,,,,,,,,,,,,,,,,,,,
+esg,water,Has a {chance_primary} chance of applying Wet status,12,,0.33,0.17,0,1,0,,x,,,,,,,,,,,,,,,,,,,,,,,,,
+fer,earth,Has a {chance_primary} chance of applying Rooted status,12,,0.33,0.17,0,1,0,,,x,,,,,,,,,,,,,,,,,,,,,,,,
+gel,wind,Has a {chance_primary} chance of applying Freezing status,12,,0.33,0.17,0,1,0,,,,x,,,,,,,,,,,,,,,,,,,,,,,

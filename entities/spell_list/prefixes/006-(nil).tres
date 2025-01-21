@@ -3,42 +3,42 @@
 [ext_resource type="Script" path="res://entities/spell/spell_modifier.gd" id="1_qxyl3"]
 [ext_resource type="Script" path="res://entities/spell/spell_prepostfix.gd" id="2_kskfl"]
 
-[sub_resource type="Resource" id="Resource_q11fm"]
+[sub_resource type="Resource" id="Resource_pjsbn"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_u1bek"]
+[sub_resource type="Resource" id="Resource_cobhq"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_5lier"]
+[sub_resource type="Resource" id="Resource_urn28"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_6gbiw"]
+[sub_resource type="Resource" id="Resource_ngx3r"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_wkclx"]
+[sub_resource type="Resource" id="Resource_42ng7"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_fsmhd"]
+[sub_resource type="Resource" id="Resource_v8ljt"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_86u13"]
+[sub_resource type="Resource" id="Resource_aiy68"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
 
-[sub_resource type="Resource" id="Resource_c4g2l"]
+[sub_resource type="Resource" id="Resource_x2xc7"]
 script = ExtResource("1_qxyl3")
 type = 2
 value = 1.0
@@ -48,14 +48,14 @@ script = ExtResource("2_kskfl")
 id = 6
 name = "(nil)"
 description = ""
-turns_casting = SubResource("Resource_c4g2l")
-turns_active = SubResource("Resource_86u13")
-mp = SubResource("Resource_wkclx")
-amount = SubResource("Resource_q11fm")
-circle = SubResource("Resource_6gbiw")
-chance_primary = SubResource("Resource_u1bek")
-chance_secondary = SubResource("Resource_5lier")
-targets = SubResource("Resource_fsmhd")
+turns_casting = SubResource("Resource_x2xc7")
+turns_active = SubResource("Resource_aiy68")
+mp = SubResource("Resource_42ng7")
+amount = SubResource("Resource_pjsbn")
+circle = SubResource("Resource_ngx3r")
+chance_primary = SubResource("Resource_cobhq")
+chance_secondary = SubResource("Resource_urn28")
+targets = SubResource("Resource_v8ljt")
 is_passive = false
 is_initial = false
 is_default = true

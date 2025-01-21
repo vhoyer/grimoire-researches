@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=9 format=3 uid="uid://c57yins7wlc7u"]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_j6upk"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_status.gd" id="2_n208l"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_wlaoe"]
+[ext_resource type="Script" path="res://entities/status/status_wet.gd" id="3_wxbek"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_chance.gd" id="4_atm7r"]
+
+[sub_resource type="Resource" id="Resource_1ux7q"]
+script = ExtResource("3_wxbek")
+
+[sub_resource type="Resource" id="Resource_ffc7x"]
+script = ExtResource("2_n208l")
+status = SubResource("Resource_1ux7q")
+
+[sub_resource type="Resource" id="Resource_0pqpd"]
+script = ExtResource("4_atm7r")
+mode = 0
+effect = SubResource("Resource_ffc7x")
+
+[resource]
+script = ExtResource("2_wlaoe")
+id = 64
+name = "esg"
+description = "Has a {chance_primary} chance of applying Wet status"
+element = 1
+mp = 12
+amount = 0
+turns_active = 0
+chance_primary = 0.33
+chance_secondary = 0.17
+circle = 1
+turns_casting = 1
+targets = 1
+effect = Array[ExtResource("1_j6upk")]([SubResource("Resource_0pqpd")])
+constraints = {
+"(nil)": true,
+"al": false,
+"in": false,
+"kai": true,
+"ma": true,
+"se": true,
+"tchi": true,
+"tchu": true
+}
+display_name = "esg"

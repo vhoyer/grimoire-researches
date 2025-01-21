@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=9 format=3 uid="uid://c8p8thsdx5tgm"]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_g88ul"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_status.gd" id="2_gcs8m"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_hhwxl"]
+[ext_resource type="Script" path="res://entities/status/status_freezing.gd" id="3_l4nsj"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_chance.gd" id="4_hvjlg"]
+
+[sub_resource type="Resource" id="Resource_51l31"]
+script = ExtResource("3_l4nsj")
+
+[sub_resource type="Resource" id="Resource_woctj"]
+script = ExtResource("2_gcs8m")
+status = SubResource("Resource_51l31")
+
+[sub_resource type="Resource" id="Resource_4ivwl"]
+script = ExtResource("4_hvjlg")
+mode = 0
+effect = SubResource("Resource_woctj")
+
+[resource]
+script = ExtResource("2_hhwxl")
+id = 66
+name = "gel"
+description = "Has a {chance_primary} chance of applying Freezing status"
+element = 3
+mp = 12
+amount = 0
+turns_active = 0
+chance_primary = 0.33
+chance_secondary = 0.17
+circle = 1
+turns_casting = 1
+targets = 1
+effect = Array[ExtResource("1_g88ul")]([SubResource("Resource_4ivwl")])
+constraints = {
+"(nil)": true,
+"al": false,
+"in": false,
+"kai": true,
+"ma": true,
+"se": true,
+"tchi": true,
+"tchu": true
+}
+display_name = "gel"

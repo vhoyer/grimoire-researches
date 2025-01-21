@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpellRadix" load_steps=9 format=3 uid="uid://c0dqxotl6oikn"]
+
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect.gd" id="1_7wr1c"]
+[ext_resource type="Script" path="res://entities/spell/spell_radix.gd" id="2_tjxuh"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_status.gd" id="2_yi2mb"]
+[ext_resource type="Script" path="res://entities/status/status_burning.gd" id="3_5segm"]
+[ext_resource type="Script" path="res://entities/spell_effects/spell_effect_chance.gd" id="4_fx1ws"]
+
+[sub_resource type="Resource" id="Resource_8iafb"]
+script = ExtResource("3_5segm")
+
+[sub_resource type="Resource" id="Resource_f7yjl"]
+script = ExtResource("2_yi2mb")
+status = SubResource("Resource_8iafb")
+
+[sub_resource type="Resource" id="Resource_tg6ux"]
+script = ExtResource("4_fx1ws")
+mode = 0
+effect = SubResource("Resource_f7yjl")
+
+[resource]
+script = ExtResource("2_tjxuh")
+id = 63
+name = "fai"
+description = "Has a {chance_primary} chance of applying Buring status"
+element = 0
+mp = 12
+amount = 0
+turns_active = 0
+chance_primary = 0.33
+chance_secondary = 0.17
+circle = 1
+turns_casting = 1
+targets = 1
+effect = Array[ExtResource("1_7wr1c")]([SubResource("Resource_tg6ux")])
+constraints = {
+"(nil)": true,
+"al": false,
+"in": false,
+"kai": true,
+"ma": true,
+"se": true,
+"tchi": true,
+"tchu": true
+}
+display_name = "fai"

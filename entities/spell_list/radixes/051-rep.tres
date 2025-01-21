@@ -7,10 +7,10 @@
 script = ExtResource("2_n5m7p")
 id = 51
 name = "rep"
-description = "Makes the target use the same spell used last for {turns_active} turns"
+description = "Makes the target use the same spell used last for {amount} turns"
 element = 1
 mp = 12
-amount = 0
+amount = 2
 turns_active = 0
 chance_primary = 0.33
 chance_secondary = 0.17

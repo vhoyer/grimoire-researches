@@ -29,9 +29,9 @@ targets = 1
 effect = Array[ExtResource("1_bckx0")]([SubResource("Resource_acebh")])
 constraints = {
 "(nil)": true,
-"al": true,
+"al": false,
 "in": true,
-"kai": true,
+"kai": false,
 "ma": false,
 "se": false,
 "tchi": true,

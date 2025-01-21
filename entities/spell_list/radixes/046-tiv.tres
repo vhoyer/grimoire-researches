@@ -7,10 +7,10 @@
 script = ExtResource("2_3vhf4")
 id = 46
 name = "tiv"
-description = "Pushs the target forward by {amount} turns"
+description = "Pushs the target's turn forward by {amount} turns"
 element = 0
 mp = 12
-amount = 0
+amount = 1
 turns_active = 0
 chance_primary = 0.33
 chance_secondary = 0.17
