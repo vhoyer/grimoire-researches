@@ -22,3 +22,11 @@ func next() -> Mage:
 
 func is_current(turn: BattleTurn) -> bool:
 	return queue[0] == turn
+
+func shift_turn(combatant: Mage, shift: int) -> void:
+	var turn_index = Util.find_custom(queue, func(turn: BattleTurn):
+		return turn.combatant == combatant
+		)
+	var turn = queue.pop_at(turn_index)
+	var new_index = max(min(turn_index - shift, queue.size()), 0)
+	queue.insert(new_index, turn)
