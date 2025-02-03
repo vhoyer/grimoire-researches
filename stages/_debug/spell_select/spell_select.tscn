@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://stages/_debug/spell_select/spell_select.gd" id="1_udffm"]
 [ext_resource type="StyleBox" uid="uid://bg8tf403k7ydc" path="res://modules/UI/backdrop_panel.tres" id="2_1s4xd"]
 [ext_resource type="PackedScene" uid="uid://dai1di82aw08k" path="res://stages/_debug/spell_display/spell_display.tscn" id="3_oahyn"]
-[ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="4_vbbdq"]
+[ext_resource type="Script" path="res://modules/UI/item_list_source/item_list_source.gd" id="4_vbbdq"]
 [ext_resource type="Resource" uid="uid://5bl7vtr8iyt" path="res://entities/spell_list/prefixes/004-in.tres" id="6_anx2t"]
 [ext_resource type="Resource" uid="uid://hps5cjkfrehq" path="res://entities/spell_list/prefixes/005-al.tres" id="7_0qk6w"]
 [ext_resource type="Resource" uid="uid://cqcqovcuaa3dm" path="res://entities/spell_list/prefixes/006-(nil).tres" id="8_0gc2u"]

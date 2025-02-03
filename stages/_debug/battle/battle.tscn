@@ -7,9 +7,9 @@
 [ext_resource type="Script" path="res://stages/_debug/battle/queue.gd" id="3_ifwug"]
 [ext_resource type="PackedScene" uid="uid://b3iquby55xoeq" path="res://stages/_debug/battle/queue_icon.tscn" id="4_4e334"]
 [ext_resource type="PackedScene" uid="uid://bdltqd0o0mciq" path="res://stages/_debug/party_display/party_display.tscn" id="7_m5ets"]
-[ext_resource type="Script" path="res://modules/UI/button_scene_changer.gd" id="8_d0o0i"]
+[ext_resource type="Script" path="res://modules/UI/scenes/button_scene_changer.gd" id="8_d0o0i"]
 [ext_resource type="Script" path="res://stages/_debug/battle/action_select.gd" id="9_sxo3i"]
-[ext_resource type="Script" path="res://modules/UI/item_list_source.gd" id="9_vkxu4"]
+[ext_resource type="Script" path="res://modules/UI/item_list_source/item_list_source.gd" id="9_vkxu4"]
 [ext_resource type="PackedScene" uid="uid://dmicbiplp74ps" path="res://stages/_debug/spell_display/spell_display_summary.tscn" id="10_u0qq7"]
 
 [sub_resource type="Resource" id="Resource_4geh4"]
