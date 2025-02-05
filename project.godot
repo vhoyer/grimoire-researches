@@ -26,6 +26,10 @@ run/main_scene="res://stages/main/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+UI="*res://modules/UI/ui.gd"
+
 [display]
 
 window/size/viewport_width=1920
@@ -43,3 +47,4 @@ locale/translations=PackedStringArray("res://assets/translations/GDD - Grimoire 
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

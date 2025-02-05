@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cftcnbx23udwl"]
+
+[ext_resource type="PackedScene" uid="uid://c4err8c6jno10" path="res://stages/_debug/spell_select/spell_select.tscn" id="1_i8we4"]
+
+[node name="SpellExplorer" type="CanvasLayer"]
+
+[node name="SpellSelect" parent="." instance=ExtResource("1_i8we4")]
